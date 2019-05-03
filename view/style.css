@@ -1,3 +1,4 @@
+/* global */
 * {
     margin: 0;
     padding: 0;
@@ -19,6 +20,17 @@ ul {
     padding: 0;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #E8E8E8; 
+    border-radius: 10px;
+}
 .outside-grid-container{
     display: grid;
     grid-template-areas: 
@@ -27,14 +39,15 @@ ul {
 }
 
 .outside-grid-container > div {
-    font-size: 1.1rem;
+    font-size: 16px;
     font-family: 'Yu Gothic';
     color: #5d5d5d;
-    
 }
 
 /* header */
 .header {
+    /* position: fixed; */
+    width: 100%;
     grid-area: header;
     box-shadow: 0 3px 10px rgba(0, 0, 0, .16);
     background-color: #FFF4AA;
@@ -52,7 +65,7 @@ ul {
 
 /* mainMenu */
 .mainMenu {
-    padding-top: 35px;
+    /* position: fixed; */
     grid-area: menu;
     box-shadow: 4px 0 10px #EAEAEA;
 }
@@ -62,39 +75,42 @@ ul {
     height: 40px;
     border-radius: 21px;  
     border: none;  
-    margin-bottom: 35px;
+    margin: 35px;
     font-family: Yu Gothic;
 }
 .mainMenu ul .items {
-    height: 100px;
+    line-height: 40px;
+    height: 75px;
     padding: 15px 25px;
     box-shadow: 0 3px 8px #EAEAEA;
     border-left: 10px solid #fff4aa;
 }
 .mainMenu ul .items a {
     color: #408f98;
-
 }
 
 
 /* datalist */
 .dataList{
-    padding-top: 35px;
+    /* position: fixed; */
+    padding: 35px;
     grid-area: dataList;
     border-right: 2px solid #EAEAEA;
-    width: 200px;
+    width: 160px;
 }
 .dataList ul li {
-    margin-left: 15px;
+    
     height: 56px;
 }
 
 /* content */
 .content {
-    padding-top: 35px;
+    /* position: fixed; */
+    padding: 35px;
     grid-area: content;
     
 }
+
 .contentList > ul li{
     float: left;
     border-right: 0.5px solid #b0b0b0;
@@ -114,40 +130,55 @@ ul {
     clear: both;
 }
 .dataContent h3 {
-    margin-left: 15px;
-    padding: 30px;
+    padding: 15px;
 }
 .contentGrid-container {
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto; 
-    margin: 0 30px; 
+    /* grid-template-columns: auto auto auto auto auto auto auto ;  */
+    /* divided into 17 columns */
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto ; 
 
 }
 
 .content-grid {
+    font-size: 14px;
     margin: 2px;
     background: #FFFFFF;
+    padding: 10px;
     border-radius: 6px;
     height: 160px;
 }
 
 .content-grid label{
-    font-size: 18px;
+    padding: 8px;
     font-weight: medium;
-    border-bottom: 0.5px solid #707070;
+    /* border-bottom: 0.5px solid #707070; */
     color: #b3b3b3;
 }
+.content-grid .text-container {
+    border-top: 0.5px solid #707070;
+}
 .content-grid input[type="text"][readonly]{
+    margin-top: 10px;
     border: 2px solid rgba(0,0,0,0);
-    font-size: 18px;
     font-family: Yu Gothic;
 }
 .content-grid textarea {
+    margin-top: 10px;
     border: 2px solid rgba(0,0,0,0);
-    font-size: 18px;
     font-family: Yu Gothic;
     resize: none;
 }
+.content-grid select {
+    margin-top: 10px;
+    border: 2px solid rgba(0,0,0,0);
+    font-family: Yu Gothic;
+    appearance: none;
+    -moz-appearance: none; 
+    -webkit-appearance: none;
+    /* background: url("img/downArrow.png") no-repeat scroll right center transparent;   */ 
+}
+
 /* .content-grid h5{
     font-size: 18px;
     font-weight: medium;
@@ -155,13 +186,55 @@ ul {
     color: #b3b3b3;
 } */
 
-#grid2 {
+/* #grid2 {
     grid-column: 2 / 4;
 }
+
+#grid4 {
+    
+}
+#grid6, #grid13{
+    min-width: 200px;
+}
+
+#grid8 {
+    max-width: 65px;
+}
+
 #grid14{
     grid-column: 1 / 8;
     height: 210px;
+} */
+#grid1,#grid7 {
+    grid-column: 1 / 3;
 }
+#grid2 {
+    grid-column: 3 / 6;
+}
+#grid3, #grid10 {
+    grid-column: 6 / 9;
+}
+#grid4, #grid11 {
+    grid-column: 9 / 11;
+    max-width: 100px;
+}
+#grid5, #grid12 {
+    grid-column: 11 / 13;
+}
+#grid6, #grid13 {
+    grid-column: 13 / 18;
+    min-width: 150px;
+}
+#grid8 {
+    max-width: 65px;
+}
+#grid9 {
+    grid-column: 4 / 6;
+}
+#grid14 {
+    grid-column: 1 / 18;
+}
+
 .content-button {
     float: right;
     margin-right: 72px;
