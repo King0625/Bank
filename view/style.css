@@ -31,6 +31,8 @@ ul {
     background: #E8E8E8; 
     border-radius: 10px;
 }
+
+
 .outside-grid-container{
     display: grid;
     grid-template-areas: 
@@ -132,9 +134,10 @@ ul {
 .dataContent h3 {
     padding: 15px;
 }
+
+/****** Grid comes here ******/
 .contentGrid-container {
     display: grid;
-    /* grid-template-columns: auto auto auto auto auto auto auto ;  */
     /* divided into 17 columns */
     grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto ; 
 
@@ -155,56 +158,42 @@ ul {
     /* border-bottom: 0.5px solid #707070; */
     color: #b3b3b3;
 }
+
 .content-grid .text-container {
     border-top: 0.5px solid #707070;
 }
-.content-grid input[type="text"][readonly]{
+
+.content-grid input[type="text"]{
     margin-top: 10px;
-    border: 2px solid rgba(0,0,0,0);
     font-family: Yu Gothic;
+    border: none;
 }
+
 .content-grid textarea {
+    padding: 5px;
     margin-top: 10px;
-    border: 2px solid rgba(0,0,0,0);
     font-family: Yu Gothic;
     resize: none;
+    border: none;
 }
+
 .content-grid select {
     margin-top: 10px;
-    border: 2px solid rgba(0,0,0,0);
+    border: none;
     font-family: Yu Gothic;
+    background: #FFFFFF;
+    color: #000000;
     appearance: none;
     -moz-appearance: none; 
     -webkit-appearance: none;
     /* background: url("img/downArrow.png") no-repeat scroll right center transparent;   */ 
 }
 
-/* .content-grid h5{
-    font-size: 18px;
-    font-weight: medium;
-    border-bottom: 0.5px solid #707070;
-    color: #b3b3b3;
-} */
-
-/* #grid2 {
-    grid-column: 2 / 4;
+.content-grid select option:hover{
+    background: #f7f7f7;
 }
 
-#grid4 {
-    
-}
-#grid6, #grid13{
-    min-width: 200px;
-}
-
-#grid8 {
-    max-width: 65px;
-}
-
-#grid14{
-    grid-column: 1 / 8;
-    height: 210px;
-} */
+/****** Adjust every grid's size(column) ******/
 #grid1,#grid7 {
     grid-column: 1 / 3;
 }
@@ -226,7 +215,7 @@ ul {
     min-width: 150px;
 }
 #grid8 {
-    max-width: 65px;
+    max-width: 60px;
 }
 #grid9 {
     grid-column: 4 / 6;
