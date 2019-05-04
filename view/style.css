@@ -234,7 +234,7 @@ ul {
 }
 #grid9 {
     grid-column: 4 / 6;
-    min-width: 70px;
+    min-width: 75px;
 }
 #grid14 {
     grid-column: 1 / 18;
