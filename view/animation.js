@@ -14,6 +14,10 @@ $(document).ready(() => {
             "border-radius": "6px"
         })
         $("select").attr('disabled', !disabled);
+        $("select").css("background", "url('img/downArrow.png') no-repeat scroll right center transparent");
+        // $("select").click(function () {
+        //     $(this).css("background", "url('img/topArrow.png') no-repeat scroll right center transparent")
+        // })
     });
     $("#save").click(function () {
         $("#edit").css("background-color", "#ffffff");
@@ -26,5 +30,6 @@ $(document).ready(() => {
             "background": "#ffffff"
         })
         $("select").attr('disabled', disabled);
+        $("select").css("background", "none");
     });
 });

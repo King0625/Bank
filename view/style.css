@@ -3,11 +3,15 @@
     margin: 0;
     padding: 0;
 }
+
 body {
     background: #FCFCFC;
     color: #333;
     height: 100%;
     width: 100%;
+    font-size: 16px;
+    font-family: 'Yu Gothic';
+    color: #5d5d5d;
 }
 
 a{
@@ -33,24 +37,19 @@ ul {
 }
 
 
-.outside-grid-container{
+/* .outside-grid-container{
     display: grid;
     grid-template-areas: 
         'header header header header header header header header '
         'menu dataList content content content content content content ';
-}
+} */
 
-.outside-grid-container > div {
-    font-size: 16px;
-    font-family: 'Yu Gothic';
-    color: #5d5d5d;
-}
 
 /* header */
 .header {
-    /* position: fixed; */
+    height: 60px;
+    position: fixed;
     width: 100%;
-    grid-area: header;
     box-shadow: 0 3px 10px rgba(0, 0, 0, .16);
     background-color: #FFF4AA;
 }
@@ -64,16 +63,22 @@ ul {
     vertical-align: middle;
 }
 
-
+.content-container {
+    display: flex;
+    padding-top : 60px; 
+}
 /* mainMenu */
 .mainMenu {
-    /* position: fixed; */
-    grid-area: menu;
+    /* width: 15%; */
+    position: fixed;
     box-shadow: 4px 0 10px #EAEAEA;
+    overflow: scroll;
+    height: 92.5%;
 }
+
 .mainMenu button {
     background: #fff4aa;
-    width: 200px;
+    width: 175px;
     height: 40px;
     border-radius: 21px;  
     border: none;  
@@ -94,19 +99,22 @@ ul {
 
 /* datalist */
 .dataList{
-    /* position: fixed; */
+    position: fixed;
+    margin-left: 245px;
+    width: 15%;
     padding: 35px;
-    grid-area: dataList;
-    border-right: 2px solid #EAEAEA;
+    /* border-right: 2px solid #EAEAEA; */
     width: 160px;
 }
 .dataList ul li {
-    
+    width: 150px;
     height: 56px;
 }
 
 /* content */
 .content {
+    border-left: 2px solid #EAEAEA;
+    margin-left: 475px;
     /* position: fixed; */
     padding: 35px;
     grid-area: content;
@@ -153,7 +161,6 @@ ul {
 }
 
 .content-grid label{
-    padding: 8px;
     font-weight: medium;
     /* border-bottom: 0.5px solid #707070; */
     color: #b3b3b3;
@@ -164,13 +171,14 @@ ul {
 }
 
 .content-grid input[type="text"]{
+    padding: 2px; 
     margin-top: 10px;
     font-family: Yu Gothic;
     border: none;
 }
 
 .content-grid textarea {
-    padding: 5px;
+    padding: 2px;
     margin-top: 10px;
     font-family: Yu Gothic;
     resize: none;
@@ -178,6 +186,7 @@ ul {
 }
 
 .content-grid select {
+    padding: 2px;
     margin-top: 10px;
     border: none;
     font-family: Yu Gothic;
@@ -186,7 +195,7 @@ ul {
     appearance: none;
     -moz-appearance: none; 
     -webkit-appearance: none;
-    /* background: url("img/downArrow.png") no-repeat scroll right center transparent;   */ 
+    /* background: url("img/downArrow.png") no-repeat scroll right center transparent;    */
 }
 
 .content-grid select option:hover{
@@ -196,29 +205,36 @@ ul {
 /****** Adjust every grid's size(column) ******/
 #grid1,#grid7 {
     grid-column: 1 / 3;
+    min-width: 75px;
+    max-width: 100px;
 }
 #grid2 {
     grid-column: 3 / 6;
 }
 #grid3, #grid10 {
     grid-column: 6 / 9;
+    min-width: 110px;
 }
 #grid4, #grid11 {
     grid-column: 9 / 11;
+    min-width: 60px;
     max-width: 100px;
 }
 #grid5, #grid12 {
     grid-column: 11 / 13;
+    min-width: 75px;
+    max-width: 90px;
 }
 #grid6, #grid13 {
     grid-column: 13 / 18;
-    min-width: 150px;
+    min-width: 175px;
 }
 #grid8 {
     max-width: 60px;
 }
 #grid9 {
     grid-column: 4 / 6;
+    min-width: 70px;
 }
 #grid14 {
     grid-column: 1 / 18;
