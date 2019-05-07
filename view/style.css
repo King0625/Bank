@@ -175,6 +175,7 @@ ul {
     margin-top: 10px;
     font-family: Yu Gothic;
     border: none;
+    outline: none;
 }
 
 .content-grid textarea {
@@ -183,6 +184,7 @@ ul {
     font-family: Yu Gothic;
     resize: none;
     border: none;
+    outline: none;
 }
 
 .content-grid select {
