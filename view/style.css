@@ -78,6 +78,8 @@ ul {
     border: none;  
     margin: 35px;
     font-family: Yu Gothic;
+    cursor: pointer;
+    outline: none;
 }
 .mainMenu ul .items {
     line-height: 40px;
@@ -319,6 +321,8 @@ ul {
     height: 32px;
     width: 64px;
     margin: 10.5px;
+    outline: none;
+    cursor: pointer;
 }
 
 /* inquire */
