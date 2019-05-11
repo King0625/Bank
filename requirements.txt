@@ -1,0 +1,8 @@
+Django==2.2.1
+mysql==0.0.2
+mysql-connector==2.2.9
+mysqlclient==1.4.2.post1
+pyaml==19.4.1
+pytz==2019.1
+PyYAML==5.1
+sqlparse==0.3.0
