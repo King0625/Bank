@@ -12,8 +12,11 @@
 <body>
     <div class="header">
         <div class="logo">
-            <img src="img/sinopac_logo.png" alt="" width="175">
-            <span class="logo-word"><span style="color: #e71a0f">e</span>Loan</span>
+            <a href="">
+                <img src="img/sinopac_logo.png" alt="" width="175">
+                <span class="logo-word"><span style="color: #e71a0f">e</span>Loan</span>
+            </a>
+
         </div>
 
     </div>
@@ -32,6 +35,7 @@
                 <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li>
                 <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li>
             </ul>
+            <!-- <div class="wrapper"></div> -->
         </div>
         <div class="dataList">
             <ul>
@@ -40,21 +44,141 @@
                 <li><a href=""><img src="img/comment.png" width="24"> 信貸徵審意見</a></li>
                 <li><a href=""><img src="img/review.png" width="24"> 防杜代辦檢核表</a></li>
             </ul>
+            <div class="swiper-pagination">
+                <a class="swiper-bullet" id="swipe1"></a>
+                <a class="swiper-bullet" id="swipe2"></a>
+                <a class="swiper-bullet" id="swipe3"></a>
+                <a class="swiper-bullet" id="swipe4"></a>
+            </div>
         </div>
         <div class="content">
             <div class="contentList">
                 <ul>
-                    <li>金融機構查詢紀錄(<span>5</span>)</li>
-                    <li>信用卡繳款紀錄</li>
-                    <li>授信餘額紀錄</li>
-                    <li>票查紀錄</li>
-                    <li>主保債務查詢</li>
-                    <li>同一經濟關係人</li>
+                    <li id="contentList1">金融機構查詢紀錄(<span>5</span>)</li>
+                    <li id="contentList2">信用卡繳款紀錄</li>
+                    <li id="contentList3">授信餘額紀錄</li>
+                    <li id="contentList4">票查紀錄</li>
+                    <li id="contentList5">主保債務查詢</li>
+                    <li id="contentList6">同一經濟關係人</li>
                     <li><img src="img/print.png" width="24"></li>
                 </ul>
             </div>
+            <div class="contentList-info not-shown" id="contentList-info1">
+                <div class="query-record">
+                    <h3>最近三個月被查詢紀錄</h3>
+                    <div class="contentList-table">
+                        <div class="contentList-table-item">
+                            <h4>姓名</h4>
+                            <p>朱炳丞</p>
+                        </div>
+                        <div class="contentList-table-item">
+                            <h4>ID</h4>
+                            <p>R123456789</p>
+                        </div>
+                        <div class="contentList-table-item">
+                            <h4>查詢日期</h4>
+                            <p>20171123</p>
+                            <p>20171129</p>
+                            <p>20180108</p>
+                            <p>20180125</p>
+                            <p>20180111</p>
+                        </div>
+                        <div class="contentList-table-item">
+                            <h4>查詢機構代號及名稱</h4>
+                            <p>822CR16 中信銀個金信用控管部擔保徵信科</p>
+                            <p>0065252 合作金庫銀行七賢分行</p>
+                            <p>0540847 京城商業銀行新莊分行</p>
+                            <p>822CR18 中信銀個金信用控管部信貸徵信科</p>
+                            <p>822CR18 中信銀個金信用控管部信貸徵信科</p>
+                        </div>
+                        <div class="contentList-table-item">
+                            <h4>查詢項目摘要串列</h4>
+                            <p>BJKS</p>
+                            <p>K</p>
+                            <p>ABKN</p>
+                            <p>B</p>
+                            <p>K</p>
+                        </div>
+                        <div class="contentList-table-item">
+                            <h4>查詢理由</h4>
+                            <p>新業務</p>
+                            <p>原業務</p>
+                            <p>新業務/公開資訊</p>
+                            <p>新業務</p>
+                            <p>新業務</p>
+                        </div>
+                    </div>
+                    <div class="inquiry-times">
+                        <div id="financial-inquiry">
+                            <h4>金融機構查詢次數</h4>
+                            <p>5</p>
+                        </div>
+                        <div id="credit-card-inquiry">
+                            <h4>信用卡查詢次數</h4>
+                            <p>0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="query-record">
+                    <h3>查詢當日截至目前之被查詢記錄</h3>
+                    <div class="contentList-table">
+                        <div class="contentList-table-item">
+                            <h4>姓名</h4>
+                            <p>朱炳丞</p>
+                        </div>
+                        <div class="contentList-table-item">
+                            <h4>ID</h4>
+                            <p>R123456789</p>
+                        </div>
+                        <div class="contentList-table-item">
+                            <h4>查詢日期</h4>
+                            <p>20171123</p>
+                        </div>
+                        <div class="contentList-table-item">
+                            <h4>查詢機構代號及名稱</h4>
+                            <p>822CR16 中信銀個金信用控管部擔保徵信科</p>
+                        </div>
+                        <div class="contentList-table-item">
+                            <h4>查詢項目摘要串列</h4>
+                            <p>BJKS</p>
+                        </div>
+                        <div class="contentList-table-item">
+                            <h4>查詢理由</h4>
+                            <p>新業務</p>
+                        </div>
+                    </div>
+                    <div class="inquiry-times">
+                        <div id="financial-inquiry">
+                            <h4>金融機構查詢次數</h4>
+                            <p>1</p>
+                        </div>
+                        <div id="credit-card-inquiry">
+                            <h4>信用卡查詢次數</h4>
+                            <p>0</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- <div class="contentList-info" id="contentList-info2">
+
+            </div>
+            <div class="contentList-info" id="contentList-info3">
+
+            </div>
+            <div class="contentList-info" id="contentList-info4">
+
+            </div>
+            <div class="contentList-info" id="contentList-info5">
+
+            </div>
+            <div class="contentList-info" id="contentList-info6">
+
+            </div> -->
+
             <div class="dataContent">
-                <h3>壹、基本資料查詢</h3>
+                <h3 id="content1">壹、基本資料查詢</h3>
                 <form class="contentGrid-container">
                     <div id="grid1" class="content-grid">
                         <label for="name">姓名/公司名稱</label>
@@ -63,8 +187,15 @@
                             <input type="text" style="width: 100%; height: 30px;" name="name" readonly
                                 value="朱炳丞"></input>
                         </div>
+                        <div class="check"></div>
                     </div>
-                    <div id="grid1-detail" class="content-grid details">
+                    <div id="grid1-detail" class="content-grid details not-shown">
+                        4465465131
+                        4465465131
+                        4465465131
+                        4465465131
+                        4465465131
+                        4465465131
                         4465465131
                         4465465131
                         4465465131
@@ -78,8 +209,9 @@
                             <input type="text" style="width: 100%; height: 30px;" name="personID" readonly
                                 value="R123456789"></input>
                         </div>
+                        <div class="check"></div>
                     </div>
-                    <div id="grid2-detail" class="content-grid details">
+                    <div id="grid2-detail" class="content-grid details not-shown">
                         4465465131
                     </div>
                     <div id="grid3" class="content-grid">
@@ -93,9 +225,9 @@
                                 <option value="借借款款人">借借款款人</option>
                             </select>
                         </div>
-
+                        <div class="check"></div>
                     </div>
-                    <div id="grid3-detail" class="content-grid details">
+                    <div id="grid3-detail" class="content-grid details not-shown">
                         4465465131
                     </div>
                     <div id="grid4" class="content-grid">
@@ -105,8 +237,9 @@
                             <input type="text" style="width: 100%; height: 30px;" name="birth" readonly
                                 value="850102"></input>
                         </div>
+                        <div class="check"></div>
                     </div>
-                    <div id="grid4-detail" class="content-grid details">
+                    <div id="grid4-detail" class="content-grid details not-shown">
                         4465465131
                     </div>
                     <div id="grid5" class="content-grid">
@@ -119,8 +252,9 @@
                             <input type="text" style="width: 100%; height: 30px;" name="birth" readonly
                                 value="0986565551"></input>
                         </div>
+                        <div class="check"></div>
                     </div>
-                    <div id="grid5-detail" class="content-grid details">
+                    <div id="grid5-detail" class="content-grid details not-shown">
                         4465465131
                     </div>
                     <div id="grid6" class="content-grid">
@@ -130,8 +264,9 @@
                             <textarea name="address" style="width: 100%; height: 80px;"
                                 readonly>台南市大學路1號補字補字補字補字補字補字</textarea>
                         </div>
+                        <div class="check"></div>
                     </div>
-                    <div id="grid6-detail" class="content-grid details">
+                    <div id="grid6-detail" class="content-grid details not-shown">
                         4465465131
                     </div>
                     <div id="grid7" class="content-grid">
@@ -142,8 +277,9 @@
                                 <option value="幹部">幹部</option>
                             </select>
                         </div>
+                        <div class="check"></div>
                     </div>
-                    <div id="grid7-detail" class="content-grid details">
+                    <div id="grid7-detail" class="content-grid details not-shown">
                         4465465131
                     </div>
                     <div id="grid8" class="content-grid">
@@ -153,8 +289,9 @@
                             <input type="text" style="width: 100%; height: 30px;" name="career" readonly
                                 value="8年"></input>
                         </div>
+                        <div class="check"></div>
                     </div>
-                    <div id="grid8-detail" class="content-grid details">
+                    <div id="grid8-detail" class="content-grid details not-shown">
                         4465465131
                     </div>
                     <div id="grid9" class="content-grid">
@@ -165,8 +302,9 @@
                                 <option value="傳產">傳產</option>
                             </select>
                         </div>
+                        <div class="check"></div>
                     </div>
-                    <div id="grid9-detail" class="content-grid details">
+                    <div id="grid9-detail" class="content-grid details not-shown">
                         4465465131
                     </div>
                     <div id="grid10" class="content-grid">
@@ -176,8 +314,9 @@
                             <input type="text" style="width:100%; height: 30px;" name="company" readonly
                                 value="台積電股份有限公司"></input>
                         </div>
+                        <div class="check"></div>
                     </div>
-                    <div id="grid10-detail" class="content-grid details">
+                    <div id="grid10-detail" class="content-grid details not-shown">
                         4465465131
                     </div>
                     <div id="grid11" class="content-grid">
@@ -187,8 +326,9 @@
                             <input type="text" style="width: 100%; height: 30px;" name="vocation" readonly
                                 value="輪班星人"></input>
                         </div>
+                        <div class="check"></div>
                     </div>
-                    <div id="grid11-detail" class="content-grid details">
+                    <div id="grid11-detail" class="content-grid details not-shown">
                         4465465131
                     </div>
                     <div id="grid12" class="content-grid">
@@ -198,8 +338,9 @@
                             <input type="text" style="width: 100%; height: 30px;" name="company-phone" readonly
                                 value="06-232841"></input>
                         </div>
+                        <div class="check"></div>
                     </div>
-                    <div id="grid12-detail" class="content-grid details">
+                    <div id="grid12-detail" class="content-grid details not-shown">
                         4465465131
                     </div>
                     <div id="grid13" class="content-grid">
@@ -209,8 +350,9 @@
                             <textarea name="company-address" style="width:100%; height: 80px;"
                                 readonly>台南市大學路1號補字補字補字補字補字補字</textarea>
                         </div>
+                        <div class="check"></div>
                     </div>
-                    <div id="grid13-detail" class="content-grid details">
+                    <div id="grid13-detail" class="content-grid details not-shown">
                         4465465131
                     </div>
                     <div id="grid14" class="content-grid">
@@ -283,7 +425,7 @@
                 </div>
                 <br><br><br>
 
-                <h3>貳、本行系統查詢 <span>(單位:新台幣)</span></h3>
+                <h3 id="content2">貳、本行系統查詢 <span>(單位:新台幣)</span></h3>
                 <div class="inquire">
                     <h4>一、本行帳戶往來資料</h4>
                     <div class="inquire-content">
@@ -471,7 +613,7 @@
                     </div>
                 </div>
 
-                <h3>參、聯合徵信中心查詢回覆資料<span>(單位:新台幣仟元)</span></h3>
+                <h3 id="content3">參、聯合徵信中心查詢回覆資料<span>(單位:新台幣仟元)</span></h3>
 
             </div>
         </div>
