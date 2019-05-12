@@ -54,6 +54,9 @@ ul {
     box-shadow: 3px 3px 6px rgba(0, 0, 0, .16);
     font-weight: 700;
 }
+.failed {
+    color: #FF4D4D;
+}
 @keyframes expand {
     0%{
         width: 0;
@@ -325,9 +328,6 @@ ul {
     /* background: url("img/downArrow.png") no-repeat scroll right center transparent;    */
 }
 
-.content-grid select option:hover{
-    background: #f7f7f7;
-}
 
 /*** details ***/
 .details {
@@ -475,8 +475,29 @@ ul {
 
 /* moreInfo in description */
 .moreInfo {
-    display: flex;
+    display: none;
+    width: 95%;
 }
+.moreInfo > div{
+    /* flex: auto; */
+    padding: 10px 5px;
+
+}
+/* .moreInfo > div > label{
+    
+}
+.moreInfo >div> select, .moreInfo > div> input[type="text"] {
+    margin: 2px;
+    border-top: 0.5px solid #707070;
+    padding-top: 10px;
+} */
+.moreInfo >div>input[name="monthly-payment"]::-webkit-input-placeholder, .moreInfo >div>input[name="credit"]::-webkit-input-placeholder{
+    text-align: right;
+}
+.moreInfo >div>input[name="monthly-payment"]::-moz-placeholder, .moreInfo >div>input[name="credit"]::-moz-placeholder{
+    text-align: right;
+}
+
 
 /* button */
 .button-area {
