@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+    {% load static %}
+	<link rel="stylesheet" href="{% static 'webpages/style.css' %}">
     <title>SinoPac</title>
 </head>
 
@@ -13,7 +14,7 @@
     <div class="header">
         <div class="logo">
             <a href="">
-                <img src="img/sinopac_logo.png" alt="" width="175">
+                    <img src="{% static 'webpages/sinopac_logo.png' %}" alt="" width="175">
                 <span class="logo-word"><span style="color: #e71a0f">e</span>Loan</span>
             </a>
 
@@ -39,10 +40,10 @@
         </div>
         <div class="dataList">
             <ul>
-                <li><a href=""><img src="img/data.png" width="24"> 個案資料</a></li>
-                <li><a href=""><img src="img/report.png" width="24"> 報告總覽</a></li>
-                <li><a href=""><img src="img/comment.png" width="24"> 信貸徵審意見</a></li>
-                <li><a href=""><img src="img/review.png" width="24"> 防杜代辦檢核表</a></li>
+                    <li><a href=""><img src="{% static 'webpages/data.png' %}" width="24"> 個案資料</a></li>
+                    <li><a href=""><img src="{% static 'webpages/report.png' %}" width="24"> 報告總覽</a></li>
+                    <li><a href=""><img src="{% static 'webpages/comment.png' %}" width="24"> 信貸徵審意見</a></li>
+                    <li><a href=""><img src="{% static 'webpages/review.png' %}" width="24"> 防杜代辦檢核表</a></li>
             </ul>
             <div class="swiper-pagination">
                 <a class="swiper-bullet" id="swipe1" style="background: #5d5d5d"></a>
@@ -661,30 +662,30 @@
                         <label for="name">姓名/公司名稱</label>
                         <br>
                         <div class="text-container">
-                            <input type="text" style="width: 100%; height: 30px;" name="name" readonly
-                                value="朱炳丞"></input>
+                                <input type="text" style="width: 100%; height: 30px;" name="name" readonly
+                                value="朱炳丞" id="personName" class="editForm"></input>
                         </div>
                         <div class="check"></div>
                     </div>
                     <div id="grid1-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="img/baseline-check_circle-24px.png" alt="">
+                        <img src="{% static 'baseline-check_circle-24px.png'%}" alt="">
                         <span>姓名/公司名稱</span>
                         <ul>
                             <li>
                                 <h6>貳、一、(一)活期性存款往來資料查詢</h6>
                                 <p>朱炳丞</p>
-                                <a href=""><img src="img/arrowForward.png" alt=""></a>
+                                <a href=""><img src="{% static 'arrowForward.png' %}" alt=""></a>
                             </li>
                             <li>
                                 <h6>貳、一、(一)活期性存款往來資料查詢</h6>
                                 <p>朱炳丞</p>
-                                <a href=""><img src="img/arrowForward.png" alt=""></a>
+                                <a href=""><img src="{% static 'arrowForward.png' %" alt=""></a>
                             </li>
                             <li>
                                 <h6>貳、一、(一)活期性存款往來資料查詢</h6>
                                 <p>朱炳丞</p>
-                                <a href=""><img src="img/arrowForward.png" alt=""></a>
+                                <a href=""><img src="{% static 'arrowForward.png' %}" alt=""></a>
                             </li>
                         </ul>
                     </div>
@@ -692,14 +693,14 @@
                         <label for="personID">身份證字號/統一編號</label>
                         <br>
                         <div class="text-container">
-                            <input type="text" style="width: 100%; height: 30px;" name="personID" readonly
-                                value="R123456789"></input>
+                                <input type="text" style="width: 100%; height: 30px;" name="personID" readonly
+                                value="R123456789" id="personId"></input>
                         </div>
                         <div class="check"></div>
                     </div>
                     <div id="grid2-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="img/baseline-check_circle-24px.png" alt="">
+                        <img src="{% static 'baseline-check_circle-24px.png' %}" alt="">
                         <span>身份證字號/統一編號</span>
                         <ul>
                             <li></li>
@@ -720,7 +721,7 @@
                     </div>
                     <div id="grid3-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="img/baseline-check_circle-24px.png" alt="">
+                        <img src="{% static 'baseline-check_circle-24px.png' %}" alt="">
                         <span>關係別/與主借款人關係</span>
                         <ul>
                             <li></li>
@@ -730,14 +731,14 @@
                         <label for="birth">出生日期</label>
                         <br>
                         <div class="text-container">
-                            <input type="text" style="width: 100%; height: 30px;" name="birth" readonly
-                                value="850102"></input>
+                                <input type="text" style="width: 100%; height: 30px;" name="birth" readonly
+                                value="850102" id="personBirthday"></input>
                         </div>
                         <div class="check"></div>
                     </div>
                     <div id="grid4-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="img/baseline-check_circle-24px.png" alt="">
+                        <img src="{% static 'baseline-check_circle-24px.png' %}" alt="">
                         <span>出生日期</span>
                         <ul>
                             <li></li>
@@ -748,16 +749,16 @@
                         <br>
                         <div class="text-container">
                             <input type="text" style="width: 100%; height: 30px;" name="phone" readonly
-                                value="06-232841"></input>
+                            value="06-232841" id="personHomeNum"></input>
                             <br>
                             <input type="text" style="width: 100%; height: 30px;" name="birth" readonly
-                                value="0986565551"></input>
+                                value="0986565551" id="personPhoneNum"></input>
                         </div>
                         <div class="check"></div>
                     </div>
                     <div id="grid5-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="img/baseline-check_circle-24px.png" alt="">
+                        <img src="{% static 'baseline-check_circle-24px.png' %}" alt="">
                         <span>個人電話</span>
                         <ul>
                             <li></li>
@@ -774,7 +775,7 @@
                     </div>
                     <div id="grid6-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="img/baseline-check_circle-24px.png" alt="">
+                        <img src="{% static 'baseline-check_circle-24px.png' %}" alt="">
                         <span>住家地址</span>
                         <ul>
                             <li></li>
@@ -803,7 +804,7 @@
                         <br>
                         <div class="text-container">
                             <input type="text" style="width: 100%; height: 30px;" name="career" readonly
-                                value="8年"></input>
+                            value="8年" id="personCareer"></input>
                         </div>
                         <div class="check"></div>
                     </div>
@@ -838,7 +839,7 @@
                         <br>
                         <div class="text-container">
                             <input type="text" style="width:100%; height: 30px;" name="company" readonly
-                                value="台積電股份有限公司"></input>
+                                value="台積電股份有限公司" id="personCompany"></input>
                         </div>
                         <div class="check"></div>
                     </div>
@@ -855,7 +856,7 @@
                         <br>
                         <div class="text-container">
                             <input type="text" style="width: 100%; height: 30px;" name="vocation" readonly
-                                value="輪班星人"></input>
+                                value="輪班星人" id="personJobTitle"></input>
                         </div>
                         <div class="check"></div>
                     </div>
@@ -871,8 +872,8 @@
                         <label for="company-phone">公司電話</label>
                         <br>
                         <div class="text-container">
-                            <input type="text" style="width: 100%; height: 30px;" name="company-phone" readonly
-                                value="06-232841"></input>
+                                <input type="text" style="width: 100%; height: 30px;" name="company-phone" readonly
+                                value="06-232841" id="personCopPhoneNum"></input>
                         </div>
                         <div class="check"></div>
                     </div>
@@ -888,8 +889,8 @@
                         <label for="company-address">公司地址</label>
                         <br>
                         <div class="text-container">
-                            <textarea name="company-address" style="width:100%; height: 80px;"
-                                readonly>台南市大學路1號補字補字補字補字補字補字</textarea>
+                                <textarea name="company-address" style="width:100%; height: 80px;"
+                                readonly id="personCopAddress">台南市大學路1號補字補字補字補字補字補字</textarea>
                         </div>
                         <div class="check"></div>
                     </div>
@@ -906,7 +907,7 @@
                         <br>
                         <div class="text-container">
                             <textarea name="description" style="width:100%; height: 120px;"
-                                readonly>台南市大學路2號補字補字補字補字補字補字台南市大學路2號補字補字補字補字補字補字台南市大學路2號補字補字補字補字補字補字</textarea>
+                                readonly id="personDescription">台南市大學路2號補字補字補字補字補字補字台南市大學路2號補字補字補字補字補字補字台南市大學路2號補字補字補字補字補字補字</textarea>
                         </div>
                         <!-- <div class="moreInfo">
                             <div>
@@ -1167,7 +1168,8 @@
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="animation.js"></script>
+    <script src="{% static 'webpages/animation.js' %}"></script>
+    <script src="{% static 'webpages/contactToSer.js' %}"></script>
 </body>
 
 </html>
