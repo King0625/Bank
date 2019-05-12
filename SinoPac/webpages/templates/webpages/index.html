@@ -188,7 +188,7 @@
                         <br>
                         <div class="text-container">
                             <input type="text" style="width: 100%; height: 30px;" name="name" readonly
-                                value="朱炳丞"></input>
+                                value="朱炳丞" id="personName" class="editForm"></input>
                         </div>
                         <div class="check"></div>
                     </div>
@@ -210,7 +210,7 @@
                         <br>
                         <div class="text-container">
                             <input type="text" style="width: 100%; height: 30px;" name="personID" readonly
-                                value="R123456789"></input>
+                                value="R123456789" id="personId"></input>
                         </div>
                         <div class="check"></div>
                     </div>
@@ -238,7 +238,7 @@
                         <br>
                         <div class="text-container">
                             <input type="text" style="width: 100%; height: 30px;" name="birth" readonly
-                                value="850102"></input>
+                                value="850102" id="personBirthday"></input>
                         </div>
                         <div class="check"></div>
                     </div>
@@ -250,10 +250,10 @@
                         <br>
                         <div class="text-container">
                             <input type="text" style="width: 100%; height: 30px;" name="phone" readonly
-                                value="06-232841"></input>
+                                value="06-232841" id="personHomeNum"></input>
                             <br>
                             <input type="text" style="width: 100%; height: 30px;" name="birth" readonly
-                                value="0986565551"></input>
+                                value="0986565551" id="personPhoneNum"></input>
                         </div>
                         <div class="check"></div>
                     </div>
@@ -265,7 +265,7 @@
                         <br>
                         <div class="text-container">
                             <textarea name="address" style="width: 100%; height: 80px;"
-                                readonly>台南市大學路1號補字補字補字補字補字補字</textarea>
+                                readonly id="personAddress" >台南市大學路1號補字補字補字補字補字補字</textarea>
                         </div>
                         <div class="check"></div>
                     </div>
@@ -290,7 +290,7 @@
                         <br>
                         <div class="text-container">
                             <input type="text" style="width: 100%; height: 30px;" name="career" readonly
-                                value="8年"></input>
+                                value="8年" id="personCareer"></input>
                         </div>
                         <div class="check"></div>
                     </div>
@@ -315,7 +315,7 @@
                         <br>
                         <div class="text-container">
                             <input type="text" style="width:100%; height: 30px;" name="company" readonly
-                                value="台積電股份有限公司"></input>
+                                value="台積電股份有限公司" id="personCompany"></input>
                         </div>
                         <div class="check"></div>
                     </div>
@@ -327,7 +327,7 @@
                         <br>
                         <div class="text-container">
                             <input type="text" style="width: 100%; height: 30px;" name="vocation" readonly
-                                value="輪班星人"></input>
+                                value="輪班星人" id="personJobTitle"></input>
                         </div>
                         <div class="check"></div>
                     </div>
@@ -339,7 +339,7 @@
                         <br>
                         <div class="text-container">
                             <input type="text" style="width: 100%; height: 30px;" name="company-phone" readonly
-                                value="06-232841"></input>
+                                value="06-232841" id="personCopPhoneNum"></input>
                         </div>
                         <div class="check"></div>
                     </div>
@@ -351,7 +351,7 @@
                         <br>
                         <div class="text-container">
                             <textarea name="company-address" style="width:100%; height: 80px;"
-                                readonly>台南市大學路1號補字補字補字補字補字補字</textarea>
+                                readonly id="personCopAddress">台南市大學路1號補字補字補字補字補字補字</textarea>
                         </div>
                         <div class="check"></div>
                     </div>
@@ -363,7 +363,7 @@
                         <br>
                         <div class="text-container">
                             <textarea name="description" style="width:100%; height: 120px;"
-                                readonly>台南市大學路2號補字補字補字補字補字補字台南市大學路2號補字補字補字補字補字補字台南市大學路2號補字補字補字補字補字補字</textarea>
+                                readonly id="personDescription">台南市大學路2號補字補字補字補字補字補字台南市大學路2號補字補字補字補字補字補字台南市大學路2號補字補字補字補字補字補字</textarea>
                         </div>
                         <!-- <div class="moreInfo">
                             <div>
@@ -624,8 +624,8 @@
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-
     <script src="{% static 'webpages/animation.js' %}"></script>
+    <script src="{% static 'webpages/contactToSer.js' %}"></script>
 </body>
 
 </html>
