@@ -1,9 +1,13 @@
 $(document).ready(() => {
     $("#swipe1").click(function () {
         window.scrollTo(0, 80);
+        $(this).css("background", "#5d5d5d")
+        $("#swipe2, #swipe3, #swipe4").css("background", "#C3C3C3")
     })
     $("#swipe2").click(function () {
         window.scrollTo(0, 750);
+        $(this).css("background", "#5d5d5d")
+        $("#swipe1, #swipe3, #swipe4").css("background", "#C3C3C3")
     })
     // $("#swipe3").click(function () {
     //     window.scrollTo(0, 80);
@@ -15,22 +19,39 @@ $(document).ready(() => {
 
     $("#contentList1").click(function () {
         $(this).toggleClass('list-clicked')
+        $("#contentList2, #contentList3, #contentList4, #contentList5, #contentList6").removeClass('list-clicked')
         $("#contentList-info1").toggleClass('not-shown')
+        $("#contentList-info2, #contentList-info3, #contentList-info4, #contentList-info5, #contentList-info6").addClass('not-shown')
     })
     $("#contentList2").click(function () {
-
+        $(this).toggleClass('list-clicked')
+        $("#contentList1, #contentList3, #contentList4, #contentList5, #contentList6").removeClass('list-clicked')
+        $("#contentList-info2").toggleClass('not-shown')
+        $("#contentList-info1, #contentList-info3, #contentList-info4, #contentList-info5, #contentList-info6").addClass('not-shown')
     })
     $("#contentList3").click(function () {
-
+        $(this).toggleClass('list-clicked')
+        $("#contentList1, #contentList2, #contentList4, #contentList5, #contentList6").removeClass('list-clicked')
+        $("#contentList-info3").toggleClass('not-shown')
+        $("#contentList-info1, #contentList-info2, #contentList-info4, #contentList-info5, #contentList-info6").addClass('not-shown')
     })
     $("#contentList4").click(function () {
-
+        $(this).toggleClass('list-clicked')
+        $("#contentList1, #contentList2, #contentList3, #contentList5, #contentList6").removeClass('list-clicked')
+        $("#contentList-info4").toggleClass('not-shown')
+        $("#contentList-info1, #contentList-info2, #contentList-info3, #contentList-info5, #contentList-info6").addClass('not-shown')
     })
     $("#contentList5").click(function () {
-
+        $(this).toggleClass('list-clicked')
+        $("#contentList1, #contentList2, #contentList3, #contentList4, #contentList6").removeClass('list-clicked')
+        $("#contentList-info5").toggleClass('not-shown')
+        $("#contentList-info1, #contentList-info2, #contentList-info3, #contentList-info4, #contentList-info6").addClass('not-shown')
     })
     $("#contentList6").click(function () {
-
+        $(this).toggleClass('list-clicked')
+        $("#contentList1, #contentList2, #contentList3, #contentList4, #contentList5").removeClass('list-clicked')
+        $("#contentList-info6").toggleClass('not-shown')
+        $("#contentList-info1, #contentList-info2, #contentList-info3, #contentList-info4, #contentList-info5").addClass('not-shown')
     })
 
 
