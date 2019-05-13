@@ -14,7 +14,7 @@
     <div class="header">
         <div class="logo">
             <a href="">
-                <img src="img/sinopac_logo.png" alt="" width="175">
+                <img src="{% static 'webpages/img/sinopac_logo.png' %}" alt="" width="175">
                 <span class="logo-word"><span style="color: #e71a0f">e</span>Loan</span>
             </a>
         </div>
@@ -46,10 +46,10 @@
                 <a class="swiper-bullet" id="swipe4"></a>
             </div>
             <ul>
-                <li><a href=""><img src="img/data.png" width="24"> 個案資料</a></li>
-                <li><a href=""><img src="img/report.png" width="24"> 報告總覽</a></li>
-                <li><a href=""><img src="img/comment.png" width="24"> 信貸徵審意見</a></li>
-                <li><a href=""><img src="img/review.png" width="24"> 防杜代辦檢核表</a></li>
+                <li><a href=""><img src="{% static 'webpages/img/data.png' %}" width="24"> 個案資料</a></li>
+                <li><a href=""><img src="{% static 'webpages/img/report.png' %}" width="24"> 報告總覽</a></li>
+                <li><a href=""><img src="{% static 'webpages/img/comment.png' %}" width="24"> 信貸徵審意見</a></li>
+                <li><a href=""><img src="{% static 'webpages/img/review.png' %}" width="24"> 防杜代辦檢核表</a></li>
             </ul>
             <a id="todo" href="#">回到代辦事項</a>
         </div>
@@ -64,7 +64,7 @@
                     <li id="contentList4">票查紀錄</li>
                     <li id="contentList5">主保債務查詢</li>
                     <li id="contentList6">同一經濟關係人</li>
-                    <li><img src="img/print.png" width="24"></li>
+                    <li><img src="{% static 'webpages/img/print.png' %}" width="24"></li>
                 </ul>
             </div>
             <div class="contentList-info not-shown" id="contentList-info1">
@@ -666,29 +666,29 @@
                         <br>
                         <div class="text-container">
                             <input type="text" style="width: 100%; height: 30px;" name="name" readonly
-                                value="朱炳丞"></input>
+                                value="朱炳丞" id="personname"></input>
                         </div>
                         <div class="check"></div>
                     </div>
                     <div id="grid1-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="img/baseline-check_circle-24px.png" alt="">
+                        <img src="{% static 'webpages/img/baseline-check_circle-24px.png' %}" alt="">
                         <span>姓名/公司名稱</span>
                         <ul>
                             <li>
                                 <h6>貳、一、(一)活期性存款往來資料查詢</h6>
                                 <p>朱炳丞</p>
-                                <a href=""><img src="img/arrowForward.png" alt=""></a>
+                                <a href=""><img src="{% static 'webpages/img/arrowForward.png' %}" alt=""></a>
                             </li>
                             <li>
                                 <h6>貳、一、(一)活期性存款往來資料查詢</h6>
                                 <p>朱炳丞</p>
-                                <a href=""><img src="img/arrowForward.png" alt=""></a>
+                                <a href=""><img src="{% static 'webpages/img/arrowForward.png' %}" alt=""></a>
                             </li>
                             <li>
                                 <h6>貳、一、(一)活期性存款往來資料查詢</h6>
                                 <p>朱炳丞</p>
-                                <a href=""><img src="img/arrowForward.png" alt=""></a>
+                                <a href=""><img src="{% static 'webpages/img/arrowForward.png' %}" alt=""></a>
                             </li>
                         </ul>
                     </div>
@@ -698,13 +698,13 @@
                         <br>
                         <div class="text-container">
                             <input type="text" style="width: 100%; height: 30px;" name="personID" readonly
-                                value="R123456789"></input>
+                                value="R123456789" id="personidentity"></input>
                         </div>
                         <div class="check"></div>
                     </div>
                     <div id="grid2-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="img/baseline-check_circle-24px.png" alt="">
+                        <img src="{% static 'webpages/img/baseline-check_circle-24px.png' %}" alt="">
                         <span>身份證字號/統一編號</span>
                         <ul>
                             <li></li>
@@ -726,7 +726,7 @@
                     </div>
                     <div id="grid3-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="img/baseline-check_circle-24px.png" alt="">
+                        <img src="{% static 'webpages/img/baseline-check_circle-24px.png' %}" alt="">
                         <span>關係別/與主借款人關係</span>
                         <ul>
                             <li></li>
@@ -738,13 +738,13 @@
                         <br>
                         <div class="text-container">
                             <input type="text" style="width: 100%; height: 30px;" name="birth" readonly
-                                value="850102"></input>
+                                value="850102" id="personbirthday"></input>
                         </div>
                         <div class="check"></div>
                     </div>
                     <div id="grid4-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="img/baseline-check_circle-24px.png" alt="">
+                        <img src="{% static 'webpages/img/baseline-check_circle-24px.png' %}" alt="">
                         <span>出生日期</span>
                         <ul>
                             <li></li>
@@ -756,16 +756,16 @@
                         <br>
                         <div class="text-container">
                             <input type="text" style="width: 100%; height: 30px;" name="phone" readonly
-                                value="06-232841"></input>
+                                value="06-232841" id="personperson_house_phone"></input>
                             <br>
                             <input type="text" style="width: 100%; height: 30px;" name="birth" readonly
-                                value="0986565551"></input>
+                                value="0986565551" id="personperson_phone"></input>
                         </div>
                         <div class="check"></div>
                     </div>
                     <div id="grid5-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="img/baseline-check_circle-24px.png" alt="">
+                        <img src="{% static 'webpages/img/baseline-check_circle-24px.png' %}" alt="">
                         <span>個人電話</span>
                         <ul>
                             <li></li>
@@ -777,13 +777,13 @@
                         <br>
                         <div class="text-container">
                             <textarea name="address" style="width: 100%; height: 80px;"
-                                readonly>台南市大學路1號補字補字補字補字補字補字</textarea>
+                                readonly id="personaddress">台南市大學路1號補字補字補字補字補字補字</textarea>
                         </div>
                         <div class="check"></div>
                     </div>
                     <div id="grid6-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="img/baseline-check_circle-24px.png" alt="">
+                        <img src="{% static 'webpages/img/baseline-check_circle-24px.png' %}" alt="">
                         <span>住家地址</span>
                         <ul>
                             <li></li>
@@ -802,7 +802,7 @@
                     </div>
                     <div id="grid7-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="img/baseline-check_circle-24px.png" alt="">
+                        <img src="{% static 'webpages/img/baseline-check_circle-24px.png' %}" alt="">
                         <span>職稱</span>
                         <ul>
                             <li></li>
@@ -814,13 +814,13 @@
                         <br>
                         <div class="text-container">
                             <input type="text" style="width: 100%; height: 30px;" name="career" readonly
-                                value="8年"></input>
+                                value="8年" id="personcareer"></input>
                         </div>
                         <div class="check"></div>
                     </div>
                     <div id="grid8-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="img/baseline-check_circle-24px.png" alt="">
+                        <img src="{% static 'webpages/img/baseline-check_circle-24px.png' %}" alt="">
                         <span>年資</span>
                         <ul>
                             <li></li>
@@ -839,7 +839,7 @@
                     </div>
                     <div id="grid9-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="img/baseline-check_circle-24px.png" alt="">
+                        <img src="{% static 'webpages/img/baseline-check_circle-24px.png' %}" alt="">
                         <span>行業別</span>
                         <ul>
                             <li></li>
@@ -851,13 +851,13 @@
                         <br>
                         <div class="text-container">
                             <input type="text" style="width:100%; height: 30px;" name="company" readonly
-                                value="台積電股份有限公司"></input>
+                                value="台積電股份有限公司" id="personcompany"></input>
                         </div>
                         <div class="check"></div>
                     </div>
                     <div id="grid10-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="img/baseline-check_circle-24px.png" alt="">
+                        <img src="{% static 'webpages/img/baseline-check_circle-24px.png' %}" alt="">
                         <span>現職公司</span>
                         <ul>
                             <li></li>
@@ -869,13 +869,13 @@
                         <br>
                         <div class="text-container">
                             <input type="text" style="width: 100%; height: 30px;" name="vocation" readonly
-                                value="輪班星人"></input>
+                                value="輪班星人" id="personjob_title"></input>
                         </div>
                         <div class="check"></div>
                     </div>
                     <div id="grid11-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="img/baseline-check_circle-24px.png" alt="">
+                        <img src="{% static 'webpages/img/baseline-check_circle-24px.png' %}" alt="">
                         <span>職業說明</span>
                         <ul>
                             <li></li>
@@ -887,13 +887,13 @@
                         <br>
                         <div class="text-container">
                             <input type="text" style="width: 100%; height: 30px;" name="company-phone" readonly
-                                value="06-232841"></input>
+                                value="06-232841" id="personcompany_phone"></input>
                         </div>
                         <div class="check"></div>
                     </div>
                     <div id="grid12-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="img/baseline-check_circle-24px.png" alt="">
+                        <img src="{% static 'webpages/img/baseline-check_circle-24px.png' %}" alt="">
                         <span>公司電話</span>
                         <ul>
                             <li></li>
@@ -905,13 +905,13 @@
                         <br>
                         <div class="text-container">
                             <textarea name="company-address" style="width:100%; height: 80px;"
-                                readonly>台南市大學路1號補字補字補字補字補字補字</textarea>
+                                readonly id="personcompany_address">台南市大學路1號補字補字補字補字補字補字</textarea>
                         </div>
                         <div class="check"></div>
                     </div>
                     <div id="grid13-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="img/baseline-check_circle-24px.png" alt="">
+                        <img src="{% static 'webpages/img/baseline-check_circle-24px.png' %}" alt="">
                         <span>公司地址</span>
                         <ul>
                             <li></li>
@@ -922,7 +922,7 @@
                         <label for="description">說明</label>
                         <br>
                         <div class="text-container">
-                            <textarea id="description" name="description" style="width:100%; height: 125px;" readonly>台南市大學路2號補字補字補字補字補字補字台南市大學路2號補字補字補字補字補字補字台南市大學路2號補字補字補字補字補字補字 &#13;&#10; ------------- &#13;&#10;
+                            <textarea name="description" style="width:100%; height: 125px;" readonly id="persondescription">台南市大學路2號補字補字補字補字補字補字台南市大學路2號補字補字補字補字補字補字台南市大學路2號補字補字補字補字補字補字 &#13;&#10; ------------- &#13;&#10;
                             </textarea>
 
                         </div>
@@ -1120,43 +1120,43 @@
                         <div class="inquire-table">
                             <div class="table-item">
                                 <h4>姓名/身分證號</h4>
-                                <p>朱炳丞/R123456789</p>
+                                <p id="FDDnameid">朱炳丞/R123456789</p>
                             </div>
                             <div class="table-item">
                                 <h4>最新跑批日</h4>
-                                <p>20190422</p>
+                                <p id="FDDnew_batch_processing_day">20190422</p>
                             </div>
                             <div class="table-item">
                                 <h4>洗錢風險分級</h4>
-                                <p>低風險</p>
+                                <p id="FDDmoney_laundering_risk_degree">低風險</p>
                             </div>
                             <div class="table-item">
                                 <h4>優先法</h4>
-                                <p>0</p>
+                                <p id="FDDpriority_low">0</p>
                             </div>
                             <div class="table-item">
                                 <h4>客戶背景</h4>
-                                <p>645</p>
+                                <p id="FDDbackground">645</p>
                             </div>
                             <div class="table-item">
                                 <h4>地域因素</h4>
-                                <p>355</p>
+                                <p id="FDDgeographical_factor">355</p>
                             </div>
                             <div class="table-item">
                                 <h4>業務關係與交易行為</h4>
-                                <p>325</p>
+                                <p id="FDDrelation_behavior">325</p>
                             </div>
                             <div class="table-item">
                                 <h4>商品</h4>
-                                <p>220</p>
+                                <p id="FDDproduction">220</p>
                             </div>
                             <div class="table-item">
                                 <h4>洗錢風險總得分</h4>
-                                <p>1545</p>
+                                <p id="FDDmoney_laundering_risk_gradding">1545</p>
                             </div>
                             <div class="table-item">
                                 <h4>防制洗錢FDD系統</h4>
-                                <p>無資料</p>
+                                <p id="FDDFDD_information">無資料</p>
                             </div>
                         </div>
                         <h4>(九)法扣系統資料 :</h4>

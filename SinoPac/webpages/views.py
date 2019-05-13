@@ -3,7 +3,11 @@ import re
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.template import loader
+<<<<<<< HEAD
 from webpages.models import BasicData
+=======
+from webpages.models import BasicData,BankDepositData,FDDData
+>>>>>>> 050ce4d689762896a4a469a465ce991527af84d1
 from django.views.decorators.csrf import csrf_exempt
 from django.forms.models import model_to_dict
 
@@ -58,10 +62,50 @@ def __basicDataQuery_POST(data):
 			setattr(d,re.sub(r'person','',key),value)
 		d.save()
 
+<<<<<<< HEAD
 	# print(json.dumps(model_to_dict(d),indent=4,ensure_ascii=False))
 	
 	pass
 
+=======
+	pass
+
+@csrf_exempt
+def bankDepositData(request):
+	if request.method == 'GET':
+		data = _bankDepositData_GET()
+		return HttpResponse(json.dumps(data,indent=4, ensure_ascii=False),content_type="application/json")
+		
+
+def _bankDepositData_GET():
+	data = []
+	d = BankDepositData.objects.all()
+	for i in d:
+		userData = model_to_dict(i)
+		dateTime = userData['opnning_data']
+		userData['opnning_data'] = '%s/%s/%s' %(dateTime.year, dateTime.month, dateTime.day)
+		data.append(userData)
+	return data
+	
+
+@csrf_exempt
+def contributionLevelData(request):
+	if request.method == 'GET':
+		data = _contributionLevelData_GET()
+		return HttpResponse(json.dumps(data,indent=4,ensure_ascii=False),content_type='application/json')
+
+
+def _contributionLevelData_GET():
+	d = FDDData.objects.all()
+	data = []
+	for i in d:
+		userData = model_to_dict(i)
+		newBatchTime = userData['new_batch_processing_day']
+		userData['new_batch_processing_day'] = '%s/%s/%s' % (newBatchTime.year, newBatchTime.month, newBatchTime.day)
+		data.append(userData)
+	return data
+	
+>>>>>>> 050ce4d689762896a4a469a465ce991527af84d1
 
 
 def test(request):

@@ -1,6 +1,7 @@
 $(document).ready(() => {
     basicDataQuery();
     bankDataQuery();
+    contributionDataQuery();
     
     $("#swipe1").click(function () {
         window.scrollTo(0, 80);
@@ -99,7 +100,7 @@ $(document).ready(() => {
             "border-radius": "6px"
         });
         $(".text-container select").attr('disabled', !disabled);
-        $(".text-container select").css("background", "url('img/downArrow.png') no-repeat scroll right center transparent");
+        $(".text-container select").css("background", "url('./img/downArrow.png') no-repeat scroll right center transparent");
 
         var houseCommunication = document.getElementById("House-communication");
         var companyCommunication = document.getElementById("company-communication");
@@ -108,7 +109,7 @@ $(document).ready(() => {
         var monthlyPayment = document.getElementById("monthly-payment");
         var usage = document.getElementById("usage");
         var credit = document.getElementById("credit")
-        var descriptionInput = document.getElementById("description")
+        var descriptionInput = document.getElementById("persondescription")
 
         houseCommunication.onchange = function () {
             descriptionInput.value += "住家: " + houseCommunication.value + "  ; ";
@@ -254,7 +255,7 @@ $(document).ready(() => {
             "border-radius": "6px"
         });
         $(".conclusion-info select").attr('disabled', !disabled);
-        $(".conclusion-info select").css("background", "url('img/downArrow.png') no-repeat scroll right center transparent");
+        $(".conclusion-info select").css("background", "url('./img/downArrow.png') no-repeat scroll right center transparent");
     })
     $("#conclusion-save").click(function () {
         $("#conclusion-edit").css("background-color", "#ffffff");

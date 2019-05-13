@@ -346,7 +346,7 @@ ul {
     height: 25px;
     right: 10px;
     top: 10px;
-    background: url("img/closeMark.png") no-repeat;
+    background: url("./img/baseline-check_circle-24px.png") no-repeat;
     cursor: pointer;
 }
 .details img{
@@ -500,7 +500,7 @@ ul {
     height: 25px;
     margin: 10px;
     border-radius: 50%;
-    background: url("img/baseline-check_circle-24px.png");
+    background: url("./img/baseline-check_circle-24px.png");
 }
 
 /* moreInfo in description */
