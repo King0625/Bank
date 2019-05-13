@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% load static %}
     <link rel="stylesheet" href="{% static 'webpages/style.css' %}">
+    <link rel="stylesheet" href="{% static 'webpages/toolbox.css' %}">
     <title>SinoPac</title>
 </head>
 
@@ -51,7 +52,7 @@
                 <li><a href=""><img src="{% static 'webpages/img/comment.png' %}" width="24"> 信貸徵審意見</a></li>
                 <li><a href=""><img src="{% static 'webpages/img/review.png' %}" width="24"> 防杜代辦檢核表</a></li>
             </ul>
-            <a id="todo" href="#">回到代辦事項</a>
+            <a id="todo" href="">回到代辦事項</a>
         </div>
 
 
@@ -665,8 +666,8 @@
                         <label for="name">姓名/公司名稱</label>
                         <br>
                         <div class="text-container">
-                            <input type="text" style="width: 100%; height: 30px;" name="name" readonly
-                                value="朱炳丞" id="personname"></input>
+                            <input type="text" style="width: 100%; height: 30px;" name="name" readonly value="朱炳丞"
+                                id="personname"></input>
                         </div>
                         <div class="check"></div>
                     </div>
@@ -737,8 +738,8 @@
                         <label for="birth">出生日期</label>
                         <br>
                         <div class="text-container">
-                            <input type="text" style="width: 100%; height: 30px;" name="birth" readonly
-                                value="850102" id="personbirthday"></input>
+                            <input type="text" style="width: 100%; height: 30px;" name="birth" readonly value="850102"
+                                id="personbirthday"></input>
                         </div>
                         <div class="check"></div>
                     </div>
@@ -776,8 +777,8 @@
                         <label for="address">住家地址</label>
                         <br>
                         <div class="text-container">
-                            <textarea name="address" style="width: 100%; height: 80px;"
-                                readonly id="personaddress">台南市大學路1號補字補字補字補字補字補字</textarea>
+                            <textarea name="address" style="width: 100%; height: 80px;" readonly
+                                id="personaddress">台南市大學路1號補字補字補字補字補字補字</textarea>
                         </div>
                         <div class="check"></div>
                     </div>
@@ -813,8 +814,8 @@
                         <label for="career">年資</label>
                         <br>
                         <div class="text-container">
-                            <input type="text" style="width: 100%; height: 30px;" name="career" readonly
-                                value="8年" id="personcareer"></input>
+                            <input type="text" style="width: 100%; height: 30px;" name="career" readonly value="8年"
+                                id="personcareer"></input>
                         </div>
                         <div class="check"></div>
                     </div>
@@ -868,8 +869,8 @@
                         <label for="vocation">職業說明</label>
                         <br>
                         <div class="text-container">
-                            <input type="text" style="width: 100%; height: 30px;" name="vocation" readonly
-                                value="輪班星人" id="personjob_title"></input>
+                            <input type="text" style="width: 100%; height: 30px;" name="vocation" readonly value="輪班星人"
+                                id="personjob_title"></input>
                         </div>
                         <div class="check"></div>
                     </div>
@@ -904,8 +905,8 @@
                         <label for="company-address">公司地址</label>
                         <br>
                         <div class="text-container">
-                            <textarea name="company-address" style="width:100%; height: 80px;"
-                                readonly id="personcompany_address">台南市大學路1號補字補字補字補字補字補字</textarea>
+                            <textarea name="company-address" style="width:100%; height: 80px;" readonly
+                                id="personcompany_address">台南市大學路1號補字補字補字補字補字補字</textarea>
                         </div>
                         <div class="check"></div>
                     </div>
@@ -922,7 +923,8 @@
                         <label for="description">說明</label>
                         <br>
                         <div class="text-container">
-                            <textarea name="description" style="width:100%; height: 125px;" readonly id="persondescription">台南市大學路2號補字補字補字補字補字補字台南市大學路2號補字補字補字補字補字補字台南市大學路2號補字補字補字補字補字補字 &#13;&#10; ------------- &#13;&#10;
+                            <textarea name="description" style="width:100%; height: 125px;" readonly
+                                id="persondescription">台南市大學路2號補字補字補字補字補字補字台南市大學路2號補字補字補字補字補字補字台南市大學路2號補字補字補字補字補字補字 &#13;&#10; ------------- &#13;&#10;
                             </textarea>
 
                         </div>
@@ -1004,8 +1006,8 @@
                 </form>
 
                 <div class="button-area">
-                    <input id="edit" type="button" value="編輯">
                     <input id="save" type="button" value="存檔">
+                    <input id="edit" type="button" value="編輯">
                 </div>
                 <br><br><br>
 
@@ -1540,7 +1542,7 @@
                     <div class="conclusion-item">
                         <h4>信用等級</h4>
                         <div class="conclusion-info">
-                            <select name="credit-level" id="" disabled>
+                            <select style="min-width: 50px" name="credit-level" id="" disabled>
                                 <option value="S"><span>S</span> 級</option>
                                 <option value="A"><span>A</span> 級</option>
                                 <option value="B"><span>B</span> 級</option>
@@ -1625,16 +1627,69 @@
 
                     </div>
                     <div class="button-area">
-                        <input id="conclusion-edit" type="button" value="編輯">
                         <input id="conclusion-save" type="button" value="存檔">
+                        <input id="conclusion-edit" type="button" value="編輯">
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- toolbox -->
+    <div class="toolbox hide">
+        <button id="pushpin"></button>
+        <button id="top"></button>
+        <button id="mark"></button>
+        <button id="sum"></button>
+        <button id="bottom"></button>
+
+    </div>
+    <div id="summary">
+        <h3>總結登打<button class="close"><img src="{% static 'webpages/img/baseline-clear-24px.png' %}"></button></h3>
+        <form class="phase">
+            <h5>
+                <input type="radio" name="sum" id="s1" checked>
+                <label for="s1"><span></span>電照補充說明</label>
+                <input type="radio" name="sum" id="s2" checked>
+                <label for="s2"><span></span>其他事項說明</label>
+                <input type="radio" name="sum" id="s3" checked>
+                <label for="s3"><span></span>公告後修改說明</label>
+                <input type="radio" name="sum" id="s4" checked>
+                <label for="s4"><span></span>信用異常資料彙整</label>
+                <input type="radio" name="sum" id="s5" checked>
+                <label for="s5"><span></span>參考資料</label>
+            </h5>
+            <h5>
+                片語
+                <select class="phaselist" id="phaselist">
+                    <option>案源:業務於北富銀上班時即往來過 </option>
+                    <option>案源:B為業務前職客戶</option>
+                    <option>案源:自行致電客服申貸.</option>
+                    <option>案源:臨櫃申辦</option>
+                    <option>案源:網銀申辦</option>
+                </select>
+                <input id="add" type="button" value="新增">
+            </h5>
+
+            <textarea id="text"></textarea>
+
+        </form>
+        <form>
+            <h5> 信用等級<select class="credit">
+                    <option value="s">S級</option>
+                    <option value="a">A級</option>
+                    <option value="b">B級</option>
+                    <option value="c">C級</option>
+                </select>
+                <input id="save" type="button" value="存檔"> </h5>
+        </form>
+    </div>
+
+
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="{% static 'webpages/jquery-ui-1.12.1.custom/jquery-ui.min.js' %}"></script>
     <script src="{% static 'webpages/animation.js' %}"></script>
+    <script src="{% static 'webpages/toolbox.js' %}"></script>
     <script src="{% static 'webpages/contactToSer.js' %}"></script>
 </body>
 

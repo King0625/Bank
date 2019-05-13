@@ -1,0 +1,235 @@
+
+h1,h2,h3,h4,h5,h6 { 
+
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+} 
+body{
+    font-family: 'Microsoft jhenghei';
+}
+.toolbox{
+    background: #FFF4AA;
+    background-image: url(img/baseline-more-24px.svg);
+   background-position: 9px 14px;
+    background-repeat: no-repeat;
+    width:60px;
+    height:60px;
+    position: fixed;
+    right:50px;
+    bottom:50px;
+    border-radius: 30px;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.16);
+}
+
+.float{
+    width:300px;
+    transition-duration: 200ms;
+}
+.float button{
+    display:inline-block;
+}
+.hide button{
+    display:none;
+}
+.hide {
+    width:60px;
+    transition-duration: 200ms;
+}
+.fix{
+    pointer-events: none;
+}
+.fix button{
+    display: inline-block;
+}
+.button{
+    padding: 0px;
+}
+.toolbox button{
+  
+  background-color: #ffffff; /* Green */
+  border: none;
+  margin:10px;
+  height:40px;
+  width:40px;
+  font-size: 16px;
+  border-radius:20px;
+    background-position:0px 0px;　
+    
+    background-repeat: no-repeat;
+   float: right; 
+    
+}
+.toolbox button:hover{
+    
+    background-color: #72D2E4;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.16);
+    background-position:40px 0px;　
+}
+
+
+
+#summary h5 input[type="radio"]{
+    display: none;
+   
+}
+#summary h5 input[type="radio"] + label {
+    color:#B3B3B3;
+     
+}
+#summary h5 input[type="radio"] + label:hover {
+    transition-duration: 200ms;
+    color:#5D5D5D;
+}
+#summary h5 input[type="radio"] + label span {
+    background:url(./img/baseline-radio_button_unchecked-24px.svg) left top no-repeat;
+    display:inline-block;
+    width:20px;
+    height:20px;
+    margin:0px 0 0 0;
+    vertical-align:middle;
+    
+}
+#summary h5 input[type="radio"]:checked + label span {
+    background:url(./img/baseline-radio_button_checked-24px.svg) left top no-repeat;
+    transition-duration: 200ms;
+}
+#summary h5 input[type="radio"]:checked + label {
+    
+    transition-duration: 200ms;
+    color:#5D5D5D;
+}
+.credit{
+    
+    width:50px;
+}
+.phaselist{
+   
+}
+.phase{
+    width:auto;
+    border-top:solid 0.5px #000
+}
+
+select {
+    width: 300px; height: 30px;
+    padding: 0px 10px;
+    border: none;
+    border-radius: 6px; 
+   background: url("img/topArrow.png") no-repeat right center transparent;
+    appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+}
+
+
+input[type="button"] {
+    background: #FFFFFF;
+    
+    border-radius: 6px;
+    border:solid 0.5px #B3B3B3;
+    padding:8px 10px;
+    margin: 10px; 0px;
+    float:right;
+
+}
+input[type="button"]:hover{
+    
+    
+    background: #5D5D5D;
+    transition-duration:200ms;
+    color:white;
+}
+
+
+#summary{
+    background: #fff;
+    padding: 0px 25px;
+    width: 600px;
+    height:340px;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.16);
+    border-radius: 10px;
+    position: fixed;
+    right:50px;
+    bottom:120px;
+    display: none;
+    
+}
+#summary h3,h5{
+    line-height: 50px;
+}
+#summary button{
+    float :right;
+    width:20px;
+    height:20px;
+    background: none;
+    border: none;
+    top:20px;
+    position: relative;
+}
+
+#summary textarea{
+    width:580px;
+    height:100px;
+    padding:10px;
+    border: none;
+    border-radius: 10px;
+    background: #F3F3F3;
+    resize: none;
+    
+}
+.draggable textarea{
+    margin:10px 0;
+    width:280px;
+    height:50px;
+    padding:10px;
+    border: none;
+    border-radius: 10px;
+    background: #F3F3F3;
+    resize: none;
+    
+}
+.draggable .note{
+    display: inline-block;
+    width:300px;
+    height:150px;
+    background: #fff;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.16);
+    border-radius: 10px;
+    padding:15px;
+}
+.draggable button{
+    float :right;
+    width:20px;
+    height:20px;
+    background: #FFFFFF;
+    border: none;
+    position: relative;
+    
+}
+.draggable .open{
+    float: left;
+    width:50px;
+    height:50px;
+    margin:10px 10px;
+    background-color: #72D2E4;
+    background-image: url("img/baseline-bookmark-24px%20(1).svg");
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    background-size: 30px;
+    border-radius: 25px;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.16);
+    
+}
+
+.draggable select{
+    padding:0px;
+    width:100px;
+    height:25px;
+    float: left;
+}
+.draggable input[type="button"]{
+    margin:0 0 0 10px;;
+
+}

@@ -3,11 +3,7 @@ import re
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.template import loader
-<<<<<<< HEAD
-from webpages.models import BasicData
-=======
 from webpages.models import BasicData,BankDepositData,FDDData
->>>>>>> 050ce4d689762896a4a469a465ce991527af84d1
 from django.views.decorators.csrf import csrf_exempt
 from django.forms.models import model_to_dict
 
@@ -62,12 +58,6 @@ def __basicDataQuery_POST(data):
 			setattr(d,re.sub(r'person','',key),value)
 		d.save()
 
-<<<<<<< HEAD
-	# print(json.dumps(model_to_dict(d),indent=4,ensure_ascii=False))
-	
-	pass
-
-=======
 	pass
 
 @csrf_exempt
@@ -105,8 +95,6 @@ def _contributionLevelData_GET():
 		data.append(userData)
 	return data
 	
->>>>>>> 050ce4d689762896a4a469a465ce991527af84d1
-
 
 def test(request):
 

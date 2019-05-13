@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI 拖动（Draggable） - 默认功能</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="./jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="toolbox.css">
+  <style>
+  #draggable { width: 150px; height: 150px; padding: 0.5em; }
+  </style>
+  
+</head>
+<body>
+    <div style="width100%;height:10000px;" id="test">
+        
+    <!-- <div class="draggable" >
+            <div class="open"></div>
+            <div class="note">
+                <select class="date">
+                <option value="s">05/10(五)</option>
+                <option value="a">05/10(五)</option>
+                <option value="b">05/10(五)</option>
+                <option value="c">05/10(五)</option>
+            </select> 
+            <button class="close"><img src="img/baseline-clear-24px.png"></button>
+            <textarea></textarea>
+            <input id="edit" type="button" value="儲存">
+            <input id="delete" type="button" value="刪除">
+            
+            </div>
+        </div>
+-->
+                
+
+    </div>
+    <div class="toolbox hide">
+        <button id="pushpin" style="background-image: url('img/Artboard%20%E2%80%93%206.png')"></button>
+        <button id="top"   style="background-image: url('img/Artboard%20%E2%80%93%204.png')"></button>
+        <button id= "mark" style="background-image: url('img/Artboard%20%E2%80%93%202.png')"></button>
+        <button id="sum" style="background-image: url('img/Artboard%20%E2%80%93%203.png')"></button>
+        <button id="bottom" style="background-image: url('img/Artboard%20%E2%80%93%205.png')"></button>
+    
+    </div>
+    <div id="summary">
+        <h3>總結登打<button class="close"><img src="img/baseline-clear-24px.png"></button></h3>
+        <form class="phase">
+            <h5>
+            <input type="radio" name="sum" id="s1" checked>
+                    <label for="s1"><span></span>電照補充說明</label>
+            <input type="radio" name="sum" id="s2" checked>
+                    <label for="s2"><span></span>其他事項說明</label>
+            <input type="radio" name="sum" id="s3" checked>
+                    <label for="s3"><span></span>公告後修改說明</label>
+            <input type="radio" name="sum" id="s4" checked>
+                    <label for="s4"><span></span>信用異常資料彙整</label>
+            <input type="radio" name="sum" id="s5" checked>
+                    <label for="s5"><span></span>參考資料</label>
+            </h5>            
+           <h5>
+            片語
+            <select class="phaselist" id="phaselist">
+                <option >案源:業務於北富銀上班時即往來過 </option>
+                <option >案源:B為業務前職客戶</option>
+                <option >案源:自行致電客服申貸.</option>
+                <option >案源:臨櫃申辦</option>
+                <option >案源:網銀申辦</option>
+            </select>
+               <input id="add" type="button" value="新增">
+            </h5>
+                 
+                <textarea id="text"></textarea>
+            
+        </form>
+        <form>
+            <h5> 信用等級<select class="credit">
+                <option value="s">S級</option>
+                <option value="a">A級</option>
+                <option value="b">B級</option>
+                <option value="c">C級</option>
+            </select>
+             <input id="save" type="button" value="存檔" > </h5>
+        </form>
+    </div>
+    
+    
+    
+ <script>
+              var pin=true;
+              var sum=false;
+     //click event
+      $(document).ready(function(){
+      $(".draggable").draggable({ distance: 20 });
+      $("#add").click(function(){
+          var e = document.getElementById("phaselist");
+          var str = e.options[e.selectedIndex].text;
+               $('#text').val($('#text').val()+str+'\n');
+            });
+      $("#summary .close").click(function(){$("#summary").fadeOut(); }); 
+    
+      $(".draggable .close").click(function(){$(".note").fadeOut();})
+       $(".draggable .open").click(function(){
+          
+         if($('.note').is(':visible')){
+				$('.note').fadeOut();
+			}else{
+                $('.note').fadeIn();
+            
+            }
+          
+          
+      })
+      $("#mark").click(function(){
+                $("#test").append('<div class="draggable" ><div class="open"></div><div class="note"><select class="date"><option value="s">05/10(五)</option><option value="a">05/10(五)</option><option value="b">05/10(五)</option><option value="c">05/10(五)</option></select> <button class="close"><img src="img/baseline-clear-24px.png"></button><textarea></textarea><input id="edit" type="button" value="儲存"><input id="delete" type="button" value="刪除"></div></div>'); 
+                $(".draggable .close").on("click",function(){  $(this).parent().animate({opacity:0},500);});
+                $(".draggable .open").on("click",function(){
+                    if($(this).next().css("opacity")==1){$(this).next().animate({opacity:0},500);}
+                    else{$(this).next().animate({opacity:1},500); }
+                        
+                });
+                $(".draggable #edit").on("click",function(){
+                   $(this).parent().animate({opacity:0},500);
+                        
+                });
+                $(".draggable").draggable({ distance: 20 });
+ 
+      })
+      $("#sum").click(function(){
+          if(!sum){
+              $("#summary").fadeIn();
+              sum=false;
+          }else{
+              $("#summary").fadeOut();
+              sum=true;
+          }
+        }); 
+      $("#top").click(function(){
+                jQuery("html,body").animate({scrollTop: 0 },500);
+        })
+      $("#bottom").click(function(){
+                jQuery("html,body").animate({scrollTop: $(document).height() },500);
+        })
+
+      })
+     
+     //toolbox hover
+    $(document).ready(function(){
+       $(".toolbox").hover(function(){ 
+           if(pin){   
+                $(".toolbox").removeClass("hide");
+                $(".toolbox").addClass("float");
+           }
+          }
+    ,function(){
+           if(pin){   
+                $(".toolbox").removeClass("float");
+                $(".toolbox").addClass("hide");
+           }             
+       })   
+    });
+     
+     
+     
+  </script>
+</body>
+</html>

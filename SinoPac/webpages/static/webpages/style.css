@@ -47,13 +47,21 @@ ul {
 
 
 .not-shown{
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+   transition-duration:500ms; 
+}
+.shown{
+    visibility: visible;
+    opacity: 1;
+    transition-duration:500ms; 
 }
 .list-clicked{
     background: #FAFAFA;
     border-radius: 6px;
     box-shadow: 3px 3px 6px rgba(0, 0, 0, .16);
     font-weight: 700;
+    
 }
 .failed {
     color: #FF4D4D;
@@ -176,6 +184,7 @@ ul {
 
 /* content */
 .content {
+    display: none;
     z-index: 0;
     border-left: 2px solid #EAEAEA;
     margin-left: 460px;
@@ -261,6 +270,7 @@ ul {
 /* dataContent */
 .dataContent{
     clear: both;
+    position: relative;
 }
 
 .dataContent h3 {
@@ -346,7 +356,7 @@ ul {
     height: 25px;
     right: 10px;
     top: 10px;
-    background: url("./img/baseline-check_circle-24px.png") no-repeat;
+    background: url("./img/closeMark.png") no-repeat;
     cursor: pointer;
 }
 .details img{
@@ -648,7 +658,7 @@ textarea[name="moreInfo-output"]{
     outline: none;
     padding: 5px;
 }
-.conclusion-info select {
+.conclusion-info  {
     /* padding: 2px; */
     width: 80px;
     border: none;
@@ -659,4 +669,14 @@ textarea[name="moreInfo-output"]{
     -moz-appearance: none; 
     -webkit-appearance: none;
     outline: none;
+}
+.conclusion-info select {
+    appearance: none;
+    -moz-appearance: none; 
+    -webkit-appearance: none;
+    outline: none;
+    border: none;
+    font-family: 'Microsoft JhengHei';
+    background: #FFFFFF;
+    color: #000000;
 }
