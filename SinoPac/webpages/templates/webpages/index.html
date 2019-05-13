@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {% load static %}
-	<link rel="stylesheet" href="{% static 'webpages/style.css' %}">
+    <link rel="stylesheet" href="style.css">
     <title>SinoPac</title>
 </head>
 
@@ -14,44 +13,47 @@
     <div class="header">
         <div class="logo">
             <a href="">
-                    <img src="{% static 'webpages/sinopac_logo.png' %}" alt="" width="175">
+                <img src="img/sinopac_logo.png" alt="" width="175">
                 <span class="logo-word"><span style="color: #e71a0f">e</span>Loan</span>
             </a>
-
         </div>
 
     </div>
     <div class="content-container">
         <div class="mainMenu">
-            <button>回到代辦事項</button>
-            <ul id="To-DoCustomList">
-                <!-- <li class="items" ><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li> -->
-                <!-- <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li> -->
-                <!-- <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li> -->
-                <!-- <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li> -->
-                <!-- <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li> -->
-                <!-- <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li> -->
-                <!-- <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li> -->
-                <!-- <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li> -->
-                <!-- <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li> -->
-                <!-- <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li> -->
+            <ul>
+                <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li>
+                <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li>
+                <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li>
+                <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li>
+                <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li>
+                <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li>
+                <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li>
+                <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li>
+                <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li>
+                <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li>
             </ul>
             <!-- <div class="wrapper"></div> -->
         </div>
+
+
         <div class="dataList">
-            <ul>
-                    <li><a href=""><img src="{% static 'webpages/data.png' %}" width="24"> 個案資料</a></li>
-                    <li><a href=""><img src="{% static 'webpages/report.png' %}" width="24"> 報告總覽</a></li>
-                    <li><a href=""><img src="{% static 'webpages/comment.png' %}" width="24"> 信貸徵審意見</a></li>
-                    <li><a href=""><img src="{% static 'webpages/review.png' %}" width="24"> 防杜代辦檢核表</a></li>
-            </ul>
             <div class="swiper-pagination">
                 <a class="swiper-bullet" id="swipe1" style="background: #5d5d5d"></a>
                 <a class="swiper-bullet" id="swipe2"></a>
                 <a class="swiper-bullet" id="swipe3"></a>
                 <a class="swiper-bullet" id="swipe4"></a>
             </div>
+            <ul>
+                <li><a href=""><img src="img/data.png" width="24"> 個案資料</a></li>
+                <li><a href=""><img src="img/report.png" width="24"> 報告總覽</a></li>
+                <li><a href=""><img src="img/comment.png" width="24"> 信貸徵審意見</a></li>
+                <li><a href=""><img src="img/review.png" width="24"> 防杜代辦檢核表</a></li>
+            </ul>
+            <a id="todo" href="#">回到代辦事項</a>
         </div>
+
+
         <div class="content">
             <div class="contentList">
                 <ul>
@@ -61,7 +63,7 @@
                     <li id="contentList4">票查紀錄</li>
                     <li id="contentList5">主保債務查詢</li>
                     <li id="contentList6">同一經濟關係人</li>
-                    <li><img src="{% static 'webpages/print.png' %}" width="24"></li>
+                    <li><img src="img/print.png" width="24"></li>
                 </ul>
             </div>
             <div class="contentList-info not-shown" id="contentList-info1">
@@ -662,50 +664,52 @@
                         <label for="name">姓名/公司名稱</label>
                         <br>
                         <div class="text-container">
-                                <input type="text" style="width: 100%; height: 30px;" name="name" readonly
-                                value="朱炳丞" id="personname" class="editForm"></input>
+                            <input type="text" style="width: 100%; height: 30px;" name="name" readonly
+                                value="朱炳丞"></input>
                         </div>
                         <div class="check"></div>
                     </div>
                     <div id="grid1-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="{% static 'webpages/baseline-check_circle-24px.png'%}" alt="">
+                        <img src="img/baseline-check_circle-24px.png" alt="">
                         <span>姓名/公司名稱</span>
                         <ul>
                             <li>
                                 <h6>貳、一、(一)活期性存款往來資料查詢</h6>
                                 <p>朱炳丞</p>
-                                <a href=""><img src="{% static 'webpages/arrowForward.png' %}" alt=""></a>
+                                <a href=""><img src="img/arrowForward.png" alt=""></a>
                             </li>
                             <li>
                                 <h6>貳、一、(一)活期性存款往來資料查詢</h6>
                                 <p>朱炳丞</p>
-                                <a href=""><img src="{% static 'webpages/arrowForward.png' %}" alt=""></a>
+                                <a href=""><img src="img/arrowForward.png" alt=""></a>
                             </li>
                             <li>
                                 <h6>貳、一、(一)活期性存款往來資料查詢</h6>
                                 <p>朱炳丞</p>
-                                <a href=""><img src="{% static 'webpages/arrowForward.png' %}" alt=""></a>
+                                <a href=""><img src="img/arrowForward.png" alt=""></a>
                             </li>
                         </ul>
                     </div>
+
                     <div id="grid2" class="content-grid">
                         <label for="personID">身份證字號/統一編號</label>
                         <br>
                         <div class="text-container">
-                                <input type="text" style="width: 100%; height: 30px;" name="personID" readonly
-                                value="R123456789" id="personidentity" class="editForm"></input>
+                            <input type="text" style="width: 100%; height: 30px;" name="personID" readonly
+                                value="R123456789"></input>
                         </div>
                         <div class="check"></div>
                     </div>
                     <div id="grid2-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="{% static 'webpages/baseline-check_circle-24px.png' %}" alt="">
+                        <img src="img/baseline-check_circle-24px.png" alt="">
                         <span>身份證字號/統一編號</span>
                         <ul>
                             <li></li>
                         </ul>
                     </div>
+
                     <div id="grid3" class="content-grid">
                         <label for="relation">關係別/與主借款人關係</label>
                         <br>
@@ -721,66 +725,70 @@
                     </div>
                     <div id="grid3-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="{% static 'webpages/baseline-check_circle-24px.png' %}" alt="">
+                        <img src="img/baseline-check_circle-24px.png" alt="">
                         <span>關係別/與主借款人關係</span>
                         <ul>
                             <li></li>
                         </ul>
                     </div>
+
                     <div id="grid4" class="content-grid">
                         <label for="birth">出生日期</label>
                         <br>
                         <div class="text-container">
-                                <input type="text" style="width: 100%; height: 30px;" name="birth" readonly
-                                value="850102" id="personbirthday" class="editForm"></input>
+                            <input type="text" style="width: 100%; height: 30px;" name="birth" readonly
+                                value="850102"></input>
                         </div>
                         <div class="check"></div>
                     </div>
                     <div id="grid4-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="{% static 'webpages/baseline-check_circle-24px.png' %}" alt="">
+                        <img src="img/baseline-check_circle-24px.png" alt="">
                         <span>出生日期</span>
                         <ul>
                             <li></li>
                         </ul>
                     </div>
+
                     <div id="grid5" class="content-grid">
                         <label for="phone">個人電話</label>
                         <br>
                         <div class="text-container">
                             <input type="text" style="width: 100%; height: 30px;" name="phone" readonly
-                            value="06-232841" id="personperson_house_phone" class="editForm"></input>
+                                value="06-232841"></input>
                             <br>
                             <input type="text" style="width: 100%; height: 30px;" name="birth" readonly
-                                value="0986565551" id="personperson_phone" class="editForm"></input>
+                                value="0986565551"></input>
                         </div>
                         <div class="check"></div>
                     </div>
                     <div id="grid5-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="{% static 'webpages/baseline-check_circle-24px.png' %}" alt="">
+                        <img src="img/baseline-check_circle-24px.png" alt="">
                         <span>個人電話</span>
                         <ul>
                             <li></li>
                         </ul>
                     </div>
+
                     <div id="grid6" class="content-grid">
                         <label for="address">住家地址</label>
                         <br>
                         <div class="text-container">
                             <textarea name="address" style="width: 100%; height: 80px;"
-                                readonly id="personaddress" class="editForm">台南市大學路1號補字補字補字補字補字補字</textarea>
+                                readonly>台南市大學路1號補字補字補字補字補字補字</textarea>
                         </div>
                         <div class="check"></div>
                     </div>
                     <div id="grid6-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="{% static 'webpages/baseline-check_circle-24px.png' %}" alt="">
+                        <img src="img/baseline-check_circle-24px.png" alt="">
                         <span>住家地址</span>
                         <ul>
                             <li></li>
                         </ul>
                     </div>
+
                     <div id="grid7" class="content-grid">
                         <label for="position">職稱</label>
                         <div class="text-container">
@@ -793,28 +801,31 @@
                     </div>
                     <div id="grid7-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="{% static 'webpages/baseline-check_circle-24px.png' %}" alt="">
+                        <img src="img/baseline-check_circle-24px.png" alt="">
                         <span>職稱</span>
                         <ul>
                             <li></li>
                         </ul>
                     </div>
+
                     <div id="grid8" class="content-grid">
                         <label for="career">年資</label>
                         <br>
                         <div class="text-container">
                             <input type="text" style="width: 100%; height: 30px;" name="career" readonly
-                            value="8年" id="personcareer" class="editForm"></input>
+                                value="8年"></input>
                         </div>
                         <div class="check"></div>
                     </div>
                     <div id="grid8-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="{% static 'webpages/baseline-check_circle-24px.png' %}" alt="">                        <span>年資</span>
+                        <img src="img/baseline-check_circle-24px.png" alt="">
+                        <span>年資</span>
                         <ul>
                             <li></li>
                         </ul>
                     </div>
+
                     <div id="grid9" class="content-grid">
                         <label for="industry">行業別</label>
                         <div class="text-container">
@@ -827,136 +838,167 @@
                     </div>
                     <div id="grid9-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="{% static 'webpages/baseline-check_circle-24px.png' %}" alt="">                        <span>行業別</span>
+                        <img src="img/baseline-check_circle-24px.png" alt="">
+                        <span>行業別</span>
                         <ul>
                             <li></li>
                         </ul>
                     </div>
+
                     <div id="grid10" class="content-grid">
                         <label for="company">現職公司</label>
                         <br>
                         <div class="text-container">
                             <input type="text" style="width:100%; height: 30px;" name="company" readonly
-                                value="台積電股份有限公司" id="personcompany" class="editForm"></input>
+                                value="台積電股份有限公司"></input>
                         </div>
                         <div class="check"></div>
                     </div>
                     <div id="grid10-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="{% static 'webpages/baseline-check_circle-24px.png' %}" alt="">                        <span>現職公司</span>
+                        <img src="img/baseline-check_circle-24px.png" alt="">
+                        <span>現職公司</span>
                         <ul>
                             <li></li>
                         </ul>
                     </div>
+
                     <div id="grid11" class="content-grid">
                         <label for="vocation">職業說明</label>
                         <br>
                         <div class="text-container">
                             <input type="text" style="width: 100%; height: 30px;" name="vocation" readonly
-                                value="輪班星人" id="personjob_title" class="editForm"></input>
+                                value="輪班星人"></input>
                         </div>
                         <div class="check"></div>
                     </div>
                     <div id="grid11-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="{% static 'webpages/baseline-check_circle-24px.png' %}" alt="">                        <span>職業說明</span>
+                        <img src="img/baseline-check_circle-24px.png" alt="">
+                        <span>職業說明</span>
                         <ul>
                             <li></li>
                         </ul>
                     </div>
+
                     <div id="grid12" class="content-grid">
                         <label for="company-phone">公司電話</label>
                         <br>
                         <div class="text-container">
-                                <input type="text" style="width: 100%; height: 30px;" name="company-phone" readonly
-                                value="06-232841" id="personcompany_phone" class="editForm"></input>
+                            <input type="text" style="width: 100%; height: 30px;" name="company-phone" readonly
+                                value="06-232841"></input>
                         </div>
                         <div class="check"></div>
                     </div>
                     <div id="grid12-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="{% static 'webpages/baseline-check_circle-24px.png' %}" alt="">                        <span>公司電話</span>
+                        <img src="img/baseline-check_circle-24px.png" alt="">
+                        <span>公司電話</span>
                         <ul>
                             <li></li>
                         </ul>
                     </div>
+
                     <div id="grid13" class="content-grid">
                         <label for="company-address">公司地址</label>
                         <br>
                         <div class="text-container">
-                                <textarea name="company-address" style="width:100%; height: 80px;"
-                                readonly id="personcompany_address" class="editForm">台南市大學路1號補字補字補字補字補字補字</textarea>
+                            <textarea name="company-address" style="width:100%; height: 80px;"
+                                readonly>台南市大學路1號補字補字補字補字補字補字</textarea>
                         </div>
                         <div class="check"></div>
                     </div>
                     <div id="grid13-detail" class="content-grid details not-shown">
                         <div class="close"></div>
-                        <img src="{% static 'webpages/baseline-check_circle-24px.png' %}" alt="">                        <span>公司地址</span>
+                        <img src="img/baseline-check_circle-24px.png" alt="">
+                        <span>公司地址</span>
                         <ul>
                             <li></li>
                         </ul>
                     </div>
+
                     <div id="grid14" class="content-grid">
                         <label for="description">說明</label>
                         <br>
                         <div class="text-container">
-                            <textarea name="description" style="width:100%; height: 120px;"
-                                readonly id="persondescription" class="editForm">台南市大學路2號補字補字補字補字補字補字台南市大學路2號補字補字補字補字補字補字台南市大學路2號補字補字補字補字補字補字</textarea>
+                            <textarea id="description" name="description" style="width:100%; height: 125px;" readonly>台南市大學路2號補字補字補字補字補字補字台南市大學路2號補字補字補字補字補字補字台南市大學路2號補字補字補字補字補字補字 &#13;&#10; ------------- &#13;&#10;
+                            </textarea>
+
                         </div>
-                        <!-- <div class="moreInfo">
+                        <div class="moreInfo">
                             <div>
                                 <label for="House-communication">住家</label>
                                 <br>
-                                <select>
-                                    <option value="">無人接聽</option>
-                                    <option value="">家人接聽</option>
-                                    <option value="">朋友接聽</option>
-                                    <option value="">本人接聽</option>
-                                </select>
-
+                                <div class="text-container">
+                                    <select id="House-communication" style="min-width: 80px">
+                                        <option value="無人接聽">無人接聽</option>
+                                        <option value="家人接聽">家人接聽</option>
+                                        <option value="朋友接聽">朋友接聽</option>
+                                        <option value="本人接聽">本人接聽</option>
+                                    </select>
+                                </div>
                             </div>
                             <div>
                                 <label for="company-communication">公司</label>
                                 <br>
-                                <select>
-                                    <option value="">(無)</option>
-                                    <option value="">總機確認</option>
-                                    <option value="">同事確認</option>
-                                    <option value="">本人接聽</option>
-                                </select>
+                                <div class="text-container">
+                                    <select id="company-communication" style="min-width: 75px">
+                                        <option value="(無)">(無)</option>
+                                        <option value="總機確認">總機確認</option>
+                                        <option value="同事確認">同事確認</option>
+                                        <option value="本人接聽">本人接聽</option>
+                                    </select>
+                                </div>
+
                             </div>
                             <div>
                                 <label for="contact">照會本人方式</label>
                                 <br>
-                                <select>
-                                    <option value="">手機</option>
-                                    <option value="">家電</option>
-                                </select>
+                                <div class="text-container">
+                                    <select id="contact" style="min-width: 75px">
+                                        <option value="手機">手機</option>
+                                        <option value="家電">家電</option>
+                                    </select>
+                                </div>
+
                             </div>
                             <div>
                                 <label for="business-origin">業務來源</label>
                                 <br>
-                                <select>
-                                    <option value="">網路申請</option>
-                                    <option value="">現場申請</option>
-                                </select>
+                                <div class="text-container">
+                                    <select id="business-origin" style="min-width: 80px">
+                                        <option value="網路申請">網路申請</option>
+                                        <option value="現場申請">現場申請</option>
+                                    </select>
+                                </div>
                             </div>
                             <div>
                                 <label for="monthly-payment">月薪</label>
                                 <br>
-                                <input type="text" name="monthly-payment" placeholder="萬">
+                                <div class="text-container">
+                                    <input id="monthly-payment" type="text" name="monthly-payment" placeholder="萬"
+                                        style="max-width: 75px">
+                                </div>
                             </div>
                             <div>
                                 <label for="usage">用途</label>
                                 <br>
-                                <input type="text" name="usage" placeholder="請敘述貸款用途">
+                                <div class="text-container">
+                                    <input id="usage" type="text" name="usage" placeholder="請敘述貸款用途"
+                                        style="max-width: 135px">
+                                </div>
+
                             </div>
                             <div>
                                 <label for="credit">申貸</label>
                                 <br>
-                                <input type="text" name="" placeholder="萬">
+                                <div class="text-container">
+                                    <input id="credit" type="text" name="credit" placeholder="萬"
+                                        style="max-width: 75px">
+                                </div>
+
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </form>
 
@@ -1155,16 +1197,444 @@
                 </div>
 
                 <h3 id="content3">參、聯合徵信中心查詢回覆資料<span>(單位:新台幣仟元)</span></h3>
+                <div class="inquire">
+                    <div class="inquire-content">
+                        <div class="inquire-table">
+                            <div class="table-item">
+                                <h4>姓名/身分證號</h4>
+                                <p>朱炳丞/R123456789</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>英文姓名</h4>
+                                <p>Bing Cheng Zhu</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>出生日期</h4>
+                                <p>19960313</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>戶籍地址</h4>
+                                <p>台南市大學路1號補字補字補字補字補字補字</p>
+                            </div>
+                        </div>
 
+                        <div class="dragable-data">
+                            <p>其餘資訊 : N</p>
+                            <p>新增額度及每筆撥款清償資訊 : N</p>
+                            <p>身分證申請補發記錄 : N</p>
+                            <p>在台無戶籍人士身分註記 : N</p>
+                            <p>退票異常紀錄 : N</p>
+                            <p>最近授信異常日期 : N</p>
+                            <p>通報案件紀錄 : N</p>
+                            <p>消債其他註記 : N</p>
+                            <p>拒絕往來紀錄 : N</p>
+                            <p>授信異常紀錄 : N</p>
+                            <p>強制停卡紀錄 : N</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="inquire">
+                    <h4>(一)通報案件紀錄資訊</h4>
+                    <div class="inquire-content">
+                        <p>1.案件通部 : 無  </p>
+                        <p>2.遷徙公告 : 無</p>
+                        <p>3.身分證更改記錄 : 無</p>
+                        <p>4.補充註記資訊 : 無</p>
+                        <p>5.國民身分證領補換資料查詢驗證 :</p>
+                        <p>資料日期 : 20190421</p>
+                        <p>身分證號 : R123456789</p>
+                        <p>領補換代碼 : 3換</p>
+                        <p>領補換日期 : 20170609</p>
+                        <p>出生日期 : 19960313</p>
+                        <p>發證地點 : 桃市列印相片</p>
+                        <p>驗證結果 : Y與檔案資料相符</p>
+                        <p>6.在台吳互即人士身分證資料 : 無</p>
+                    </div>
+                </div>
+                <div class="inquire">
+                    <h4>(二)授信保證資料</h4>
+                    <h4>授信資料日期 : 20190331</h4>
+                    <h4>衍生性金融商品交易轉捩授信爭議案件住記 : 無</h4>
+                    <div class="inquire-content">
+                        <h4>1.授信資料明細及還款記錄資訊<span>(暫定表格 尚未修改)</span></h4>
+                        <div class="inquire-table">
+                            <div class="table-item">
+                                <h4>姓名/身分證號</h4>
+                                <p>朱炳丞/R123456789</p>
+                                <p>朱炳丞/R123456789</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>來文資料</h4>
+                                <p>20190116</p>
+                                <p>20180813</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>扣押類別</h4>
+                                <p>燃料費</p>
+                                <p>燃料費</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>合計(扣押執行金額)</h4>
+                                <p>4764</p>
+                                <p>5142</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>資料來源</h4>
+                                <p>法務部行政執行署高雄分屬</p>
+                                <p>法務部行政執行署高雄分屬</p>
+                            </div>
+                        </div>
+                        <h4>查資料庫中吳債權轉讓資料明細-主債務</h4>
+                        <br><br>
+                        <h4>2.共同債務 : 查資料庫中無本人擔任他戶之共同債務資訊</h4>
+                        <h4>查資料庫中吳債權轉讓資料明細-共同債務</h4>
+                        <h4>3.從債務(以下均為主借款戶之資料) : 無</h4>
+                        <h4>查資料庫中吳債權轉讓資料明細-從債務</h4>
+                        <h4>4.其他(擔保品提供人-身分證代號S) : 無</h4>
+                        <h4>查資料庫中吳債權轉讓資料明細-其他(擔保品提供人)</h4>
+                        <h4>5.每日受信餘額變動資訊</h4>
+                        <h4>(1)每日受信餘額變動資訊<span>(尚未編輯)</span></h4>
+                        <h4>(2)每日受信餘額變動資訊<span>(尚未編輯)</span></h4>
+                        <h4>(3)每日受信餘額變動資訊(尚未編輯)如下<span>(暫定表格 尚未修改)</span></h4>
+                        <div class="inquire-table">
+                            <div class="table-item">
+                                <h4>姓名/身分證號</h4>
+                                <p>朱炳丞/R123456789</p>
+                                <p>朱炳丞/R123456789</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>來文資料</h4>
+                                <p>20190116</p>
+                                <p>20180813</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>扣押類別</h4>
+                                <p>燃料費</p>
+                                <p>燃料費</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>合計(扣押執行金額)</h4>
+                                <p>4764</p>
+                                <p>5142</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>資料來源</h4>
+                                <p>法務部行政執行署高雄分屬</p>
+                                <p>法務部行政執行署高雄分屬</p>
+                            </div>
+                        </div>
+                        <h4>(4)每日受信餘額變動資訊<span>(尚未編輯)</span></h4>
+                    </div>
+                </div>
+                <div class="inquire">
+                    <h4>(三)新增額度(含應計入DBR22倍金額)及清償資訊 : 無</h4>
+                </div>
+                <div class="inquire">
+                    <h4>(四)授信異常資料</h4>
+                    <div class="inquire-content">
+                        <h4>1.逾期催收及呆帳資料 : 無</h4>
+                        <h4>2.逾期資料債權轉讓 : 無</h4>
+                        <h4>3.個人餘催呆授信留向非法人組織資訊 : 無</h4>
+                    </div>
+                </div>
+                <div class="inquire">
+                    <h4>(五)票據退票及拒往資訊<span>(表格尚未編輯)</span></h4>
+                    <h4>票信資料日期 : 20190416</h4>
+                    <div class="inquire-content">
+                        <div class="inquire-table">
+                            <div class="table-item">
+                                <h4>姓名/身分證號</h4>
+                                <p>朱炳丞/R123456789</p>
+                                <p>朱炳丞/R123456789</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>來文資料</h4>
+                                <p>20190116</p>
+                                <p>20180813</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>扣押類別</h4>
+                                <p>燃料費</p>
+                                <p>燃料費</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>合計(扣押執行金額)</h4>
+                                <p>4764</p>
+                                <p>5142</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>資料來源</h4>
+                                <p>法務部行政執行署高雄分屬</p>
+                                <p>法務部行政執行署高雄分屬</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="inquire">
+                    <h4>(六)信用卡資訊</h4>
+                    <h4>資料處理日期 : 20190423</h4>
+                    <div class="inquire-content">
+                        <h4>1.信用卡<span>(表格尚未編輯)</span></h4>
+                        <div class="inquire-table">
+                            <div class="table-item">
+                                <h4>姓名/身分證號</h4>
+                                <p>朱炳丞/R123456789</p>
+                                <p>朱炳丞/R123456789</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>來文資料</h4>
+                                <p>20190116</p>
+                                <p>20180813</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>扣押類別</h4>
+                                <p>燃料費</p>
+                                <p>燃料費</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>合計(扣押執行金額)</h4>
+                                <p>4764</p>
+                                <p>5142</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>資料來源</h4>
+                                <p>法務部行政執行署高雄分屬</p>
+                                <p>法務部行政執行署高雄分屬</p>
+                            </div>
+                        </div>
+                        <h4>2.信用卡用戶基本資訊</h4>
+                        <div class="inquire-table">
+                            <div class="table-item">
+                                <h4><br>異動日期</h4>
+                                <p>20190407</p>
+                            </div>
+                            <div class="table-item">
+                                <h4><br>報送機構</h4>
+                                <p>匯豐銀行</p>
+                            </div>
+                            <div class="table-item">
+                                <h4><br>中文姓名</h4>
+                                <p>朱炳丞</p>
+                            </div>
+                            <div class="table-item">
+                                <h4><br>出生日期</h4>
+                                <p>19960312</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>戶籍地址<br>通訊地址</h4>
+                                <p>台南市大學路1號補字補字補字補字補字補字 </p>
+                                <p>台南市大學路2號補字補字補字補字補字補字</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>居住電話<br>任職電話</h4>
+                                <p>06-2328411</p>
+                                <p>06-2328412</p>
+                            </div>
+                        </div>
+                        <div class="inquire-table">
+                            <div class="table-item">
+                                <h4>任職機構</h4>
+                                <p>台積電股份有限公司</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>職稱</h4>
+                                <p>一般職員</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>年薪</h4>
+                                <p>444</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>年資</h4>
+                                <p>8</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>教育程度</h4>
+                                <p>大學</p>
+                            </div>
+                        </div>
+                        <h4>3.自用住宅有無 : N</h4>
+                    </div>
+                </div>
+                <div class="inquire">
+                    <h4>(七)最近三個月被查詢記錄</h4>
+                    <div class="inquire-content">
+                        <h4>新業務申請 : 2次</h4>
+                        <h4>原業務往來 : 0次</h4>
+                        <h4>原業務往來及新業務申請 : 0次</h4>
+                        <h4>查詢當日截至目前金融機構查詢次數 : 1次</h4>
+                        <h4>金融機構查詢次數 : 1次</h4>
+                    </div>
+                </div>
+                <div class="inquire">
+                    <h4>(八)信用評分 : <span style="color: #1974f5; font-weight: 700; font-size: 20px">514</span> 分</h4>
+                    <div class="inquire-content">
+                        <h4>新業務申請 : 2次 <span>(尚未編輯)</span></h4>
+                        <h4>原業務往來 : 0次</h4>
+                        <h4>原業務往來及新業務申請 : 0次</h4>
+                        <h4>查詢當日截至目前金融機構查詢次數 : 1次</h4>
+                        <h4>金融機構查詢次數 : 1次</h4>
+                    </div>
+                </div>
+                <div class="inquire">
+                    <h4>(九)應記入DBR22倍規範之無擔保放款明細</h4>
+                    <div class="inquire-content">
+                        <h4>新業務申請 : 2次 <span>(尚未編輯)</span></h4>
+                        <h4>原業務往來 : 0次</h4>
+                        <div class="inquire-table">
+                            <div class="table-item">
+                                <h4>姓名/身分證號</h4>
+                                <p>朱炳丞/R123456789</p>
+                                <p>朱炳丞/R123456789</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>來文資料</h4>
+                                <p>20190116</p>
+                                <p>20180813</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>扣押類別</h4>
+                                <p>燃料費</p>
+                                <p>燃料費</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>合計(扣押執行金額)</h4>
+                                <p>4764</p>
+                                <p>5142</p>
+                            </div>
+                            <div class="table-item">
+                                <h4>資料來源</h4>
+                                <p>法務部行政執行署高雄分屬</p>
+                                <p>法務部行政執行署高雄分屬</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <h3 id="content4 ">肆、總結</h3>
+                <div class="inquire" id="conclusion">
+                    <div class="conclusion-item">
+                        <h4>電照補充說明</h4>
+                        <div class="conclusion-info">
+                            <input type="text" value="無" readonly>
+                        </div>
+                    </div>
+                    <div class="conclusion-item">
+                        <h4>其他事項說明</h4>
+                        <div class="conclusion-info">
+                            <textarea name="" id="" cols="30" rows="10" readonly>*本案有同一經紀關係人資料，請業務同仁依據「同一經濟關係授信歸互暨簽核要點」規範辦理。&#13;&#10;*B有法扣系統資料 &#13;&#10;*本徵信報告同一經濟關係戶共1名「主保債務查詢」基本資料區無異常訊息或註記資料，業務單位需再依規確認。&#13;&#10;*月收暫認:107.10~108.3$235080/6+年終41420/12=42632元，核委得依客戶提供之財力文件核算並調整其月收入。
+                            </textarea>
+                        </div>
+
+                    </div>
+                    <div class="conclusion-item">
+                        <h4>公告後修改說明</h4>
+                        <div class="conclusion-info">
+                            <input type="text" value="無" readonly>
+                        </div>
+                    </div>
+                    <div class="conclusion-item">
+                        <h4>信用等級</h4>
+                        <div class="conclusion-info">
+                            <select name="credit-level" id="" disabled>
+                                <option value="S"><span>S</span> 級</option>
+                                <option value="A"><span>A</span> 級</option>
+                                <option value="B"><span>B</span> 級</option>
+                                <option value="C"><span>C</span> 級</option>
+                                <option value="D"><span>D</span> 級</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="conclusion-item">
+                        <h4>信用異常資料彙整</h4>
+                        <div class="conclusion-info">
+                            <p>關係人:R123456789 朱炳丞</p>
+                            <br>
+                            <div class="inquire-table">
+                                <div class="table-item">
+                                    <h4>大項</h4>
+                                    <p>本行</p>
+                                </div>
+                                <div class="table-item">
+                                    <h4>資料來源</h4>
+                                    <p>本行系統</p>
+                                </div>
+                                <div class="table-item">
+                                    <h4>異常原因</h4>
+                                    <p>扣押存款</p>
+                                </div>
+                                <div class="table-item">
+                                    <h4>備註</h4>
+                                    <p>法院扣押存款</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="conclusion-item">
+                        <h4>參考資料</h4>
+                        <div class="conclusion-info">
+                            <p>無</p>
+                        </div>
+                    </div>
+                    <div class="conclusion-item">
+                        <h4>信用卡繳款延遲狀</h4>
+                        <div class="conclusion-info">
+                            <p>朱炳丞/R123456789</p>
+                            <p>[31-37].未繳足最低金額 : 0</p>
+                            <p>[41-47].全額逾期未繳 : 0</p>
+                            <p>催收、呆帳 : 0</p>
+                        </div>
+                    </div>
+                    <div class="conclusion-item">
+                        <h4>洗錢及資助恐怖主義防治彙整</h4>
+                        <div class="conclusion-info">
+                            <div class="inquire-table">
+                                <div class="table-item">
+                                    <h4>姓名/身分證號</h4>
+                                    <p>朱炳丞/R123456789</p>
+                                    <p>朱炳丞/R123456789</p>
+                                </div>
+                                <div class="table-item">
+                                    <h4>來文資料</h4>
+                                    <p>20190116</p>
+                                    <p>20180813</p>
+                                </div>
+                                <div class="table-item">
+                                    <h4>扣押類別</h4>
+                                    <p>燃料費</p>
+                                    <p>燃料費</p>
+                                </div>
+                                <div class="table-item">
+                                    <h4>合計(扣押執行金額)</h4>
+                                    <p>4764</p>
+                                    <p>5142</p>
+                                </div>
+                                <div class="table-item">
+                                    <h4>資料來源</h4>
+                                    <p>法務部行政執行署高雄分屬</p>
+                                    <p>法務部行政執行署高雄分屬</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="button-area">
+                        <input id="conclusion-edit" type="button" value="編輯">
+                        <input id="conclusion-save" type="button" value="存檔">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="{% static 'webpages/contactToSer.js' %}"></script>
-    <script src="{% static 'webpages/animation.js' %}"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="animation.js"></script>
 </body>
 
 </html>
