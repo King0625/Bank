@@ -3,7 +3,7 @@ import re
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.template import loader
-from webpages.models import BasicData,BankDepositData,ContributionLevel
+from webpages.models import BasicData
 from django.views.decorators.csrf import csrf_exempt
 from django.forms.models import model_to_dict
 
@@ -18,13 +18,13 @@ def index(request):
 @csrf_exempt
 def basicDataQuery(request) :
 	if request.method == 'GET':
-		data = _basicDataQuery_GET()
+		data = __basicDataQuery_GET()
 		return HttpResponse(json.dumps(data,indent=4,ensure_ascii=False),content_type="application/json")
 	else:
-		_basicDataQuery_POST(request.body)
+		__basicDataQuery_POST(request.body)
 		return HttpResponse('POST SUCCESSFUL')
 
-def _basicDataQuery_GET():
+def __basicDataQuery_GET():
 	d = BasicData.objects.all()
 	data = []
 	for i in d:
@@ -45,59 +45,27 @@ def _basicDataQuery_GET():
 		data.append(temp)
 	return data
 	
-def _basicDataQuery_POST(data):
+def __basicDataQuery_POST(data):
 	
 	data = json.loads(data,encoding=False)
 	userid = data['id']
 	del data['id']
 	d = BasicData.objects.get(id=userid)
 
-	if(len(data.keys()) > 0):
+	if(len(data.keys()) > 1):
 		# update sql
 		for key, value in data.items():
 			setattr(d,re.sub(r'person','',key),value)
 		d.save()
 
+	# print(json.dumps(model_to_dict(d),indent=4,ensure_ascii=False))
+	
 	pass
 
-@csrf_exempt
-def bankDepositData(request):
-	if request.method == 'GET':
-		data = _bankDepositData_GET()
-		return HttpResponse(json.dumps(data,indent=4, ensure_ascii=False),content_type="application/json")
-		
-
-def _bankDepositData_GET():
-	data = []
-	d = BankDepositData.objects.all()
-	for i in d:
-		userData = model_to_dict(i)
-		dateTime = userData['opnning_data']
-		userData['opnning_data'] = '%s/%s/%s' %(dateTime.year, dateTime.month, dateTime.day)
-		data.append(userData)
-	return data
-	
-
-@csrf_exempt
-def contributionLevelData(request):
-	if request.method == 'GET':
-		data = _contributionLevelData_GET()
-		return HttpResponse(json.dumps(data,indent=4,ensure_ascii=False),content_type='application/json')
-	
-
-def _contributionLevelData_GET():
-	d = ContributionLevel.objects.all()
-	data = []
-	for i in d:
-		userData = model_to_dict(i)
-		newBatchTime = userData['new_batch_processing_day']
-		userData['new_batch_processing_day'] = '%s/%s/%s' % (newBatchTime.year, newBatchTime.month, newBatchTime.day)
-		data.append(userData)
-	return data
-	
 
 
 def test(request):
+
 	return HttpResponse("application/json")
 
 
