@@ -1,9 +1,10 @@
 import json
 import re
+import webpages.models
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.template import loader
-from webpages.models import BasicData,BankDepositData,FDDData
+from webpages.models import BasicData,BankDepositData,FDDData,UnionSearchData
 from django.views.decorators.csrf import csrf_exempt
 from django.forms.models import model_to_dict
 
@@ -79,13 +80,13 @@ def _bankDepositData_GET():
 	
 
 @csrf_exempt
-def contributionLevelData(request):
+def FDDLevelData(request):
 	if request.method == 'GET':
-		data = _contributionLevelData_GET()
+		data = _FDDLevelData_GET()
 		return HttpResponse(json.dumps(data,indent=4,ensure_ascii=False),content_type='application/json')
 
 
-def _contributionLevelData_GET():
+def _FDDLevelData_GET():
 	d = FDDData.objects.all()
 	data = []
 	for i in d:
@@ -95,6 +96,46 @@ def _contributionLevelData_GET():
 		data.append(userData)
 	return data
 	
+
+@csrf_exempt
+def contributionData(request):
+	if request.method == 'GET':
+		data = _contributionData_GET()
+		# data = []
+		return HttpResponse(json.dumps(data,indent=4,ensure_ascii=False),content_type='application/json')
+		pass
+	pass
+
+def _contributionData_GET():
+	d = webpages.models.Contribution.objects.all()
+	data = []
+	for i in d:
+		userData = model_to_dict(i)
+		date = userData['date_of_information']
+		# print(date.date)
+
+		userData['date_of_information'] = '%s/%s/%s' % (date.year, date.month, date.day)
+		data.append(userData)
+
+	return data
+	pass
+
+@csrf_exempt
+def unionCreditData(request):
+	if request.method == 'GET':
+		data = _unionCreditData_GET()
+		return HttpResponse(json.dumps(data,indent=4, ensure_ascii=False),content_type = 'application/json')
+		pass
+	pass
+
+def _unionCreditData_GET():
+	d = webpages.models.UnionSearchData.objects.all()
+	data = []
+	for i in d:
+		data.append(model_to_dict(i))	
+
+	return data
+	pass
 
 
 def test(request):

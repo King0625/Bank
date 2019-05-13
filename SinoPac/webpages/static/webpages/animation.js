@@ -1,7 +1,9 @@
 $(document).ready(() => {
     basicDataQuery();
     bankDataQuery();
-    contributionDataQuery();
+    // contributionDataQuery();
+    FDDbutionDataQuery();
+    ContrubutionDataQuery();
     
     $("#swipe1").click(function () {
         window.scrollTo(0, 80);

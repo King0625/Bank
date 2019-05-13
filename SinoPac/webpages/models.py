@@ -1,7 +1,5 @@
 from django.db import models
 
-# it is necessary to set the identity to be the link of each table
-
 class BasicData(models.Model):
     identity = models.CharField(max_length=15)
     name = models.CharField(max_length=11)
@@ -60,5 +58,21 @@ class FDDData(models.Model):
     money_laundering_risk_gradding = models.IntegerField()
     FDD_information = models.BooleanField()
     
+
+class Contribution(models.Model):
+    name = models.CharField(max_length=15)
+    date_of_information = models.DateField()
+    three_months_assets = models.IntegerField()
+    AP = models.IntegerField()
+    not_ap = models.IntegerField()
+    last_ap = models.IntegerField()
+    last_not_ap =  models.IntegerField()
+
+class UnionSearchData(models.Model):
+    name = models.CharField(max_length=15)
+    identity = models.CharField(max_length=15)
+    EN_name = models.CharField(max_length=15)
+    address = models.CharField(max_length=50)
+    birthday = models.DateField()
 
 # Create your models here.

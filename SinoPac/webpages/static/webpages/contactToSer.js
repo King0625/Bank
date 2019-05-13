@@ -3,7 +3,9 @@ let EDITELEMTSid = []
 let id;
 let BasicData = []
 let BankData = []
-let ContributionData = []
+let FDDbutionData = []
+let Contribution = []
+let creditData = []
 
 var basicDataQuery = ()=>{
     $.ajax({
@@ -51,7 +53,8 @@ var editTheForm = (num)=>{
 var edittoTheDom = (num) =>{
     editTheForm(num);
     editTheBankData(num);
-    editContributionData(num)
+    editFDDbutionData(num)
+    editContributionData(num);
 }
 
 $('.editForm').on('change', function () {
@@ -85,29 +88,72 @@ var editTheBankData = (num)=>{
     $('#customSuspicious_account').html(BankData[num]['suspicious_account'] ? '正常戶' : '可疑戶');
 }
 
-var contributionDataQuery = ()=>{
+var FDDbutionDataQuery = ()=>{
     $.ajax({
         type: "GET",
-        url: "/sinopac/contributionData/",
+        url: "/sinopac/FDDData/",
         dataType: "json",
         async : false,
         success: function (response) {
             console.log(response);
-            ContributionData = response;
+            FDDbutionData = response;
         }
     });
-    editContributionData(0)
+    editFDDbutionData(0)
+}
+
+var editFDDbutionData = (num)=>{
+    $('#FDDnameid').html(FDDbutionData[num]['name'] + '/' + FDDbutionData[num]['identity']);
+    $('#FDDnew_batch_processing_day').html(FDDbutionData[num]['new_batch_processing_day']);
+    $('FDDmoney_laundering_risk_degree').html(FDDbutionData[num]['money_laundering_risk_degree']);
+    $('#FDDpriority_low').html(FDDbutionData[num]["priority_low"]);
+    $('#FDDbackground').html(FDDbutionData[num]["background"]);
+    $('#FDDgeographical_factor').html(FDDbutionData[num]['geographical_factor']);
+    $('#FDDrelation_behavior').html(FDDbutionData[num]['relation_behavior']);
+    $('#FDDproduction').html(FDDbutionData[num]['production']);
+    $('#FDDmoney_laundering_risk_gradding').html(FDDbutionData[num]['money_laundering_risk_gradding']);
+    $('#FDDFDD_information').html(FDDbutionData[num]['FDD_information'] == true ? '有資料' : '無資料');
+}
+
+var ContrubutionDataQuery = ()=>{
+    $.ajax({
+        type: "GET",
+        url: "/sinopac/contrubutionData/",
+        dataType: "json",
+        async : false,
+        success: function (response) {
+            Contribution = response;
+        }
+    });
+
+    editContributionData(0);
 }
 
 var editContributionData = (num)=>{
-    $('#FDDnameid').html(ContributionData[num]['name'] + '/' + ContributionData[num]['identity']);
-    $('#FDDnew_batch_processing_day').html(ContributionData[num]['new_batch_processing_day']);
-    $('FDDmoney_laundering_risk_degree').html(ContributionData[num]['money_laundering_risk_degree']);
-    $('#FDDpriority_low').html(ContributionData[num]["priority_low"]);
-    $('#FDDbackground').html(ContributionData[num]["background"]);
-    $('#FDDgeographical_factor').html(ContributionData[num]['geographical_factor']);
-    $('#FDDrelation_behavior').html(ContributionData[num]['relation_behavior']);
-    $('#FDDproduction').html(ContributionData[num]['production']);
-    $('#FDDmoney_laundering_risk_gradding').html(ContributionData[num]['money_laundering_risk_gradding']);
-    $('#FDDFDD_information').html(ContributionData[num]['FDD_information'] == true ? '有資料' : '無資料');
+    $('#con-name').html(Contribution[num]['name'])
+    $('#con-date').html(Contribution[num]['date_of_information'])
+    $('#con-asset').html(Contribution[num]['three_months_assets'])
+    $('#con-ap').html(Contribution[num]['AP'])
+    $('#con-not-ap').html(Contribution[num]['not_ap'])
+    $('#con-last-ap').html(Contribution[num]['last_ap'])
+    $('#con-last-not-ap').html(Contribution[num]['last_not_ap'])
+}
+
+var unionDataQuery = ()=>{
+    $.ajax({
+        type: "GET",
+        url: "/",
+        data: "data",
+        dataType: "dataType",
+        success: function (response) {
+            creditData = response;
+        }
+    });
+}
+
+var editUnionData = (num)=>{
+    $('#credit_name_and_identity').html(creditData[num]['name'] + '/' + creditData[num]['identity']);
+    $('#credit_EN_name').html(creditData[num]['EN_name']);
+    $('#credit_birthday').html(creditData[num]['']);
+    $('#credit_address').html(creditData[num]);
 }
