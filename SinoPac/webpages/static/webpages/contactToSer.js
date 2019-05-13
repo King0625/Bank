@@ -51,6 +51,7 @@ var editTheForm = (num)=>{
 var edittoTheDom = (num) =>{
     editTheForm(num);
     editTheBankData(num);
+    editContributionData(num)
 }
 
 $('.editForm').on('change', function () {
@@ -84,7 +85,7 @@ var editTheBankData = (num)=>{
     $('#customSuspicious_account').html(BankData[num]['suspicious_account'] ? '正常戶' : '可疑戶');
 }
 
-var contributionData = ()=>{
+var contributionDataQuery = ()=>{
     $.ajax({
         type: "GET",
         url: "/sinopac/contributionData/",
@@ -95,9 +96,18 @@ var contributionData = ()=>{
             ContributionData = response;
         }
     });
-
+    editContributionData(0)
 }
 
 var editContributionData = (num)=>{
-
+    $('#FDDnameid').html(ContributionData[num]['name'] + '/' + ContributionData[num]['identity']);
+    $('#FDDnew_batch_processing_day').html(ContributionData[num]['new_batch_processing_day']);
+    $('FDDmoney_laundering_risk_degree').html(ContributionData[num]['money_laundering_risk_degree']);
+    $('#FDDpriority_low').html(ContributionData[num]["priority_low"]);
+    $('#FDDbackground').html(ContributionData[num]["background"]);
+    $('#FDDgeographical_factor').html(ContributionData[num]['geographical_factor']);
+    $('#FDDrelation_behavior').html(ContributionData[num]['relation_behavior']);
+    $('#FDDproduction').html(ContributionData[num]['production']);
+    $('#FDDmoney_laundering_risk_gradding').html(ContributionData[num]['money_laundering_risk_gradding']);
+    $('#FDDFDD_information').html(ContributionData[num]['FDD_information'] == true ? '有資料' : '無資料');
 }

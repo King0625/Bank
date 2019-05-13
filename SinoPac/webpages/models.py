@@ -29,7 +29,7 @@ class BankDepositData(models.Model):
     suspicious_account = models.BooleanField()
     
     
-class ContributionLevel(models.Model):
+class FDDData(models.Model):
     name = models.CharField(max_length=15)
     identity = models.CharField(max_length=15)
     new_batch_processing_day = models.DateTimeField()

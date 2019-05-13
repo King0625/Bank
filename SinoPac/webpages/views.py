@@ -3,7 +3,7 @@ import re
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.template import loader
-from webpages.models import BasicData,BankDepositData,ContributionLevel
+from webpages.models import BasicData,BankDepositData,FDDData
 from django.views.decorators.csrf import csrf_exempt
 from django.forms.models import model_to_dict
 
@@ -83,10 +83,10 @@ def contributionLevelData(request):
 	if request.method == 'GET':
 		data = _contributionLevelData_GET()
 		return HttpResponse(json.dumps(data,indent=4,ensure_ascii=False),content_type='application/json')
-	
+
 
 def _contributionLevelData_GET():
-	d = ContributionLevel.objects.all()
+	d = FDDData.objects.all()
 	data = []
 	for i in d:
 		userData = model_to_dict(i)
