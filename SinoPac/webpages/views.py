@@ -19,13 +19,13 @@ def index(request):
 @csrf_exempt
 def basicDataQuery(request) :
 	if request.method == 'GET':
-		data = _basicDataQuery_GET()
+		data = __basicDataQuery_GET()
 		return HttpResponse(json.dumps(data,indent=4,ensure_ascii=False),content_type="application/json")
 	else:
-		_basicDataQuery_POST(request.body)
+		__basicDataQuery_POST(request.body)
 		return HttpResponse('POST SUCCESSFUL')
 
-def _basicDataQuery_GET():
+def __basicDataQuery_GET():
 	d = BasicData.objects.all()
 	data = []
 	for i in d:
@@ -46,14 +46,14 @@ def _basicDataQuery_GET():
 		data.append(temp)
 	return data
 	
-def _basicDataQuery_POST(data):
+def __basicDataQuery_POST(data):
 	
 	data = json.loads(data,encoding=False)
 	userid = data['id']
 	del data['id']
 	d = BasicData.objects.get(id=userid)
 
-	if(len(data.keys()) > 0):
+	if(len(data.keys()) > 1):
 		# update sql
 		for key, value in data.items():
 			setattr(d,re.sub(r'person','',key),value)
@@ -139,6 +139,7 @@ def _unionCreditData_GET():
 
 
 def test(request):
+
 	return HttpResponse("application/json")
 
 
