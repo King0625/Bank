@@ -1,5 +1,7 @@
 from django.db import models
 
+# it is necessary to set the identity to be the link of each table
+
 class BasicData(models.Model):
     identity = models.CharField(max_length=15)
     name = models.CharField(max_length=11)
@@ -14,6 +16,20 @@ class BasicData(models.Model):
     company_address = models.CharField(max_length=50,default = '')
     description = models.TextField(max_length=500,default='')
     
+class BankDepositData(models.Model):
+    name = models.CharField(max_length=15)
+    identity = models.CharField(max_length=15)
+    account = models.CharField(max_length=20)
+    performance = models.IntegerField()
+    opnning_data = models.DateTimeField()
+    a_year_average_balance = models.IntegerField()
+    six_month_average_balance = models.IntegerField()
+    refund_record = models.IntegerField()
+    seizure_deposit = models.IntegerField()
+    suspicious_account = models.BooleanField()
+    
+    
+
 
     
 

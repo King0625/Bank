@@ -1,6 +1,7 @@
 $(document).ready(() => {
     basicDataQuery();
-
+    bankDataQuery();
+    
     $("#swipe1").click(function () {
         window.scrollTo(0, 80);
     })
