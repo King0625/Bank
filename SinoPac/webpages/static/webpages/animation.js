@@ -1,9 +1,10 @@
 $(document).ready(() => {
     basicDataQuery();
     bankDataQuery();
-    // contributionDataQuery();
     FDDbutionDataQuery();
     ContrubutionDataQuery();
+    unionDataQuery();
+    autoJudgeQuery();
     
     $("#swipe1").click(function () {
         window.scrollTo(0, 80);
@@ -102,7 +103,7 @@ $(document).ready(() => {
             "border-radius": "6px"
         });
         $(".text-container select").attr('disabled', !disabled);
-        $(".text-container select").css("background", "url('./img/downArrow.png') no-repeat scroll right center transparent");
+        $(".text-container select").css("background", "url('../../static/webpages/img/downArrow.png') no-repeat scroll right center transparent");
 
         var houseCommunication = document.getElementById("House-communication");
         var companyCommunication = document.getElementById("company-communication");
@@ -257,7 +258,7 @@ $(document).ready(() => {
             "border-radius": "6px"
         });
         $(".conclusion-info select").attr('disabled', !disabled);
-        $(".conclusion-info select").css("background", "url('./img/downArrow.png') no-repeat scroll right center transparent");
+        $(".conclusion-info select").css("background", "url('../../static/webpages/img/downArrow.png') no-repeat scroll right center transparent");
     })
     $("#conclusion-save").click(function () {
         $("#conclusion-edit").css("background-color", "#ffffff");

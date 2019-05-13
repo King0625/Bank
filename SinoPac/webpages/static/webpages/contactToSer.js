@@ -6,6 +6,13 @@ let BankData = []
 let FDDbutionData = []
 let Contribution = []
 let creditData = []
+let autoJudgeData = []
+
+const mapping = {
+    "Basic" : "壹、基本資料查詢",
+    "credit" : "參、聯合徵信中心查詢回覆資料",
+    "creditCard" : "參 (六) 信用卡資料查詢資料" 
+}
 
 var basicDataQuery = ()=>{
     $.ajax({
@@ -55,6 +62,8 @@ var edittoTheDom = (num) =>{
     editTheBankData(num);
     editFDDbutionData(num)
     editContributionData(num);
+    editUnionData(num)
+    editAutoJudgeQuery(num);
 }
 
 $('.editForm').on('change', function () {
@@ -142,18 +151,55 @@ var editContributionData = (num)=>{
 var unionDataQuery = ()=>{
     $.ajax({
         type: "GET",
-        url: "/",
-        data: "data",
-        dataType: "dataType",
+        url: "/sinopac/unionData/",
+        dataType: "json",
+        async : false,
         success: function (response) {
             creditData = response;
         }
     });
+    editUnionData(0);
 }
 
 var editUnionData = (num)=>{
-    $('#credit_name_and_identity').html(creditData[num]['name'] + '/' + creditData[num]['identity']);
+    $('#credit_name').html(creditData[num]['name'] + '/' + creditData[num]['identity']);
     $('#credit_EN_name').html(creditData[num]['EN_name']);
     $('#credit_birthday').html(creditData[num]['']);
     $('#credit_address').html(creditData[num]);
 }
+
+var autoJudgeQuery = ()=>{
+    $.ajax({
+        type: "GET",
+        url: "/sinopac/autoJudgeData/",
+        dataType: "json",
+        async : false,
+        success: function (response) {
+            autoJudgeData = response;
+        }
+    });
+    editAutoJudgeQuery(0);
+}
+
+var editAutoJudgeQuery = (num)=>{
+    // for(var i = 0; i < autoJudgeData.length; i++){
+    var judgeList = Object.keys(autoJudgeData[num]);
+    console.log(judgeList);
+    
+    var j = 0;
+    for(var j = 0 ; j < judgeList.length; j++){
+        var html = ''
+        for(var k = 0 ; k < autoJudgeData[num][judgeList[j]].length; k++){
+            html += `<li class="judgeItem"><h6> ${mapping[autoJudgeData[num][judgeList[j]][k]['field']]}</h6>
+            <p> ${autoJudgeData[num][judgeList[j]][k]['text']}</p>
+            <a href="#${autoJudgeData[num][judgeList[j]][k]['field'] + '_' + judgeList[j]}"><img src="../../static/webpages/img/arrowForward.png" alt=""></a>
+            </li>
+            `
+        }
+        console.log('#' + judgeList[j]);
+        $('#' + judgeList[j]).append(html)
+    }
+    // $('.judgeItem').remove();
+    
+    }
+// }

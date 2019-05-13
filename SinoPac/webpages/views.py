@@ -4,10 +4,18 @@ import webpages.models
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.template import loader
-from webpages.models import BasicData,BankDepositData,FDDData,UnionSearchData
+from webpages.models import BasicData,BankDepositData,FDDData,UnionSearchData, Contribution,CreditCardBasicData
 from django.views.decorators.csrf import csrf_exempt
 from django.forms.models import model_to_dict
 
+
+# __SQL_TABLE__ = [BankDepositData, FDDData, UnionSearchData, Contribution]
+__SQL_TABLE = {
+	"credit" : UnionSearchData,
+	"creditCard" : CreditCardBasicData
+}
+
+__JUDGE_LIST = ['name','birthday','address','person_phone','person_house_phone','company','job_title','career']
 
 def index(request):
 	d = BasicData.objects.all()
@@ -132,11 +140,97 @@ def _unionCreditData_GET():
 	d = webpages.models.UnionSearchData.objects.all()
 	data = []
 	for i in d:
-		data.append(model_to_dict(i))	
-
+		userData = model_to_dict(i)
+		print(userData)
+		dateTime = userData['birthday']
+		userData['birthday'] = '%s/%s/%s' %(dateTime.year, dateTime.month, dateTime.day)
+		data.append(userData)	
 	return data
 	pass
 
+@csrf_exempt
+def autoJudge(request):
+	if request.method == 'GET':
+		data = _autoJudge_GET()
+		return HttpResponse(json.dumps(data,indent=4,ensure_ascii=False), content_type = 'application/json')
+		pass
+	pass
+
+def _autoJudge_GET():
+	d = BasicData.objects.all()
+	temp = []
+	result = []
+	personAllData = {}
+	personResult = []
+	AllResult = []
+	for i in d:
+		basicdata = model_to_dict(i)
+		temp_result = {}
+		for j in __SQL_TABLE.keys():
+			userData = __SQL_TABLE[j].objects.get(identity=i.identity)
+			userJsonData = model_to_dict(userData)
+			personAllData[j] = userJsonData
+			# print(userJsonData)
+			# print(json.dumps(userJsonData,indent=4))
+		# print(personAllData)
+
+		
+		for j in __JUDGE_LIST:
+			add = False
+			temp_result[j] = []
+			for k in personAllData.keys():
+				try:
+					print('basicData : %s, personAllData[%s] : %s' %(basicdata[j],k,personAllData[k][j]))
+					if(basicdata[j] != personAllData[k][j]):
+						print('in')
+						temp_result[j].append({
+							"field" : k,
+							"text" : personAllData[k][j]
+						})
+						if(add == False):
+							temp_result[j].append({
+								"field" : "Basic",
+								"text" : basicdata[j]
+							})
+							add = True
+				except:
+					pass
+				
+		AllResult.append(temp_result)
+
+		for i in range(len(AllResult)):
+			for j in range(len(AllResult[i]['birthday'])):
+				try:
+					AllResult[i]['birthday'][j]['text'] = '%s/%s/%s' %(AllResult[i]['birthday'][j]['text'].year,AllResult[i]['birthday'][j]['text'].month,AllResult[i]['birthday'][j]['text'].day)
+				except:
+					pass
+
+		return AllResult
+
+
+	
+	pass
+
+
+@csrf_exempt
+def creditCardDataQuery(request):
+	data = _creditCarDataQuery_GET()
+	return HttpResponse(json.dumps(data,indent=4,ensure_ascii=False),content_type = 'application/json')
+	pass
+
+def _creditCarDataQuery_GET():
+	d = CreditCardBasicData.objects.all()
+	data = []
+	for i in d:
+		userData = model_to_dict(i)
+		date = userData['change_date']
+		userData['change_date'] = '%s/%s/%s' % (date.year, date.month, date.day)
+		dateTime = userData['birthday']
+		userData['birthday'] = '%s/%s/%s' %(dateTime.year, dateTime.month, dateTime.day)
+		data.append(userData)
+
+	return data
+	pass
 
 def test(request):
 
