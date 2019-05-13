@@ -1,4 +1,6 @@
 $(document).ready(() => {
+    basicDataQuery();
+
     $("#swipe1").click(function () {
         window.scrollTo(0, 80);
     })
@@ -51,7 +53,7 @@ $(document).ready(() => {
             "border-radius": "6px"
         })
         $("select").attr('disabled', !disabled);
-        $("select").css("background", "url('img/downArrow.png') no-repeat scroll right center transparent");
+        $("select").css("background", `url("{% static 'webpages/downArrow.png' %}) no-repeat scroll right center transparent`);
         // $("select").click(function () {
         //     $(this).css("background", "url('img/topArrow.png') no-repeat scroll right center transparent")
         // })
@@ -71,6 +73,26 @@ $(document).ready(() => {
         })
         $("select").attr('disabled', disabled);
         $("select").css("background", "none");
+
+        let s = new Set(EDITELEMTSid);
+        let iddata = Array.from(s);
+        let data = {}
+        for (var i = 0 ; i < iddata.length; i++){
+            data[iddata[i]] = $('#' + iddata[i]).val();
+        }
+        data['id'] = id;
+        console.log(data);
+        $.ajax({
+            type: "POST",
+            url: "/sinopac/basicData/",
+            data: JSON.stringify(data),
+            async:false,
+            dataType: "JSON",
+            success: function (response) {
+                console.log(response)
+            }
+        });
+        basicDataQuery();
     });
 
     $("#grid1 .check").click(function () {
@@ -123,6 +145,5 @@ $(document).ready(() => {
     })
     $("#grid13 .check").click(function () {
         $("#grid13-detail").toggleClass('not-shown');
-
     })
 });
