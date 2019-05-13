@@ -89,7 +89,7 @@ var contributionData = ()=>{
         type: "GET",
         url: "/sinopac/contributionData/",
         dataType: "json",
-        async = false,
+        async : false,
         success: function (response) {
             console.log(response);
             ContributionData = response;
@@ -99,5 +99,5 @@ var contributionData = ()=>{
 }
 
 var editContributionData = (num)=>{
-    
+
 }

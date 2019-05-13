@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'webpages/style.css' %}">
     <title>SinoPac</title>
 </head>
 
@@ -21,17 +22,17 @@
     </div>
     <div class="content-container">
         <div class="mainMenu">
-            <ul>
-                <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li>
-                <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li>
-                <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li>
-                <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li>
-                <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li>
-                <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li>
-                <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li>
-                <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li>
-                <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li>
-                <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li>
+            <ul id="To-DoCustomList">
+                <!-- <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li> -->
+                <!-- <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li> -->
+                <!-- <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li> -->
+                <!-- <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li> -->
+                <!-- <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li> -->
+                <!-- <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li> -->
+                <!-- <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li> -->
+                <!-- <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li> -->
+                <!-- <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li> -->
+                <!-- <li class="items"><a href="">朱炳丞 | 信用貸款<br>[消金TM網銀信貸專案]</a></li> -->
             </ul>
             <!-- <div class="wrapper"></div> -->
         </div>
@@ -1632,9 +1633,9 @@
         </div>
     </div>
 
-
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="animation.js"></script>
+    <script src="{% static 'webpages/animation.js' %}"></script>
+    <script src="{% static 'webpages/contactToSer.js' %}"></script>
 </body>
 
 </html>
