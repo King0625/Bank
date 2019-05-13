@@ -3,6 +3,7 @@ let EDITELEMTSid = []
 let id;
 let BasicData = []
 let BankData = []
+let ContributionData = []
 
 var basicDataQuery = ()=>{
     $.ajax({
@@ -11,7 +12,7 @@ var basicDataQuery = ()=>{
         dataType: "json",
         async : false,
         success: function (response) {
-            console.log(response);
+            // console.log(response);
             id = response[0]['id'];
             BasicData = response;
             // editTheForm(response[0]);
@@ -65,8 +66,6 @@ var bankDataQuery = ()=>{
         dataType: "json",
         async:false,
         success: function (response) {
-            console.log('response');
-            console.log(response);
             BankData = response;
         }
     });
@@ -74,8 +73,6 @@ var bankDataQuery = ()=>{
 }
 
 var editTheBankData = (num)=>{
-    console.log('editTheBankData');
-    console.log(BankData);
     $('#customName').html(BankData[num]['name']);
     $('#customAccount').html(BankData[num]['account']);
     $('#customPerformance').html(BankData[num]['performance']);
@@ -85,4 +82,22 @@ var editTheBankData = (num)=>{
     $('#customRefund_record').html(BankData[num]['refund_record']);
     $('#customSeizure_deposit').html(BankData[num]['seizure_deposit']);
     $('#customSuspicious_account').html(BankData[num]['suspicious_account'] ? '正常戶' : '可疑戶');
+}
+
+var contributionData = ()=>{
+    $.ajax({
+        type: "GET",
+        url: "/sinopac/contributionData/",
+        dataType: "json",
+        async = false,
+        success: function (response) {
+            console.log(response);
+            ContributionData = response;
+        }
+    });
+
+}
+
+var editContributionData = (num)=>{
+    
 }

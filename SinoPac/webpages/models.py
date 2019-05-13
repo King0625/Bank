@@ -29,8 +29,36 @@ class BankDepositData(models.Model):
     suspicious_account = models.BooleanField()
     
     
+class ContributionLevel(models.Model):
+    name = models.CharField(max_length=15)
+    identity = models.CharField(max_length=15)
+    new_batch_processing_day = models.DateTimeField()
 
+    VERY_LOW = 'VL'
+    LOW = 'L',
+    MIDDLE = 'M'
+    HIGH = 'H'
+    VERY_HIGH = 'VH'
 
+    LAUNDERING_RISK_GRADDING = (
+        ('VL', '非常高風險'),
+        ('L','低風險'),
+        ('M','中風險'),
+        ('H','高風險'),
+        ('VH','非常高風險'),
+    )
+    money_laundering_risk_degree = models.CharField(
+        max_length=5,
+        choices=LAUNDERING_RISK_GRADDING,
+        default = 'VL'
+    )
+    priority_low = models.CharField(max_length=10)
+    background = models.CharField(max_length=50)
+    geographical_factor = models.CharField(max_length=50)
+    relation_behavior = models.CharField(max_length=50)
+    production = models.CharField(max_length=20)
+    money_laundering_risk_gradding = models.IntegerField()
+    FDD_information = models.BooleanField()
     
 
 # Create your models here.
