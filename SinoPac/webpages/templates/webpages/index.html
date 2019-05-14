@@ -675,22 +675,22 @@
                         <div class="close"></div>
                         <img src="{% static 'webpages/img/baseline-check_circle-24px.png' %}" alt="">
                         <span>姓名/公司名稱</span>
-                        <ul>
-                            <li>
+                        <ul id="name">
+                            <!-- <li>
                                 <h6>貳、一、(一)活期性存款往來資料查詢</h6>
                                 <p>朱炳丞</p>
                                 <a href=""><img src="{% static 'webpages/img/arrowForward.png' %}" alt=""></a>
-                            </li>
-                            <li>
+                            </li> -->
+                            <!-- <li>
                                 <h6>貳、一、(一)活期性存款往來資料查詢</h6>
                                 <p>朱炳丞</p>
                                 <a href=""><img src="{% static 'webpages/img/arrowForward.png' %}" alt=""></a>
-                            </li>
-                            <li>
+                            </li> -->
+                            <!-- <li>
                                 <h6>貳、一、(一)活期性存款往來資料查詢</h6>
                                 <p>朱炳丞</p>
                                 <a href=""><img src="{% static 'webpages/img/arrowForward.png' %}" alt=""></a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
 
@@ -747,7 +747,7 @@
                         <div class="close"></div>
                         <img src="{% static 'webpages/img/baseline-check_circle-24px.png' %}" alt="">
                         <span>出生日期</span>
-                        <ul>
+                        <ul id="birthday">
                             <li></li>
                         </ul>
                     </div>
@@ -768,7 +768,7 @@
                         <div class="close"></div>
                         <img src="{% static 'webpages/img/baseline-check_circle-24px.png' %}" alt="">
                         <span>個人電話</span>
-                        <ul>
+                        <ul id="person_phone">
                             <li></li>
                         </ul>
                     </div>
@@ -786,7 +786,7 @@
                         <div class="close"></div>
                         <img src="{% static 'webpages/img/baseline-check_circle-24px.png' %}" alt="">
                         <span>住家地址</span>
-                        <ul>
+                        <ul id="address">
                             <li></li>
                         </ul>
                     </div>
@@ -823,7 +823,7 @@
                         <div class="close"></div>
                         <img src="{% static 'webpages/img/baseline-check_circle-24px.png' %}" alt="">
                         <span>年資</span>
-                        <ul>
+                        <ul id="career">
                             <li></li>
                         </ul>
                     </div>
@@ -860,7 +860,7 @@
                         <div class="close"></div>
                         <img src="{% static 'webpages/img/baseline-check_circle-24px.png' %}" alt="">
                         <span>現職公司</span>
-                        <ul>
+                        <ul id="company">
                             <li></li>
                         </ul>
                     </div>
@@ -878,7 +878,7 @@
                         <div class="close"></div>
                         <img src="{% static 'webpages/img/baseline-check_circle-24px.png' %}" alt="">
                         <span>職業說明</span>
-                        <ul>
+                        <ul id="job_title">
                             <li></li>
                         </ul>
                     </div>
@@ -1063,31 +1063,31 @@
                         <div class="inquire-table">
                             <div class="table-item">
                                 <h4>姓名/公司名稱</h4>
-                                <p>朱炳丞</p>
+                                <p id="con-name">朱炳丞</p>
                             </div>
                             <div class="table-item">
                                 <h4>資料日期</h4>
-                                <p>201903</p>
+                                <p id="con-date">201903</p>
                             </div>
                             <div class="table-item">
                                 <h4>近三個月資產規模</h4>
-                                <p>20074</p>
+                                <p id="con-asset">20074</p>
                             </div>
                             <div class="table-item">
                                 <h4>當年度總AP</h4>
-                                <p>10928</p>
+                                <p id="con-ap">10928</p>
                             </div>
                             <div class="table-item">
                                 <h4>當年度非放款AP</h4>
-                                <p>10928</p>
+                                <p id="con-not-ap">10928</p>
                             </div>
                             <div class="table-item">
                                 <h4>前一年度總AP</h4>
-                                <p>26013</p>
+                                <p id="con-last-ap">26013</p>
                             </div>
                             <div class="table-item">
                                 <h4>前一年非放款AP</h4>
-                                <p>26013</p>
+                                <p id="con-last-not-ap">26013</p>
                             </div>
                         </div>
                         <h4>(五)企金主從債務查詢 : (無)</h4>
@@ -1205,19 +1205,19 @@
                         <div class="inquire-table">
                             <div class="table-item">
                                 <h4>姓名/身分證號</h4>
-                                <p>朱炳丞/R123456789</p>
+                                <p id="credit_name">朱炳丞/R123456789</p>
                             </div>
                             <div class="table-item">
                                 <h4>英文姓名</h4>
-                                <p>Bing Cheng Zhu</p>
+                                <p id="credit_EN_name">Bing Cheng Zhu</p>
                             </div>
                             <div class="table-item">
                                 <h4>出生日期</h4>
-                                <p>19960313</p>
+                                <p id="credit_birthday">19960313</p>
                             </div>
                             <div class="table-item">
                                 <h4>戶籍地址</h4>
-                                <p>台南市大學路1號補字補字補字補字補字補字</p>
+                                <p id=credit_address>台南市大學路1號補字補字補字補字補字補字</p>
                             </div>
                         </div>
 

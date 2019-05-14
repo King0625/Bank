@@ -5,6 +5,13 @@ $(document).ready(() => {
 
     $(".content").slideDown("slow");
 
+    basicDataQuery();
+    bankDataQuery();
+    FDDbutionDataQuery();
+    ContrubutionDataQuery();
+    unionDataQuery();
+    autoJudgeQuery();
+    
     $("#swipe1").click(function () {
         //window.scrollTo(0, 80);
         $(this).css("background", "#5d5d5d");
