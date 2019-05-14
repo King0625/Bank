@@ -4,11 +4,7 @@ import webpages.models
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.template import loader
-<<<<<<< HEAD
-from webpages.models import BasicData,BankDepositData,FDDData
-=======
 from webpages.models import BasicData,BankDepositData,FDDData,UnionSearchData, Contribution,CreditCardBasicData
->>>>>>> 384b542a2c0e9047e17ee914641a781a0171ae66
 from django.views.decorators.csrf import csrf_exempt
 from django.forms.models import model_to_dict
 

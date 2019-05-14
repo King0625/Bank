@@ -172,6 +172,7 @@ input[type="button"]:hover{
     border-radius: 10px;
     background: #F3F3F3;
     resize: none;
+    outline: none;
     
 }
 
@@ -189,7 +190,7 @@ input[type="button"]:hover{
     border-radius: 10px;
     background: #F3F3F3;
     resize: none;
-    
+    outline: none;
 }
 .draggable .note{
     display: inline-block;
