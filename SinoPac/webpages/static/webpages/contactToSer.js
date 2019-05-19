@@ -55,6 +55,9 @@ var editTheForm = (num)=>{
     $('#personcompany_phone').val(data['company_phone']);
     $('#personbirthday').val(data['birthday']);
     $('#persondescription').val(data['description']);
+    $('.name').html(data['name']);
+    $('.identity').html(data['person_id']);
+    $('.name-identity').html(data['name'] + '/' + data['person_id']);
 }
 
 var edittoTheDom = (num) =>{
@@ -95,6 +98,7 @@ var editTheBankData = (num)=>{
     $('#customRefund_record').html(BankData[num]['refund_record']);
     $('#customSeizure_deposit').html(BankData[num]['seizure_deposit']);
     $('#customSuspicious_account').html(BankData[num]['suspicious_account'] ? '正常戶' : '可疑戶');
+    
 }
 
 var FDDbutionDataQuery = ()=>{
@@ -185,7 +189,7 @@ var editAutoJudgeQuery = (num)=>{
     // for(var i = 0; i < autoJudgeData.length; i++){
     var judgeList = Object.keys(autoJudgeData[num]);
     console.log(judgeList);
-    
+    $('.judgeItem').remove();
     var j = 0;
     for(var j = 0 ; j < judgeList.length; j++){
         var html = ''

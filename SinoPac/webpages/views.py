@@ -205,7 +205,7 @@ def _autoJudge_GET():
 				except:
 					pass
 
-		return AllResult
+	return AllResult
 
 
 	
