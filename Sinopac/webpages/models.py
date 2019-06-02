@@ -46,7 +46,7 @@ class BankDepositData(models.Model):
     flexible_hand_money = models.BooleanField(null=True)
 
     # (四)客戶貢獻程度分析查詢 :
-    date_of_information = models.DateField(null=True)
+    date_of_information = models.DateField()
     three_months_assets = models.IntegerField(null=True)
     AP = models.IntegerField(null=True)
     not_ap = models.IntegerField(null=True)
@@ -118,7 +118,7 @@ class BankDepositData(models.Model):
     money_laundering_risk_degree = models.CharField(
         max_length=5,
         choices=LAUNDERING_RISK_GRADDING,
-        default = 'VL'
+        default = 'VH'
     )
 
     priority_low = models.CharField(max_length=10,null=True) # 優先法
