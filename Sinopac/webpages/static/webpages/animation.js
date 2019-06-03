@@ -5,12 +5,13 @@ $(document).ready(() => {
 
     $(".content").slideDown("slow");
 
-    basicDataQuery();
-    bankDataQuery();
-    FDDbutionDataQuery();
-    ContrubutionDataQuery();
-    unionDataQuery();
-    autoJudgeQuery();
+    // basicDataQuery();
+    getToDoList();
+    // bankDataQuery();
+    // FDDbutionDataQuery();
+    // ContrubutionDataQuery();
+    // unionDataQuery();
+    // autoJudgeQuery();
     
     $("#swipe1").click(function () {
         //window.scrollTo(0, 80);

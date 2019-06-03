@@ -18,7 +18,7 @@ class BasicData(models.Model):
     description = models.TextField(max_length=500) # 說明
 
     def __str__(self):
-        return "%s" % self.name
+        return "%s %s %s" % (self.id, self.identity, self.name)
     
 class BankDepositData(models.Model):
     """
@@ -142,90 +142,3 @@ class BankDepositData(models.Model):
     def __str__(self):
         return "%s BankDepositData" %(self.name)
     
-    
-# class FDDData(models.Model):
-#     name = models.CharField(max_length=15)
-#     identity = models.CharField(max_length=15)
-#     new_batch_processing_day = models.DateTimeField() #最新跑批日
-
-#     VERY_LOW = 'VL'
-#     LOW = 'L',
-#     MIDDLE = 'M'
-#     HIGH = 'H'
-#     VERY_HIGH = 'VH'
-
-
-#     # 洗錢風險分級
-#     LAUNDERING_RISK_GRADDING = (
-#         ('VL', '非常高風險'),
-#         ('L','低風險'),
-#         ('M','中風險'),
-#         ('H','高風險'),
-#         ('VH','非常高風險'),
-#     )  
-#     money_laundering_risk_degree = models.CharField(
-#         max_length=5,
-#         choices=LAUNDERING_RISK_GRADDING,
-#         default = 'VL'
-#     )
-
-#     priority_low = models.CharField(max_length=10) # 優先法
-#     background = models.CharField(max_length=50) # 客戶背景
-#     geographical_factor = models.CharField(max_length=50) # 地域因素
-#     relation_behavior = models.CharField(max_length=50) # 業務關係與交易行為
-#     production = models.CharField(max_length=20) # 商品
-#     money_laundering_risk_gradding = models.IntegerField() # 洗錢風險總得分
-#     FDD_information = models.BooleanField() # 防制洗錢FDD系統
-
-#     def __str__(self):
-#         return "FDD Data"
-    
-
-# class Contribution(models.Model):
-#     name = models.CharField(max_length=15)
-#     identity = models.CharField(max_length=15,default='')
-#     date_of_information = models.DateField()
-#     three_months_assets = models.IntegerField()
-#     AP = models.IntegerField()
-#     not_ap = models.IntegerField()
-#     last_ap = models.IntegerField()
-#     last_not_ap =  models.IntegerField()
-    
-#     def __str__(self):
-#         return "Contribution Data"
-
-# class UnionSearchData(models.Model):
-#     name = models.CharField(max_length=15)
-#     identity = models.CharField(max_length=15)
-#     EN_name = models.CharField(max_length=15)
-#     address = models.CharField(max_length=50)
-#     birthday = models.DateField()
-
-#     def __str__(self):
-#         return "Union Search Data"
-
-# class CreditCardBasicData(models.Model):
-#     change_date = models.DateField()
-#     identity = models.CharField(max_length=15,default='')
-#     institute = models.CharField(max_length=15)
-#     name = models.CharField(max_length = 15)
-#     birthday = models.DateField()
-#     census = models.CharField(max_length=30)
-#     address = models.CharField(max_length=30)
-#     person_phone = models.CharField(max_length=15)
-#     person_house_phone = models.CharField(max_length=15)
-#     company = models.CharField(max_length = 20)
-#     job_title = models.CharField(max_length = 50)
-#     year_salary = models.IntegerField()
-#     career = models.IntegerField()
-#     EDU_DEGREE = (
-#         ('elementary', '小學'),
-#         ('junior' , '國中'),
-#         ('senior' , '高中'),
-#         ('undergraduated' , '大學'),
-#         ('master' , '碩士'),
-#         ('phd' , '博士'),
-#     )
-#     edu_degree = models.CharField(max_length=20,choices=EDU_DEGREE,default='undergraduated')
-
-# Create your models here.

@@ -15,40 +15,33 @@ __JUDGE_LIST = ['name','birthday','address','person_phone','person_house_phone',
 
 def index(request):
 	d = BasicData.objects.all()
-	print(d)
 	template = loader.get_template('webpages/index.html')
 	return HttpResponse(template.render({},request))
 	# return render(request, 'webpages/webpages.html', {}) 
 
 @csrf_exempt
 def basicDataQuery(request) :
+	print(request.GET)
 	if request.method == 'GET':
-		data = __basicDataQuery_GET()
+		data = __basicDataQuery_GET(request.GET["id"])
 		return HttpResponse(json.dumps(data,indent=4,ensure_ascii=False),content_type="application/json")
 	else:
 		__basicDataQuery_POST(request.body)
 		return HttpResponse('POST SUCCESSFUL')
 
-def __basicDataQuery_GET():
-	d = BasicData.objects.all()
-	data = []
-	for i in d:
-		temp = {}
-		temp['id'] = i.id
-		temp['person_id'] = i.identity
-		temp['name'] = i.name
-		temp['address'] = i.address
-		temp['person_house_phone'] = i.person_house_phone
-		temp['person_phone'] = i.person_phone
-		temp['company'] = i.company
-		temp['job_title'] = i.job_title
-		temp['career'] = i.career
-		temp['company_phone'] = i.company_phone
-		temp['birthday'] = i.birthday
-		temp['copAddress'] = i.company_address
-		temp['description'] = i.description
-		data.append(temp)
-	return data
+def __basicDataQuery_GET(GETid):
+	print(GETid)
+	try:
+		"""
+		QUERY FAILED GETid isn't exist
+		"""
+		d = BasicData.objects.get(id=GETid)
+	except:
+		return {}
+	
+	# print(json.dumps(model_to_dict(d),indent=4,ensure_ascii=False))
+	
+	return model_to_dict(d)
 	
 def __basicDataQuery_POST(data):
 	
@@ -65,22 +58,29 @@ def __basicDataQuery_POST(data):
 
 	pass
 
-@csrf_exempt
-def bankDepositData(request):
-	if request.method == 'GET':
-		data = _bankDepositData_GET()
-		return HttpResponse(json.dumps(data,indent=4, ensure_ascii=False),content_type="application/json")
-		
 
-def _bankDepositData_GET():
+@csrf_exempt
+def ToDoListQuery(request):
+	if request.method == 'GET':
+		data = _ToDoListQuery()
+		# print(json.dumps(data,indent=4,ensure_ascii=False))
+		return HttpResponse(json.dumps(data,indent=4,ensure_ascii=False),content_type="application/json")
+		pass
+	elif request.method == 'POST':
+		pass
+
+def _ToDoListQuery():
+	d = BasicData.objects.all()
 	data = []
-	d = BankDepositData.objects.all()
 	for i in d:
-		userData = model_to_dict(i)
-		dateTime = userData['opnning_data']
-		userData['opnning_data'] = '%s/%s/%s' %(dateTime.year, dateTime.month, dateTime.day)
-		data.append(userData)
+		temp = {}
+		temp['name'] = i.name
+		temp['id'] = i.id
+		temp['identity'] = i.identity
+		data.append(temp)
+
 	return data
+	
 	
 
 # @csrf_exempt
