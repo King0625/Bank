@@ -142,3 +142,36 @@ class BankDepositData(models.Model):
     def __str__(self):
         return "%s BankDepositData" %(self.name)
     
+class UnionCreditCheckSystemInfo(models.Model):
+
+    # Title information
+    identity = models.CharField(max_length=15) #身分證字號
+    name = models.CharField(max_length=11)
+    eng_name = models.CharField(max_length=30)
+    birthday = models.DateField()
+    address = models.CharField(max_length=30)
+
+    other_info = models.CharField(max_length=15,default='N') # 其餘資訊
+    repay_info = models.CharField(max_length=15,default='N') # 新增額度及每筆撥款清償資訊
+    identity_card_reissue_record = models.IntegerField(default=0) # 身分證申請補發記錄
+    no_household_registration_in_TW = models.BooleanField(default=False) # 在台無戶籍人士身分註記
+    refund_error_record = models.IntegerField(default=0) # 退票異常紀錄
+    recent_credit_problem = models.DateField(null=True) # 最近授信異常日期 
+    bulletined_case_record = models.IntegerField(default=0) # 通報案件紀錄
+    cancel_debt_record = models.IntegerField(default=0) # 消債其他註記
+    reject_contact_record = models.BooleanField(default=False) # 拒絕往來紀錄
+    credits_problem_record = models.IntegerField(default=0) # 授信異常紀錄
+    forced_stopping_credit_card_record = models.IntegerField(default=0) # 強制停卡紀錄
+
+    ############################################################################################
+
+    # (一)通報案件紀錄資訊
+
+    
+
+
+
+
+    
+
+
