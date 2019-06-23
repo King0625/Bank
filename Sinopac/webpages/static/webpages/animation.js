@@ -107,6 +107,17 @@ $(document).ready(() => {
         $("#contentList-info1, #contentList-info2, #contentList-info3, #contentList-info4, #contentList-info5").addClass('not-shown');
     })
 
+    var externalWebsites = document.getElementById('all-external-Websites');
+    externalWebsites.style.left = document.getElementById('externalPage').offsetLeft + "px";
+
+    $("#externalPage").click(function () {
+        $(this).toggleClass('list-clicked');
+        // externalWebsites.style.left = document.getElementById('externalPage').offsetLeft;
+        // externalWebsites.style.left = 990;
+
+        $("#all-external-Websites").toggleClass('not-shown');
+
+    })
 
     var readonly = true;
     var disabled = true;
