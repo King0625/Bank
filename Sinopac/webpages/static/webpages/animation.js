@@ -12,45 +12,40 @@ $(document).ready(() => {
     // ContrubutionDataQuery();
     // unionDataQuery();
     // autoJudgeQuery();
-    
     $("#swipe1").click(function () {
-        //window.scrollTo(0, 80);
+        jQuery("html,body").animate({ scrollTop: document.getElementById('content1').offsetTop - 15 }, 500);
+        // window.scrollTo(0, document.getElementById('content1').offsetTop - 15);
         $(this).css("background", "#5d5d5d");
         $("#swipe2, #swipe3, #swipe4").css("background", "#C3C3C3");
-        jQuery("html,body").animate({ scrollTop: 0 }, 500);
-
     })
     $("#swipe2").click(function () {
-        //window.scrollTo(0, 850);
+        jQuery("html,body").animate({ scrollTop: document.getElementById('content2').offsetTop - 15 }, 500);
+        // window.scrollTo(0, document.getElementById('content2').offsetTop - 15);
         $(this).css("background", "#5d5d5d");
         $("#swipe1, #swipe3, #swipe4").css("background", "#C3C3C3");
-        jQuery("html,body").animate({ scrollTop: 850 }, 500);
-
     })
     $("#swipe3").click(function () {
-        //window.scrollTo(0, 2125);
+        jQuery("html,body").animate({ scrollTop: document.getElementById('content3').offsetTop - 15 }, 500);
+        // window.scrollTo(0, document.getElementById('content3').offsetTop - 15);
         $(this).css("background", "#5d5d5d");
         $("#swipe1, #swipe2, #swipe4").css("background", "#C3C3C3");
-        jQuery("html,body").animate({ scrollTop: 2125 }, 500);
-
     })
     $("#swipe4").click(function () {
-        //window.scrollTo(0, 5000);
+        jQuery("html,body").animate({ scrollTop: document.getElementById('content4').offsetTop - 15 }, 500);
+        // window.scrollTo(0, document.getElementById('content4').offsetTop - 15);
         $(this).css("background", "#5d5d5d");
         $("#swipe1, #swipe2, #swipe3").css("background", "#C3C3C3");
-        jQuery("html,body").animate({ scrollTop: 5000 }, 500);
-
     })
 
     $(window).scroll(function () {
         var scrollVal = $(this).scrollTop();
-        if (scrollVal >= 4999) {
+        if (scrollVal >= document.getElementById('content4').offsetTop - 16) {
             $("#swipe4").css("background", "#5d5d5d");
             $("#swipe1, #swipe2, #swipe3").css("background", "#C3C3C3");
-        } else if (scrollVal >= 2124) {
+        } else if (scrollVal >= document.getElementById('content3').offsetTop - 16) {
             $("#swipe3").css("background", "#5d5d5d");
             $("#swipe1, #swipe2, #swipe4").css("background", "#C3C3C3");
-        } else if (scrollVal >= 849) {
+        } else if (scrollVal >= document.getElementById('content2').offsetTop - 16) {
             $("#swipe2").css("background", "#5d5d5d");
             $("#swipe1, #swipe3, #swipe4").css("background", "#C3C3C3");
         } else {
@@ -58,7 +53,24 @@ $(document).ready(() => {
             $("#swipe2, #swipe3, #swipe4").css("background", "#C3C3C3");
         }
     });
+    var coll = document.getElementsByClassName("collapse-btn");
+    var i;
 
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+            var content = this.nextElementSibling;
+            var collapse_section = content.nextElementSibling;
+            if (content.style.display === "none") {
+                content.style.display = "flex";
+                collapse_section.style.display = "none";
+                this.setAttribute('src', '../../static/webpages/img/downArrow.png');
+            } else {
+                content.style.display = "none";
+                collapse_section.style.display = "block";
+                this.setAttribute('src', '../../static/webpages/img/topArrow.png');
+            }
+        });
+    }
     $("#contentList1").click(function () {
         $(this).toggleClass('list-clicked');
         $("#contentList2, #contentList3, #contentList4, #contentList5, #contentList6").removeClass('list-clicked');
