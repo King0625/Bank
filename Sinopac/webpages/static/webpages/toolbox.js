@@ -60,7 +60,7 @@ $(document).ready(function () {
     })
     $("#alert-save").click(function () {
         $("textarea").attr('readonly', true);
-        $(".note").fadeOut();
+
     })
 
     $(".alert .close").click(function () {

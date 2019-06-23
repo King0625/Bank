@@ -213,17 +213,31 @@ ul {
     border-right: 0.5px solid #b0b0b0;
     padding: 0 15px 15px 15px;
     cursor: pointer;
-    font-size: 1.2em
+    font-size: 1.1em;
 }
-
 .contentList > ul li:nth-child(6){
     border-right: none;
 }
+#externalPage{
+    border-right: none;
+    font-weight: bold;
+    margin-left: 5em;
+}
+#externalPage span {
+    height: inherit;
+}
+#externalPage span img{
+    vertical-align: middle;
+    padding-right: 0.5em;
+    width: inherit;
+    height: inherit;
+}
+
 
 .contentList > ul li:last-child{
     border-right: none;
     float: right;
-    margin-right: 50px;
+    margin-right: 25px;
 }
 
 .contentList-info{
@@ -280,6 +294,22 @@ ul {
     font-size: 25px;
     font-weight: 700;
     color: #1794F5;
+}
+
+#all-external-Websites {
+    /* left: 950px; */
+    width: auto;
+    height: auto;
+}
+
+#all-external-Websites ul li{
+    padding: 0.5em;
+}
+
+#all-external-Websites ul li a{
+    color: #1794F5;
+    text-decoration: underline;
+    font-weight: bold;
 }
 /* dataContent */
 .dataContent{

@@ -50,10 +50,10 @@
 				<span> 朱炳丞 | 信用貸款</span><br>[消金TM網銀信貸專案]
 			</div>
 			<ul>
-				<li><a href=""><img src="{% static 'webpages/img/data.png' %}" width="24"> 個案資料</a></li>
-				<li><a href=""><img src="{% static 'webpages/img/report.png' %}" width="24"> 報告總覽</a></li>
-				<li><a href=""><img src="{% static 'webpages/img/comment.png' %}" width="24"> 信貸徵審意見</a></li>
-				<li><a href=""><img src="{% static 'webpages/img/review.png' %}" width="24"> 防杜代辦檢核表</a></li>
+				<li><a href=""><img src="{% static 'webpages/img/data.png' %}" width="24"> 報告總覽</a></li>
+				<li><a href=""><img src="{% static 'webpages/img/report.png' %}" width="24"> 信貸徵審意見</a></li>
+				<li><a href=""><img src="{% static 'webpages/img/comment.png' %}" width="24"> 防杜代辦檢核表</a></li>
+				<li><a href=""><img src="{% static 'webpages/img/review.png' %}" width="24"> 個案資料-公告</a></li>
 			</ul>
 			<a id="todo" href="">回到代辦事項</a>
 		</div>
@@ -68,6 +68,8 @@
 					<li id="contentList4">票查紀錄</li>
 					<li id="contentList5">主保債務查詢</li>
 					<li id="contentList6">同一經濟關係人</li>
+					<li id="externalPage"><span><img src="{% static 'webpages/img/round-public.png' %}"></span>外部參考網頁
+					</li>
 					<li><img src="{% static 'webpages/img/print.png' %}" width="24"></li>
 				</ul>
 			</div>
@@ -657,6 +659,23 @@
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class="contentList-info not-shown" id="all-external-Websites">
+				<ul>
+					<li><a href="https://www.iyp.com.tw/" target="_blank">中華黃頁</a></li>
+					<li><a href="https://findbiz.nat.gov.tw/fts/query/QueryBar/queryInit.do"
+							target="_blank">經濟部商業司網站</a></li>
+					<li><a href="https://www.etax.nat.gov.tw/cbes/web/CBES113W1" target="_blank">財政部稅務入口網頁</a></li>
+					<li><a href="https://ipost.post.gov.tw/pst/home.html" target="_blank">網路郵局</a></li>
+					<li><a href="https://icinfo.immigration.gov.tw/NIL_WEB/NFCData.aspx" target="_blank">晶片居留證資料查詢系統</a>
+					</li>
+					<li><a href="https://ma.mohw.gov.tw/masearch/SearchDOC-101-1.aspx" target="_blank">衛生福利部醫療資源管理</a>
+					</li>
+					<li><a href="https://service.moj.gov.tw/lawer/baseSearch.aspx" target="_blank">律師查詢系統</a></li>
+					<li><a href="https://www.roccpa.org.tw/member_search/?AspxAutoDetectCookieSupport=1"
+							target="_blank">會計師公會聯合網</a>
+					</li>
+				</ul>
 			</div>
 
 			<div class="dataContent">
@@ -1736,7 +1755,8 @@
 	</div>
 	<div class="alert">
 		<div class="note">
-			<input type="text" id="hour"> 時:<input type="text" id="minute">分後提醒我
+			<input type="text" id="hour"> 時:<input type="text" id="minute">分<span style="font-weight: bold;">
+				後</span>提醒我
 			<button class="close"><img src="{% static 'webpages/img/baseline-clear-24px.png' %}"></button>
 			<div style="border-top:solid 0.5px #aaa;margin-top: 10px;padding-top: 10px;">
 				<textarea id="alert-summary"></textarea>
