@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="todo.css">
+    <title>SinoPac</title>
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="img/sinopac_logo.png" width="120">
+            <span class="logo-word"><span style="color: #e71a0f">e</span>Loan</span>
+        </div>
+
+    </div>
+    <div class="searchbar ">
+        <div class="search">
+
+            <h2><img src="./img/baseline-view_list-24px.svg">聯徵作業代辦事項
+                <h5>
+                    <form>
+                        <input type="checkbox" id="c1"><label for="c1"><span></span></label>到件日期
+
+                        <input type="checkbox" id="c2"><label for="c2"><span></span></label>聯絡單件號
+                        <input type="checkbox" id="c3"><label for="c3"><span></span></label>申請者/部門
+                        <input type="checkbox" id="c4"><label for="c4"><span></span></label>申請者/ID
+                        <input type="search" placeholder="Search">
+                        <button type="submit"
+                            style="border:0;background: none;position: relative;left:-35px;top:7px"><img
+                                src="img/baseline-search-24px.svg" style="width:24px"></button>
+                    </form>
+                </h5>
+            </h2>
+        </div>
+        <div class="filter">
+            <form>
+                <h5>排列依據:
+                    <input type="radio" name="rank" id="r1" checked>
+                    <label for="r1">到件日期<span></span></label>
+                    <input type="radio" name="rank" id="r2">
+                    <label for="r2">急件<span></span></label>
+                    <input type="radio" name="rank" id="r3">
+                    <label for="r3">案件性質<span></span></label>
+                    <input type="radio" name="rank" id="r4">
+                    <label for="r4">聯徵註記<span></span></label>
+                    <input type="radio" name="rank" id="r5">
+                    <label for="r5">案件註記<span></span></label>
+                    <input type="radio" name="rank" id="r6">
+                    <label for="r6">完成度<span></span></label> </h5>
+            </form>
+        </div>
+
+
+
+    </div>
+    <div class="container">
+        <div class="content">
+            <h5 style="line-height: 60px;"><input type="checkbox" id="all"><label for="all"><span></span></label>
+                &nbsp全選&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <input type="button" name="delete" value="刪除">
+                <input type="button" name="delete" value="列印徵信報告">
+                <input type="button" name="delete" value="匯出徵信報告"></h5>
+
+        </div>
+        <div class=" content">
+            <table>
+                <tr class="title" style="display:table-row">
+
+                    <td style="width:50px;">勾選</td>
+                    <td style="width:80px;">完成度</td>
+                    <td style="width:80px;">急件</td>
+                    <td>聯絡單件號</td>
+                    <td>申請者/部門</td>
+                    <td>申請者/ID</td>
+                    <td>貸款種類</td>
+                    <td>案件性質</td>
+                    <td style="width:80px;">本行註記</td>
+                    <td style="width:80px;">聯徵註記</td>
+                    <td style="width:80px;">案件註記</td>
+                    <td style="width:100px;">特殊照會</td>
+                    <td style="width:100px;">審查資訊</td>
+                </tr>
+                <tr class="data">
+                    <td><input type="checkbox" id="d1"><label for="d1"><span></span></label></td>
+                    <td>80%</td>
+                    <td><img src="./img/fire.svg"></td>
+                    <td><a href="">NYKD-545545</a></td>
+                    <td>2019/04 14:04</td>
+                    <td>朱成成/消金業務部</td>
+                    <td>朱*丞/A44458588</td>
+                    <td>新件</td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td>特殊時段</td>
+                    <td>遠端</td>
+                </tr>
+                <tr class="data">
+                    <td><input type="checkbox" id="d2"><label for="d2"><span></span></label></td>
+                    <td>80%</td>
+                    <td><img src="./img/fire.svg"></td>
+                    <td><a href="">NYKD-545545</a></td>
+                    <td>2019/04 14:04</td>
+                    <td>朱成成/消金業務部</td>
+                    <td>朱*丞/A44458588</td>
+                    <td>新件(客群分類件)</td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td>特殊時段</td>
+                    <td>遠端</td>
+                </tr>
+                <tr class="data">
+                    <td><input type="checkbox" id="d3"><label for="d3"><span></span></label></td>
+                    <td>80%</td>
+                    <td><img src="./img/fire.svg"></td>
+                    <td><a href="">NYKD-545545</a></td>
+                    <td>2019/04 14:04</td>
+                    <td>朱成成/消金業務部</td>
+                    <td>朱*丞/A44458588</td>
+                    <td>新件</td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td>特殊時段</td>
+                    <td>遠端</td>
+                </tr>
+                <tr class="data">
+                    <td><input type="checkbox" id="d4"><label for="d4"><span></span></label></td>
+                    <td>80%</td>
+                    <td><img src="./img/fire.svg"></td>
+                    <td><a href="">NYKD-545545</a></td>
+                    <td>2019/04 14:04</td>
+                    <td>朱成成/消金業務部</td>
+                    <td>朱*丞/A44458588</td>
+                    <td>新件</td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td>特殊時段</td>
+                    <td>遠端</td>
+                </tr>
+                <tr class="data">
+                    <td><input type="checkbox" id="d4"><label for="d4"><span></span></label></td>
+                    <td>80%</td>
+                    <td><img src="./img/fire.svg"></td>
+                    <td><a href="">NYKD-545545</a></td>
+                    <td>2019/04 14:04</td>
+                    <td>朱成成/消金業務部</td>
+                    <td>朱*丞/A44458588</td>
+                    <td>新件</td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td>特殊時段</td>
+                    <td>遠端</td>
+                </tr>
+                <tr class="data">
+                    <td><input type="checkbox" id="d4"><label for="d4"><span></span></label></td>
+                    <td>80%</td>
+                    <td><img src="./img/fire.svg"></td>
+                    <td><a href="">NYKD-545545</a></td>
+                    <td>2019/04 14:04</td>
+                    <td>朱成成/消金業務部</td>
+                    <td>朱*丞/A44458588</td>
+                    <td>新件</td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td>特殊時段</td>
+                    <td>遠端</td>
+                </tr>
+                <tr class="data">
+                    <td><input type="checkbox" id="d4"><label for="d4"><span></span></label></td>
+                    <td>80%</td>
+                    <td><img src="./img/fire.svg"></td>
+                    <td><a href="">NYKD-545545</a></td>
+                    <td>2019/04 14:04</td>
+                    <td>朱成成/消金業務部</td>
+                    <td>朱*丞/A44458588</td>
+                    <td>新件</td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td>特殊時段</td>
+                    <td>遠端</td>
+                </tr>
+                <tr class="data">
+                    <td><input type="checkbox" id="d4"><label for="d4"><span></span></label></td>
+                    <td>80%</td>
+                    <td><img src="./img/fire.svg"></td>
+                    <td><a href="">NYKD-545545</a></td>
+                    <td>2019/04 14:04</td>
+                    <td>朱成成/消金業務部</td>
+                    <td>朱*丞/A44458588</td>
+                    <td>新件</td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td>特殊時段</td>
+                    <td>遠端</td>
+                </tr>
+                <tr class="data">
+                    <td><input type="checkbox" id="d4"><label for="d4"><span></span></label></td>
+                    <td>80%</td>
+                    <td><img src="./img/fire.svg"></td>
+                    <td><a href="">NYKD-545545</a></td>
+                    <td>2019/04 14:04</td>
+                    <td>朱成成/消金業務部</td>
+                    <td>朱*丞/A44458588</td>
+                    <td>新件</td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td>特殊時段</td>
+                    <td>遠端</td>
+                </tr>
+                <tr class="data">
+                    <td><input type="checkbox" id="d4"><label for="d4"><span></span></label></td>
+                    <td>80%</td>
+                    <td><img src="./img/fire.svg"></td>
+                    <td><a href="">NYKD-545545</a></td>
+                    <td>2019/04 14:04</td>
+                    <td>朱成成/消金業務部</td>
+                    <td>朱*丞/A44458588</td>
+                    <td>新件</td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td><img src="./img/baseline-done-24px.svg"></td>
+                    <td>特殊時段</td>
+                    <td>遠端</td>
+                </tr>
+            </table>
+            <div class="footer"></div>
+        </div>
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="todo.js"></script>
+</body>
+
+</html>

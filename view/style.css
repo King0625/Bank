@@ -95,8 +95,8 @@ ul {
 
 
 /* mainMenu */
-.mainMenu {
-    /* width: 15%; */
+/* .mainMenu {
+    width: 15%;
     background: #FFFFFF;
     position: fixed;
     box-shadow: 4px 0 10px #EAEAEA;
@@ -129,7 +129,7 @@ ul {
 
 .mainMenu ul .items a {
     color: #408f98;
-}
+} */
 
 
 /* datalist */
