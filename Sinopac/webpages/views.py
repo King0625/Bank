@@ -1,5 +1,6 @@
 import json
 import re
+import datetime
 import webpages.models
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse, Http404
@@ -48,7 +49,7 @@ def case(request):
 
 @csrf_exempt
 def basicDataQuery(request) :
-	print(request.GET)
+	# print(request.GET)
 	if request.method == 'GET':
 		try:
 			identity = Case.objects.get(id=request.GET['id']).identity
@@ -65,7 +66,11 @@ def basicDataQuery(request) :
 			raise Http404("This Person Does Not Exist")
 		return HttpResponse(json.dumps(data,indent=4,ensure_ascii=False),content_type="application/json")
 	else:
-		__basicDataQuery_POST(request.body)
+		# id = request.GET
+		id = Case.objects.get(id=request.GET['id']).identity
+		# print(id)
+		# identity = Case.objects.get(id=request.POST['id']).identity
+		__basicDataQuery_POST(id,request.body)
 		return HttpResponse('POST SUCCESSFUL')
 
 def __basicDataQuery_GET(GETid):
@@ -81,20 +86,30 @@ def __basicDataQuery_GET(GETid):
 	data['birthday'] = '%s-%s-%s' %(data['birthday'].year,data['birthday'].month,data['birthday'].day)
 	return data
 	
-def __basicDataQuery_POST(data):
+def __basicDataQuery_POST(id,data):
 	
 	data = json.loads(data,encoding=False)
-	userid = data['id']
-	del data['id']
-	d = BasicData.objects.get(id=userid)
+	print(data)
+	d = BasicData.objects.get(identity=id)
+	if('basic_birthday' in data):
+		day = data['basic_birthday'].split('-')
+		print(day)
+		date = datetime.date(int(day[0]),int(day[1]),int(day[2]))
+		data['basic_birthday'] = date
 
-	if(len(data.keys()) > 1):
+	keys = data.keys()
+	newData = {}
+	for i in keys:
+		newData[re.sub(r'basic_','',i)] = data[i]
+	print(newData)
+		
+	if(len(newData.keys())):
 		# update sql
-		for key, value in data.items():
-			setattr(d,re.sub(r'person','',key),value)
+		for key, value in newData.items():
+			setattr(d,key,value)
 		d.save()
 
-	pass
+	# pass
 
 
 @csrf_exempt

@@ -139,7 +139,7 @@ $(document).ready(() => {
         var monthlyPayment = document.getElementById("monthly-payment");
         var usage = document.getElementById("usage");
         var credit = document.getElementById("credit")
-        var descriptionInput = document.getElementById("persondescription")
+        var descriptionInput = document.getElementById("basic_description")
 
         houseCommunication.onchange = function () {
             descriptionInput.value += "住家: " + houseCommunication.value + "  ; ";

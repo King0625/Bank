@@ -53,7 +53,7 @@ class BankDepositData(models.Model):
     suspicious_account = models.BooleanField('可疑帳戶',default=True) # 可疑帳戶
 
     # (二)定期性存款往來資料查詢 : 
-    regularly_deposit_data_query  = models.BooleanField('定期性存款往來資料查詢',default=False) # 定期性存款往來資料查詢
+    regularly_deposit_data_query  = models.TextField('定期性存款往來資料查詢',default='無') # 定期性存款往來資料查詢
 
     # (三)放款往來、保證資料查詢(額度有效記號限主債務):
     yet_settled_data = models.TextField('尚未結清資料',default='無') # 尚未結清資料
