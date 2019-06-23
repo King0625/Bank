@@ -4,7 +4,7 @@ import webpages.models
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse, Http404
 from django.template import loader
-from webpages.models import BasicData,BankDepositData,UnionCreditCheckSystemInfo
+from webpages.models import BasicData,BankDepositData,UnionCreditCheckSystemInfo,Case
 from django.views.decorators.csrf import csrf_exempt
 from django.forms.models import model_to_dict
 from django.db import connection
@@ -34,8 +34,13 @@ __DATE_COL__ = {
 }
 
 def index(request):
+	template = loader.get_template('webpages/todo.html')
+	return HttpResponse(template.render({},request))
+
+
+def case(request):
 	"""
-	Return the index.html
+	Return the case.html
 	"""
 	template = loader.get_template('webpages/index.html')
 	return HttpResponse(template.render({},request))
@@ -46,7 +51,7 @@ def basicDataQuery(request) :
 	print(request.GET)
 	if request.method == 'GET':
 		try:
-			identity = BasicData.objects.get(id=request.GET['id']).identity
+			identity = Case.objects.get(id=request.GET['id']).identity
 
 			BData = __basicDataQuery_GET(identity)
 			BaData = getBankDepositData(identity)
@@ -103,18 +108,16 @@ def ToDoListQuery(request):
 		pass
 
 def _ToDoListQuery():
-	d = BasicData.objects.all()
+	d = Case.objects.all()
 	data = []
 	for i in d:
-		temp = {}
-		temp['name'] = i.name
-		temp['id'] = i.id
-		temp['identity'] = i.identity
-		data.append(temp)
+		temp = model_to_dict(i)
+		temp['progress'] = temp['progress'] * 100
+		if(temp['progress'] < 100):
+			data.append(temp)
 
 	return data
 	
-
 def getBankDepositData(personal_identity):
 	data = getDataFromDB(personal_identity,BankDepositData,'BankDepositData')
 	print(json.dumps(data,indent=4,ensure_ascii=False))

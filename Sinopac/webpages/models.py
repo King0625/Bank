@@ -1,5 +1,19 @@
 from django.db import models
 
+class Case(models.Model):
+    name = models.CharField('名字',default='',max_length=20)
+    progress = models.FloatField('完成度',default=0.0)
+    apply_department = models.CharField('部門',max_length=20,default='消金業務部')
+    identity = models.CharField('ID', max_length=20,default='')
+    debt_type = models.CharField('貸款種類',max_length=20)
+    case_property = models.CharField('案件性質',max_length=20,default='新建')
+    comment = models.BooleanField('本行註記',default=False)
+    union_check_system_comment = models.BooleanField('聯徵註記',default=False)
+    case_comment = models.BooleanField('案件註記',default=False)
+    special_interview = models.CharField('特殊照會',default='特殊時段',max_length=20)
+    check_info = models.CharField('審查資訊',default='遠端',max_length=20)
+    pass
+
 class BasicData(models.Model):
     """
     一．基本資料查詢
