@@ -2,19 +2,41 @@ import json
 import re
 import webpages.models
 from django.shortcuts import render
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse, Http404
 from django.template import loader
-from webpages.models import BasicData,BankDepositData
+from webpages.models import BasicData,BankDepositData,UnionCreditCheckSystemInfo
 from django.views.decorators.csrf import csrf_exempt
 from django.forms.models import model_to_dict
+from django.db import connection
 
 
 
+# __JUDGE_LIST = ['name','birthday','address','person_phone','person_house_phone','company','job_title','career']
 
-__JUDGE_LIST = ['name','birthday','address','person_phone','person_house_phone','company','job_title','career']
+__DATE_COL__ = {
+	"BankDepositData" : [
+		"openning_date",
+		"date_of_information",
+		"new_batch_processing_day"
+	],
+	"UnionCreditCheckSystemInfo" : [
+		"birthday",
+		"recent_credit_problem",
+		"identity_data_date",
+		"birthdat_on_identity_system",
+		"reissue_date",
+		"extend_credit_data_date",
+		"data_info_date",
+		"data_process_date",
+		"change_date",
+		"birthday_on_credit_system",
+	]
+}
 
 def index(request):
-	d = BasicData.objects.all()
+	"""
+	Return the index.html
+	"""
 	template = loader.get_template('webpages/index.html')
 	return HttpResponse(template.render({},request))
 	# return render(request, 'webpages/webpages.html', {}) 
@@ -23,7 +45,19 @@ def index(request):
 def basicDataQuery(request) :
 	print(request.GET)
 	if request.method == 'GET':
-		data = __basicDataQuery_GET(request.GET["id"])
+		try:
+			identity = BasicData.objects.get(id=request.GET['id']).identity
+
+			BData = __basicDataQuery_GET(identity)
+			BaData = getBankDepositData(identity)
+			UData = getUnionCreditCheckSystemInfo(identity)
+
+			data = {}
+			data['BasicData'] = BData
+			data['BankDepositData'] = BaData
+			data['UnionCreditCheckSystemInfo'] = UData
+		except:
+			raise Http404("This Person Does Not Exist")
 		return HttpResponse(json.dumps(data,indent=4,ensure_ascii=False),content_type="application/json")
 	else:
 		__basicDataQuery_POST(request.body)
@@ -35,13 +69,12 @@ def __basicDataQuery_GET(GETid):
 		"""
 		QUERY FAILED GETid isn't exist
 		"""
-		d = BasicData.objects.get(id=GETid)
+		d = BasicData.objects.get(identity=GETid)
 	except:
 		return {}
-	
-	# print(json.dumps(model_to_dict(d),indent=4,ensure_ascii=False))
-	
-	return model_to_dict(d)
+	data = model_to_dict(d)
+	data['birthday'] = '%s-%s-%s' %(data['birthday'].year,data['birthday'].month,data['birthday'].day)
+	return data
 	
 def __basicDataQuery_POST(data):
 	
@@ -81,156 +114,29 @@ def _ToDoListQuery():
 
 	return data
 	
+
+def getBankDepositData(personal_identity):
+	data = getDataFromDB(personal_identity,BankDepositData,'BankDepositData')
+	print(json.dumps(data,indent=4,ensure_ascii=False))
+	return data
+
+def getUnionCreditCheckSystemInfo(personal_identity) : 
+	data = getDataFromDB(personal_identity, UnionCreditCheckSystemInfo,'UnionCreditCheckSystemInfo')
+	print(json.dumps(data,indent=4,ensure_ascii=False))
+	return data
 	
 
-# @csrf_exempt
-# def FDDLevelData(request):
-# 	if request.method == 'GET':
-# 		data = _FDDLevelData_GET()
-# 		return HttpResponse(json.dumps(data,indent=4,ensure_ascii=False),content_type='application/json')
-
-
-# def _FDDLevelData_GET():
-# 	d = FDDData.objects.all()
-# 	data = []
-# 	for i in d:
-# 		userData = model_to_dict(i)
-# 		newBatchTime = userData['new_batch_processing_day']
-# 		userData['new_batch_processing_day'] = '%s/%s/%s' % (newBatchTime.year, newBatchTime.month, newBatchTime.day)
-# 		data.append(userData)
-# 	return data
-	
-
-# @csrf_exempt
-# def contributionData(request):
-# 	if request.method == 'GET':
-# 		data = _contributionData_GET()
-# 		# data = []
-# 		return HttpResponse(json.dumps(data,indent=4,ensure_ascii=False),content_type='application/json')
-# 		pass
-# 	pass
-
-# def _contributionData_GET():
-# 	d = webpages.models.Contribution.objects.all()
-# 	data = []
-# 	for i in d:
-# 		userData = model_to_dict(i)
-# 		date = userData['date_of_information']
-# 		# print(date.date)
-
-# 		userData['date_of_information'] = '%s/%s/%s' % (date.year, date.month, date.day)
-# 		data.append(userData)
-
-# 	return data
-# 	pass
-
-# @csrf_exempt
-# def unionCreditData(request):
-# 	if request.method == 'GET':
-# 		data = _unionCreditData_GET()
-# 		return HttpResponse(json.dumps(data,indent=4, ensure_ascii=False),content_type = 'application/json')
-# 		pass
-# 	pass
-
-# def _unionCreditData_GET():
-# 	d = webpages.models.UnionSearchData.objects.all()
-# 	data = []
-# 	for i in d:
-# 		userData = model_to_dict(i)
-# 		print(userData)
-# 		dateTime = userData['birthday']
-# 		userData['birthday'] = '%s/%s/%s' %(dateTime.year, dateTime.month, dateTime.day)
-# 		data.append(userData)	
-# 	return data
-# 	pass
-
-# @csrf_exempt
-# def autoJudge(request):
-# 	if request.method == 'GET':
-# 		data = _autoJudge_GET()
-# 		return HttpResponse(json.dumps(data,indent=4,ensure_ascii=False), content_type = 'application/json')
-# 		pass
-# 	pass
-
-# def _autoJudge_GET():
-# 	d = BasicData.objects.all()
-# 	temp = []
-# 	result = []
-# 	personAllData = {}
-# 	personResult = []
-# 	AllResult = []
-# 	for i in d:
-# 		basicdata = model_to_dict(i)
-# 		temp_result = {}
-# 		for j in __SQL_TABLE.keys():
-# 			userData = __SQL_TABLE[j].objects.get(identity=i.identity)
-# 			userJsonData = model_to_dict(userData)
-# 			personAllData[j] = userJsonData
-# 			# print(userJsonData)
-# 			# print(json.dumps(userJsonData,indent=4))
-# 		# print(personAllData)
-
-		
-# 		for j in __JUDGE_LIST:
-# 			add = False
-# 			temp_result[j] = []
-# 			for k in personAllData.keys():
-# 				try:
-# 					print('basicData : %s, personAllData[%s] : %s' %(basicdata[j],k,personAllData[k][j]))
-# 					if(basicdata[j] != personAllData[k][j]):
-# 						print('in')
-# 						temp_result[j].append({
-# 							"field" : k,
-# 							"text" : personAllData[k][j]
-# 						})
-# 						if(add == False):
-# 							temp_result[j].append({
-# 								"field" : "Basic",
-# 								"text" : basicdata[j]
-# 							})
-# 							add = True
-# 				except:
-# 					pass
-				
-# 		AllResult.append(temp_result)
-
-# 		for i in range(len(AllResult)):
-# 			for j in range(len(AllResult[i]['birthday'])):
-# 				try:
-# 					AllResult[i]['birthday'][j]['text'] = '%s/%s/%s' %(AllResult[i]['birthday'][j]['text'].year,AllResult[i]['birthday'][j]['text'].month,AllResult[i]['birthday'][j]['text'].day)
-# 				except:
-# 					pass
-
-# 	return AllResult
-
-
-	
-# 	pass
-
-
-# @csrf_exempt
-# def creditCardDataQuery(request):
-# 	data = _creditCarDataQuery_GET()
-# 	return HttpResponse(json.dumps(data,indent=4,ensure_ascii=False),content_type = 'application/json')
-# 	pass
-
-# def _creditCarDataQuery_GET():
-# 	d = CreditCardBasicData.objects.all()
-# 	data = []
-# 	for i in d:
-# 		userData = model_to_dict(i)
-# 		date = userData['change_date']
-# 		userData['change_date'] = '%s/%s/%s' % (date.year, date.month, date.day)
-# 		dateTime = userData['birthday']
-# 		userData['birthday'] = '%s/%s/%s' %(dateTime.year, dateTime.month, dateTime.day)
-# 		data.append(userData)
-
-# 	return data
-# 	pass
+def getDataFromDB(personal_identity, tb, tbName) : 
+	data = tb.objects.get(identity=personal_identity)
+	data = model_to_dict(data)
+	for i in __DATE_COL__[tbName] :
+		 data[i] = '%s-%s-%s' % (data[i].year, data[i].month, data[i].day) 
+	return data
 
 def test(request):
-
-	return HttpResponse("application/json")
+	data = BankDepositData.objects.get(identity=BasicData.objects.get(id=request.GET['id']).identity)
+	print(data.identity)
+	return HttpResponse(json.dumps({}),"application/json")
 
 
 # Create your views here.

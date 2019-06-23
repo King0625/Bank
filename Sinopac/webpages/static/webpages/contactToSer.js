@@ -1,4 +1,6 @@
 
+'use strict'
+
 let EDITELEMTSid = []
 let id;
 let BasicData = []
@@ -7,6 +9,21 @@ let FDDbutionData = []
 let Contribution = []
 let creditData = []
 let autoJudgeData = []
+
+$(document).ready(()=>{
+    // get the url paramater to get the correct
+    var url = new URL(window.location.href);
+    var id = url.searchParams.get('id')
+    $.ajax({
+        type : "GET",
+        url : window.location.origin + '/sinopac/basicData/?id=' + id,
+        async : false,
+        success : (res) => {
+            console.log(res);
+            editTheForm(res['BasicData']);
+        }
+    })
+})
 
 const mapping = {
     "Basic" : "壹、基本資料查詢",
@@ -18,7 +35,7 @@ var getToDoList = ()=>{
     var data;
     $.ajax({
         type : "GET",
-        url : window.location.href + "ToDoList/",
+        url : window.location.origin + "/sinopac/ToDoList/",
         dataType : "json",
         async : false,
         success : (res)=>{
@@ -31,29 +48,22 @@ var getToDoList = ()=>{
         $('#To-DoCustomList').append(`<li class="items" ><a href="javascript:void(0);" onclick="edittoTheDom(${data[i]["id"]})">${data[i]["name"]} | 信用貸款<br>[消金TM網銀信貸專案]</a></li>`);
     }
 
-    editTheForm(data[0]['id']);
+    // editTheForm(data[0]['id']);
 }
 
 
-var editTheForm = (num)=>{
-    $.ajax({
-        type: "GET",
-        url: window.location.href + 'basicData/?id='+num,
-        dataType: "json",
-        async : false,
-        success: (res) => {
-            console.log(res);
-            var keys = Object.keys(res);
-            console.log(keys);
-            for(var i = 0; i < keys.length; i++){
-                $('#basic_' + keys[i]).val(res[keys[i]]);
-            }
-        }
-    });
+var editTheForm = (BasicData)=>{
+    
+    console.log(BasicData);
+    var keys = Object.keys(BasicData);
+    console.log(keys);
+    for(var i = 0; i < keys.length; i++){
+        $('#basic_' + keys[i]).val(BasicData[keys[i]]);
+    }
 }
 
 var edittoTheDom = (num) =>{
-    editTheForm(num);
+    // editTheForm(num);
     // editTheBankData(num);
     // editFDDbutionData(num)
     // editContributionData(num);
@@ -196,6 +206,5 @@ var editAutoJudgeQuery = (num)=>{
         $('#' + judgeList[j]).append(html)
     }
     // $('.judgeItem').remove();
-    
-    }
-// }
+}
+
