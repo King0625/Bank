@@ -1688,7 +1688,7 @@
 	<div class="toolbox hide">
 		<button id="pushpin"></button>
 		<button id="top"></button>
-		<button id="mark"></button>
+		<button id="alert"></button>
 		<button id="sum"></button>
 		<button id="bottom"></button>
 
@@ -1723,6 +1723,7 @@
 			<textarea id="text"></textarea>
 
 		</form>
+
 		<form>
 			<h5> 信用等級<select class="credit">
 					<option value="s">S級</option>
@@ -1733,7 +1734,17 @@
 				<input id="save" type="button" value="存檔"> </h5>
 		</form>
 	</div>
-
+	<div class="alert">
+		<div class="note">
+			<input type="text" id="hour"> 時:<input type="text" id="minute">分後提醒我
+			<button class="close"><img src="{% static 'webpages/img/baseline-clear-24px.png' %}"></button>
+			<div style="border-top:solid 0.5px #aaa;margin-top: 10px;padding-top: 10px;">
+				<textarea id="alert-summary"></textarea>
+			</div>
+			<button id="alert-edit"></button>
+			<button id="alert-save"></button>
+		</div>
+	</div>
 
 	<script src="{% static 'webpages/jquery-3.4.1.min.js' %}"></script>
 	<script src="{% static 'webpages/jquery-ui-1.12.1.custom/jquery-ui.min.js' %}"></script>
