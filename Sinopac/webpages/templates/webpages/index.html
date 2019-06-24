@@ -1601,13 +1601,15 @@
 					<div class="conclusion-item">
 						<h4>電照補充說明</h4>
 						<div class="conclusion-info">
-							<input type="text" value="無" readonly>
+							<textarea name="" id="summary0" cols="30" rows="3" readonly
+								onkeyup="AutoGrowTextArea(this)">無</textarea>
 						</div>
 					</div>
 					<div class="conclusion-item">
 						<h4>其他事項說明</h4>
 						<div class="conclusion-info">
-							<textarea name="" id="" cols="30" rows="10" readonly>*本案有同一經紀關係人資料，請業務同仁依據「同一經濟關係授信歸互暨簽核要點」規範辦理。&#13;&#10;*B有法扣系統資料 &#13;&#10;*本徵信報告同一經濟關係戶共1名「主保債務查詢」基本資料區無異常訊息或註記資料，業務單位需再依規確認。&#13;&#10;*月收暫認:107.10~108.3$235080/6+年終41420/12=42632元，核委得依客戶提供之財力文件核算並調整其月收入。
+							<textarea name="" id="summary1" cols="30" rows="10" readonly
+								onkeyup="AutoGrowTextArea(this)">*本案有同一經紀關係人資料，請業務同仁依據「同一經濟關係授信歸互暨簽核要點」規範辦理。&#13;&#10;*B有法扣系統資料 &#13;&#10;*本徵信報告同一經濟關係戶共1名「主保債務查詢」基本資料區無異常訊息或註記資料，業務單位需再依規確認。&#13;&#10;*月收暫認:107.10~108.3$235080/6+年終41420/12=42632元，核委得依客戶提供之財力文件核算並調整其月收入。
                             </textarea>
 						</div>
 
@@ -1615,7 +1617,8 @@
 					<div class="conclusion-item">
 						<h4>公告後修改說明</h4>
 						<div class="conclusion-info">
-							<input type="text" value="無" readonly>
+							<textarea name="" id="summary2" cols="30" rows="3" readonly
+								onkeyup="AutoGrowTextArea(this)">無</textarea>
 						</div>
 					</div>
 					<div class="conclusion-item">
@@ -1660,7 +1663,8 @@
 					<div class="conclusion-item">
 						<h4>參考資料</h4>
 						<div class="conclusion-info">
-							<p>無</p>
+							<textarea name="" id="summary3" cols="30" rows="3" readonly
+								onkeyup="AutoGrowTextArea(this)">無</textarea>
 						</div>
 					</div>
 					<div class="conclusion-item">
@@ -1727,19 +1731,18 @@
 		<h3>總結登打<button class="close"><img src="{% static 'webpages/img/baseline-clear-24px.png' %}"></button></h3>
 		<form class="phase">
 			<h5>
-				<input type="radio" name="sum" id="s1" checked>
+				<input type="radio" name="sum" id="s1" value="0" checked>
 				<label for="s1"><span></span>電照補充說明</label>
-				<input type="radio" name="sum" id="s2" checked>
+				<input type="radio" name="sum" id="s2" value="1" checked>
 				<label for="s2"><span></span>其他事項說明</label>
-				<input type="radio" name="sum" id="s3" checked>
+				<input type="radio" name="sum" id="s3" value="2" checked>
 				<label for="s3"><span></span>公告後修改說明</label>
-				<input type="radio" name="sum" id="s4" checked>
-				<label for="s4"><span></span>信用異常資料彙整</label>
-				<input type="radio" name="sum" id="s5" checked>
-				<label for="s5"><span></span>參考資料</label>
+				<input type="radio" name="sum" id="s4" value="3" checked>
+				<label for="s4"><span></span>參考資料</label>
 			</h5>
 			<h5>
 				片語
+				<input class="phasehide" id="inputphase" type="text">
 				<select class="phaselist" id="phaselist">
 					<option>案源:業務於北富銀上班時即往來過 </option>
 					<option>案源:B為業務前職客戶</option>
@@ -1747,11 +1750,11 @@
 					<option>案源:臨櫃申辦</option>
 					<option>案源:網銀申辦</option>
 				</select>
-				<input id="new" type="button" value="自訂片語">
 				<input id="add" type="button" value="新增">
+				<input id="new" type="button" value="自訂片語">
 			</h5>
 
-			<textarea id="text"></textarea>
+			<textarea id="phase-text"></textarea>
 
 		</form>
 
@@ -1762,7 +1765,7 @@
 					<option value="b">B級</option>
 					<option value="c">C級</option>
 				</select>
-				<input id="save" type="button" value="存檔"> </h5>
+				<input id="sum-save" type="button" value="存檔"> </h5>
 		</form>
 	</div>
 	<div class="alert">

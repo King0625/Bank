@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link href="{% static 'webpages/information.css'%}" rel="stylesheet" type="text/css">
+    <link href="{% static 'webpages/style.css'%}" rel="stylesheet" type="text/css">
+    <title>個案資料-</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="">
+                <img src="{% static 'webpages/img/sinopac_logo.png'%}" alt="" width="175">
+                <span class="logo-word"><span style="color: #e71a0f">e</span>Loan</span>
+            </a>
+        </div>
+
+    </div>
+
+
+    <div class="container">
+        <div class="dataList">
+            <div class="loaner">
+                <span> 朱炳丞 | 信用貸款</span><br>[消金TM網銀信貸專案]
+            </div>
+            <ul>
+                <li><a href=""><img src="{% static 'webpages/img/data.png' %}" width="24"> 報告總覽</a></li>
+                <li><a href=""><img src="{% static 'webpages/img/report.png' %}" width="24"> 信貸徵審意見</a></li>
+                <li><a href=""><img src="{% static 'webpages/img/comment.png' %}" width="24"> 防杜代辦檢核表</a></li>
+                <li><a href=""><img src="{% static 'webpages/img/review.png' %}" width="24"> 個案資料-公告</a></li>
+            </ul>
+            <a id="todo" href="">回到代辦事項</a>
+        </div>
+
+        <div class="caseData">
+            <h2>徵信件號: AAA23232323</h2>
+            <div class="container1">
+                <div class="category">
+                    <section class="w-name" id="pple">借款人</section>
+                    <section class="w-data" id="ppl">郭X銘</section>
+                </div>
+
+                <div class="category">
+                    <section class="w-name">借款種類</section>
+                    <section class="w-data">信貸專案</section>
+                    <section class="w-name">徵信人員</section>
+                    <section class="w-data">朱炳丞(消金審查部)</section>
+                </div>
+
+                <div class="category">
+                    <section class="w-name">報告性質</section>
+                    <section class="w-data">新件(客群分類件)</section>
+                    <section class="w-name">業務人員</section>
+                    <section class="w-data">林友鈞(消金業務部)</section>
+                </div>
+
+                <div class="btns">
+                    <button class="button button1">公告</button>
+                    <button class="button button2">轉呈</button>
+                    <button class="button button2">退件</button>
+                </div>
+            </div>
+
+            <br>
+
+            <div id="container2">
+                <p id="space1">近一年相同公司名稱、公司地址記公司電話 </p>
+                <p id="underline">相同主借款人案件</p>
+            </div>
+
+            <div id="container3">
+                <p id="space">聯徵系統完成註記 : 完成</p>
+                <p>本行系統完成註記 : 完成</p>
+                <p>備註說明 : 本案為MMA網銀線上申請信貸案件，網銀申請時間為 2018-09-12 14:19:59</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'webpages/loan.css'%}">
+    <title>SinoPac</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="">
+                <img src="{% static 'webpages/img/sinopac_logo.png'%}" alt="" width="175">
+                <span class="logo-word"><span style="color: #e71a0f">e</span>Loan</span>
+            </a>
+        </div>
+
+    </div>
+    <div class="content-container">
+
+
+        <div class="dataList">
+            <div class="swiper-pagination">
+                <a class="swiper-bullet" id="swipe1" style="background: #5d5d5d"></a>
+                <a class="swiper-bullet" id="swipe2"></a>
+                <a class="swiper-bullet" id="swipe3"></a>
+                <a class="swiper-bullet" id="swipe4"></a>
+            </div>
+            <div class="loaner">
+                <span> 朱炳丞 | 信用貸款</span><br>[消金TM網銀信貸專案]
+            </div>
+            <ul>
+                <li><a href=""><img src="{% static 'webpages/img/data.png' %}" width="24"> 報告總覽</a></li>
+                <li><a href=""><img src="{% static 'webpages/img/report.png' %}" width="24"> 信貸徵審意見</a></li>
+                <li><a href=""><img src="{% static 'webpages/img/comment.png' %}" width="24"> 防杜代辦檢核表</a></li>
+                <li><a href=""><img src="{% static 'webpages/img/review.png' %}" width="24"> 個案資料-公告</a></li>
+
+            </ul>
+            <a id="todo" href=""> 回到代辦事項</a>
+        </div>
+
+
+        <div class="content">
+
+
+            <div class="dataContent" style="width:100%">
+                <h2 id="content1">徵信件號 : AAA23232323</h2>
+                <div class="inquire" id="conclusion">
+                    <div class="conclusion-item">
+                        <div class="conclusion-info">
+                            <div class="button-area">
+                                <input id="conclusion-edit" type="button" value="編輯">
+                                <input class="conclusion-save" type="button" value="存檔">
+                                <input id="conclusion-scan" type="button" value="掃描檔案">
+                                <img src="{% static 'webpages/img/print.png'%}" width="24px">
+                            </div>
+
+                        </div>
+
+
+                    </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" id="a1"><label for="a1"><span></span></label>本案不需填寫徵審意見表
+                    <div class="conclusion-item">
+
+                        <h4>徵信狀況</h4>
+                        <div class="conclusion-info">
+                            <p><input type="checkbox" id="b1"><label for="b1"><span></span></label>正常</p>
+                            <p><input type="checkbox" id="b1"><label for="b2"><span></span></label>建議人工審查</p>
+                        </div>
+                    </div>
+                    <div class="conclusion-item">
+                        <h4>財力資料</h4>
+                        <div class="conclusion-info">
+                            <p><input type="checkbox" id="c1"><label for="c1"><span></span></label>符合規定</p>
+                            <p><input type="checkbox" id="c2"><label for="c2"><span></span></label>不符規定</p>
+                            <br>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;徵提文件 :</p>
+                            <p><input type="checkbox" id="c3"><label for="c3"><span></span></label>扣繳憑單</p>
+                            <p><input type="checkbox" id="c4"><label for="c4"><span></span></label>薪轉存褶</p>
+                            <p><input type="checkbox" id="c5"><label for="c5"><span></span></label>薪資單</p>
+                            <p><input type="checkbox" id="c6"><label for="c6"><span></span></label>報稅證明</p>
+                            <input type="checkbox" id="c7"><label for="c7"><span></span></label>其他<input type="text"
+                                id="other">
+                            <br>
+                            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;月收入 : </p>新台幣<input type="text"
+                                id="income" value="1599897">元 &nbsp;<input id="autofill" type="button"
+                                value="同申請資料">&nbsp;評估說明<input type="text" id="assessment" value="你好">
+                        </div>
+
+                    </div>
+                    <div class="conclusion-item">
+                        <h4>租金支出</h4>
+                        <div class="conclusion-info">
+                            新台幣<input type="text" id="income" value="1599897">元
+                        </div>
+                    </div>
+                    <div class="conclusion-item">
+                        <h4>收入評估與 業務人員評估差異</h4>
+                        <div class="conclusion-info">
+                            <p><input type="checkbox" id="d1"><label for="d1"><span></span></label>>10%</p>
+                            <p><input type="checkbox" id="d2"><label for="d2"><span></span></label>&#60;10%</p>
+                        </div>
+
+                    </div>
+                    <div class="conclusion-item">
+                        <h4>代償案價DBR計算</h4>
+                        <div class="conclusion-info">
+                            <input type="checkbox" id="c1"><label for="c1"><span></span></label>不須計算
+                            DBR<input type="text" id="dbr" value="10">倍，無擔餘額，新台幣<input type="text" id="dbr_icome"
+                                value="1599897">元
+                        </div>
+
+                    </div>
+                    <div class="conclusion-item">
+                        <h4>建議人工審查項目</h4>
+                        <div class="conclusion-info">
+                            <div>
+                                <p><input type="checkbox" id="e1"><label for="e1"><span></span></label>無</p>
+                                <p><input type="checkbox" id="e2"><label for="e2"><span></span></label>有</p>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="e4"><label for="e4"><span></span></label>尚有非金融機構債務<br>
+                                <input type="checkbox" id="e5"><label for="e5"><span></span></label>徵信照會異常<br>
+                                <input type="checkbox" id="e6"><label
+                                    for="e6"><span></span></label>同一經濟關係戶「主堡債務查詢」有異常訊息或註記資料<br>
+                                <input type="checkbox" id="e7"><label for="e7"><span></span></label>非名下債務之實際繳款人<br>
+                                <input type="checkbox" id="e8"><label for="e8"><span></span></label>資金用途為投資不動產<br>
+                                <input type="checkbox" id="e9"><label for="e9"><span></span></label>防制洗錢歸屬之中、高風險客群<br>
+                                <input type="checkbox" id="e10"><label for="e10"><span></span></label>名下債務非本人使用<br>
+                                <input type="checkbox" id="e3"><label for="e3"><span></span></label>說明<br>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="conclusion-item">
+                        <h4>其他意見</h4>
+                        <div class="conclusion-info" style="border: none">
+                            <textarea id="opnion">c8c8c88ccc8sdgwdjghlksdghsd</textarea>
+                            <div class="button-area">
+
+                                <input style="top:75px;position: relative" class="conclusion-save" type="button"
+                                    value="存檔">
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{% static 'webpages/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'webpages/loan.js' %}"></script>
+
+</body>
+
+</html>
