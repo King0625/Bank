@@ -239,7 +239,7 @@ $(document).ready(() => {
         });
     });
 
-    $("#grid6 .check").click(function () {
+    $("#grid6 .wrong").click(function () {
         $("#grid6-detail").toggleClass('shown');
         $("#grid6-detail").toggleClass('not-shown');
         $("#grid6-detail .close").click(function () {
