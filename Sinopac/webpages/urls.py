@@ -8,6 +8,7 @@ urlpatterns = [
 		path('test/',views.test,name='test'),
 		path('ToDoList/',views.ToDoListQuery,name='to-do'),
 		path('basicData/',views.basicDataQuery,name='basicDataQuery'),
+		path('autoJudge/',views.autoJudge,name="autoJudge"),
 		# path('bankDepositData/',views.bankDepositData,name="bankDepositData"),
 		# path('contrubutionData/',views.contributionData, name='contributionData'),
 		# path('FDDData/',views.FDDLevelData,name ='FDDData'),

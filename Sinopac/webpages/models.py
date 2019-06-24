@@ -25,6 +25,7 @@ class BasicData(models.Model):
     person_house_phone = models.CharField('個人住家電話',max_length=15) # 個人住家電話
     company = models.CharField('公司',max_length=50) # 公司
     company_phone = models.CharField('公司電話',max_length=15) # 公司電話
+    job_type = models.CharField('行業別',max_length=20,default="服物業") # 行業別
     job_title = models.CharField('職業說明',max_length=30) # 職業說明
     career = models.IntegerField('年資') # 年資
     birthday = models.DateField('生日')

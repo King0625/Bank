@@ -24,6 +24,12 @@ const query_data = [
     'financial_query_time'
 ]
 
+const mapping = {
+    "basic" : "壹、基本資料查詢",
+    "deposit" : "貳、本行系統查詢",
+    "union" : "參、聯合徵信中心查詢回覆資料" 
+}
+
 $(document).ready(()=>{
     // get the url paramater to get the correct
     var url = new URL(window.location.href);
@@ -37,15 +43,12 @@ $(document).ready(()=>{
             editTheForm(res['BasicData']);
             editPartTwo(res['BankDepositData']);
             editPartThree(res['UnionCreditCheckSystemInfo']);
+            editAutoJudgeQuery();
         }
     })
 })
 
-const mapping = {
-    "Basic" : "壹、基本資料查詢",
-    "credit" : "參、聯合徵信中心查詢回覆資料",
-    "creditCard" : "參 (六) 信用卡資料查詢資料" 
-}
+
 
 var editTheForm = (BasicData)=>{
     console.log(BasicData);
@@ -57,6 +60,7 @@ var editTheForm = (BasicData)=>{
 
     $('.basic_name').html(BasicData['name'] + '| 信用貸款');
     $('.basic_name_identity').html(BasicData['name'] + ' ' + BasicData['identity']);
+    $('#basic_career').val(BasicData['career'] + '年')
 }
 
 var editPartTwo = (DepositData)=>{
@@ -169,24 +173,58 @@ $('#save').click(()=>{
 
 })
 
-var editAutoJudgeQuery = (num)=>{
+var editAutoJudgeQuery = ()=>{
     // for(var i = 0; i < autoJudgeData.length; i++){
-    var judgeList = Object.keys(autoJudgeData[num]);
-    console.log(judgeList);
-    $('.judgeItem').remove();
-    var j = 0;
-    for(var j = 0 ; j < judgeList.length; j++){
-        var html = ''
-        for(var k = 0 ; k < autoJudgeData[num][judgeList[j]].length; k++){
-            html += `<li class="judgeItem"><h6> ${mapping[autoJudgeData[num][judgeList[j]][k]['field']]}</h6>
-            <p> ${autoJudgeData[num][judgeList[j]][k]['text']}</p>
-            <a href="#${autoJudgeData[num][judgeList[j]][k]['field'] + '_' + judgeList[j]}"><img src="../../static/webpages/img/arrowForward.png" alt=""></a>
-            </li>
-            `
+    var url = new URL(window.location.href);
+    var id = url.searchParams.get('id')
+    $.ajax({
+        type: "GET",
+        url: window.location.origin + '/sinopac/autoJudge/?id=' + id,
+        dataType: "json",
+        async : false,
+        success: (res)=>{
+            console.log(res);
+            for(var i = 0; i < res.length; i++){
+                var html = ''
+                var keys = Object.keys(res[i]['result']);
+                if(keys.length > 0){
+                    // html += `
+                    //     <li class="judgeItem"><h6> ${mapping['basic']}</h6>
+                    //     <p> ${res[i]['result'][keys[j]]}</p>
+                    //     <a href=""><img src="../../static/webpages/img/arrowForward.png" alt=""></a>
+                    //     </li>
+                    //     `
+                    for(var j = 0 ; j < keys.length; j++){
+                        html += `
+                        <li class="judgeItem"><h6> ${mapping[keys[j]]}</h6>
+                        <p> ${res[i]['result'][keys[j]]}</p>
+                        <a href=""><img src="../../static/webpages/img/arrowForward.png" alt=""></a>
+                        </li>
+                        `
+                    }
+                }
+                console.log(html);
+                $('#auto_' + res[i]['item']).html(html);
+            }
         }
-        console.log('#' + judgeList[j]);
-        $('#' + judgeList[j]).append(html)
-    }
+    });
+    // var judgeList = Object.keys(autoJudgeData[num]);
+    // console.log(judgeList);
+    // $('.judgeItem').remove();
+    // var j = 0;
+    // for(var j = 0 ; j < judgeList.length; j++){
+    //     var html = ''
+    //     for(var k = 0 ; k < autoJudgeData[num][judgeList[j]].length; k++){
+            // html += `
+            // <li class="judgeItem"><h6> ${mapping[autoJudgeData[num][judgeList[j]][k]['field']]}</h6>
+            // <p> ${autoJudgeData[num][judgeList[j]][k]['text']}</p>
+            // <a href="#${autoJudgeData[num][judgeList[j]][k]['field'] + '_' + judgeList[j]}"><img src="../../static/webpages/img/arrowForward.png" alt=""></a>
+            // </li>
+            // `
+    //     }
+    //     console.log('#' + judgeList[j]);
+    //     $('#' + judgeList[j]).append(html)
+    // }
     // $('.judgeItem').remove();
 }
 
