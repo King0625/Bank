@@ -100,12 +100,13 @@ body{
 .credit{
     width:50px;
 }
-.phaselist{
-   
-}
+
 .phase{
     width:auto;
     border-top:solid 0.5px #000
+}
+.phase h5 input[type="button"]{
+    margin: 1em;
 }
 
 h5 select {
@@ -176,7 +177,15 @@ input[type="button"]:hover{
     outline: none;
     
 }
+#summary input[type="text"]{
+    border-radius:6px;
+    height:25px;
+    width:250px;
+    border:none;
+    background:#f3f3f3;
+    margin-left:10px;
 
+}
 .draggable {
     position: absolute;
     left: 5%;
@@ -259,6 +268,10 @@ input[type="button"]:hover{
 }
 
 
+.phasehide{
+    display: none;
+    transition-duration: 200ms;
+}
 
 
 .alert{

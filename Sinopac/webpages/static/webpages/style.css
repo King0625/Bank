@@ -705,7 +705,10 @@ textarea[name="moreInfo-output"]{
     border: none;
     outline: none;
     padding: 5px;
+}
+.conclusion-info textarea#summary1{
     color: #1794F5;
+
 }
 .conclusion-info select {
     /* padding: 2px; */
