@@ -163,17 +163,26 @@ def basicDataQuery(request) :
 	if request.method == 'GET':
 		try:
 			identity = Case.objects.get(id=request.GET['id']).identity
-
-			BData = __basicDataQuery_GET(identity)
-			BaData = getBankDepositData(identity)
-			UData = getUnionCreditCheckSystemInfo(identity)
-
-			data = {}
-			data['BasicData'] = BData
-			data['BankDepositData'] = BaData
-			data['UnionCreditCheckSystemInfo'] = UData
 		except:
-			raise Http404("This Person Does Not Exist")
+			raise Http404('Case id error')
+		try:
+			BData = __basicDataQuery_GET(identity)
+		except:
+			raise Http404('Basic Data error')
+		try:
+			BaData = getBankDepositData(identity)
+		except:
+			raise Http404('Bank Deposit error')
+		try:
+			UData = getUnionCreditCheckSystemInfo(identity)
+		except:
+			raise Http404('union credit error')
+		data = {}
+		data['BasicData'] = BData
+		data['BankDepositData'] = BaData
+		data['UnionCreditCheckSystemInfo'] = UData
+		# except:
+		# 	raise Http404("This Person Does Not Exist")
 		return HttpResponse(json.dumps(data,indent=4,ensure_ascii=False),content_type="application/json")
 	else:
 		# id = request.GET
@@ -327,8 +336,17 @@ def autoJudge_GET(id):
 	return judge_result
 
 def test(request):
-	data = BankDepositData.objects.get(identity=BasicData.objects.get(id=request.GET['id']).identity)
-	print(data.identity)
+	c = Case.objects.get(id=2)
+	
+	print(model_to_dict(c))
+	identity = c.identity
+	print('case identity = %s' % identity)
+	data = UnionCreditCheckSystemInfo.objects.get(identity='A548754877')
+	setattr(c,'identity',data.identity)
+	c.save()
+	print(len(identity))
+	print(len(data.identity))
+	
 	return HttpResponse(json.dumps({}),"application/json")
 
 
