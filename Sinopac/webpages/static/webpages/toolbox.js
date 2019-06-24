@@ -1,5 +1,10 @@
 var pin = true;
 var sum = false;
+var phase = [["案源:業務於北富銀上班時即往來過", "案源:B為業務前職客戶", "案源:自行致電客服申貸.", "案源:臨櫃申辦.", "案源:網銀申辦"],
+["加查全國商工行政服務入口網站/財政部稅務入口網站-統編:代表人-,成立-.", "加查經濟部商業司網站-統編:代表人-,成立-", "B國民身份證領補換資料查詢驗證：N查無紀錄,然掃描進件系統影像資料補提供資料相符.", "本案客戶風險等級資訊與防制洗錢-FDD系統查詢尚無資料，請業務同仁依規建置並簽核至適當層級。", "加查晶片居留證資料查詢網站—B,統一證號、核發日期、居留期限及背面序號資料均相符.", "B為公司債務保證人,請業務同仁補公司聯徵系統查詢.", "B於洗錢及資助恐怖主義防制彙整-最高風險分級：中/高風險，本案請業務同仁依規簽核至適當層級。", "業務將B姓名鍵錯,請確認正確資料後自行於FDD網站查詢,並將加查資料以影像系統補傳.", "本案尚未提供“銀行法第33條之3「同一關係人」資料表”，請業務單位依規確認該文件並上傳至掃描進件整合系統後完成系統建檔。", "請業務同仁參酌本報告客戶風險等級資訊與防制洗錢-FDD系統查詢資訊及洗錢及資助恐怖主義防制彙整-本案地域風險/本案客戶風險，綜合評估客戶總風險值後依規簽核至適當層級。", "月收暫認:107.3~107.5$/6+年終/12=元,核委得依客戶提供之財力文件核算並調整其月收入."],
+["3", "2", "3", "45", "7"],
+["4", "2", "3", "45", "8", "9"],
+["無戶名,核對居留證出生日期無誤.", "無戶名,核對貸款申請書出生日期無誤.", "無戶名,與本人核對ID及出生日期無誤."]];
 
 //click event
 $(document).ready(function () {
@@ -79,3 +84,26 @@ $(document).ready(function () {
             }
         })
 });
+
+// summary
+$(document).ready(function () {
+    $('[name=sum]').change(function () {
+        var checked = parseInt($('[name=sum]:checked').val(), 10);
+
+        var arrayLength = phase[checked].length;
+        $("#phaselist").html("");
+        for (var i = 0; i < arrayLength; i++) {
+            $("#phaselist").append("<option>" + phase[checked][i] + "</option")
+        }
+    })
+    $('[name=sum]').change(function () {
+        var checked = parseInt($('[name=sum]:checked').val(), 10);
+
+        var arrayLength = phase[checked].length;
+        $("#phaselist").html("");
+        for (var i = 0; i < arrayLength; i++) {
+            $("#phaselist").append("<option>" + phase[checked][i] + "</option")
+        }
+    })
+});
+

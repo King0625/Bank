@@ -470,15 +470,15 @@ ul {
     grid-row: 3 / 8;
 }
 #grid9 {
-    grid-column: 5 / 7;
+    grid-column: 5 / 8;
     grid-row: 3 / 5;
 }
 #grid9-detail {
-    grid-column: 7 / 11;
+    grid-column: 8 / 12;
     grid-row: 3 / 8;
 }
 #grid10 {
-    grid-column: 7 / 11;
+    grid-column: 8 / 11;
     grid-row: 3 / 5;
 }
 #grid10-detail {

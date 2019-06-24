@@ -4,14 +4,7 @@ $(document).ready(() => {
     // contributionDataQuery();
 
     $(".content").slideDown("slow");
-
-    // basicDataQuery();
-    getToDoList();
-    // bankDataQuery();
-    // FDDbutionDataQuery();
-    // ContrubutionDataQuery();
-    // unionDataQuery();
-    // autoJudgeQuery();
+    
     $("#swipe1").click(function () {
         jQuery("html,body").animate({ scrollTop: document.getElementById('content1').offsetTop - 15 }, 500);
         // window.scrollTo(0, document.getElementById('content1').offsetTop - 15);
@@ -157,7 +150,7 @@ $(document).ready(() => {
         var monthlyPayment = document.getElementById("monthly-payment");
         var usage = document.getElementById("usage");
         var credit = document.getElementById("credit")
-        var descriptionInput = document.getElementById("persondescription")
+        var descriptionInput = document.getElementById("basic_description")
 
         houseCommunication.onchange = function () {
             descriptionInput.value += "住家: " + houseCommunication.value + "  ; ";

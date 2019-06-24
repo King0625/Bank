@@ -47,7 +47,7 @@
 				<a class="swiper-bullet" id="swipe4"></a>
 			</div>
 			<div class="loaner">
-				<span> 朱炳丞 | 信用貸款</span><br>[消金TM網銀信貸專案]
+				<span class="basic_name"> 朱炳丞 | 信用貸款</span><br>[消金TM網銀信貸專案]
 			</div>
 			<ul>
 				<li><a href=""><img src="{% static 'webpages/img/data.png' %}" width="24"> 報告總覽</a></li>
@@ -854,10 +854,9 @@
 					<div id="grid9" class="content-grid">
 						<label for="industry">行業別</label>
 						<div class="text-container">
-							<select disabled style="width: 100%; height: 30px;">
-								<option value="科技公司">科技公司</option>
-								<option value="傳產">傳產</option>
-							</select>
+							<!-- id for backend!!!!!!!!!!!!!! -->
+							<input type="text" style="width: 100%; height: 30px;" name="industry" readonly value="8年"
+								id="" class="basicFormData"></input>
 						</div>
 						<div class="check"></div>
 					</div>
@@ -1040,7 +1039,7 @@
 					<div class="collapsible">
 						<div class="non-collapsed-item">
 							<h4>活期性存款往來資料查詢</h4>
-							<p>正常戶</p>
+							<p class="deposit_suspicious_account">正常戶</p>
 						</div>
 						<div class="non-collapsed-item">
 							<h4>本行歷史資料查詢記錄</h4>
@@ -1048,15 +1047,15 @@
 						</div>
 						<div class="non-collapsed-item">
 							<h4>洗錢風險等級</h4>
-							<p>低風險</p>
+							<p class="deposit_money_laundering_risk_degree">低風險</p>
 						</div>
 						<div class="non-collapsed-item">
 							<h4>洗錢風險總分</h4>
-							<p>1545</p>
+							<p class="deposit_money_laundering_risk_gradding">1545</p>
 						</div>
 						<div class="non-collapsed-item">
 							<h4>防制洗錢FDD系統</h4>
-							<p>無資料</p>
+							<p class="deposit_FDD_information">無資料</p>
 						</div>
 					</div>
 					<div class="collapse-section">
@@ -1066,152 +1065,155 @@
 							<div class="inquire-table">
 								<div class="table-item">
 									<h4>姓名/公司名稱</h4>
-									<p id="customName">朱炳丞</p>
+									<p id="deposit_name">朱炳丞</p>
 								</div>
 								<div class="table-item">
 									<h4>帳號</h4>
-									<p id="customAccount">1234567891011</p>
+									<p id="deposit_account">1234567891011</p>
 								</div>
 								<div class="table-item">
 									<h4>績效行</h4>
-									<p id="customPerformance">024</p>
+									<p id="deposit_performance">024</p>
 								</div>
 								<div class="table-item">
 									<h4>開戶日</h4>
-									<p id="customOpeningDate">2008/08/29</p>
+									<p id="deposit_openning_date">2008/08/29</p>
 								</div>
 								<div class="table-item">
 									<h4>一年平均餘額</h4>
-									<p id="customYearAverageBalance">11,388</p>
+									<p id="deposit_a_year_average_balance">11,388</p>
 								</div>
 								<div class="table-item">
 									<h4>六個月平均餘額</h4>
-									<p id="custom6MonthBalance">17,747</p>
+									<p id="deposit_six_month_average_balance">17,747</p>
 								</div>
 								<div class="table-item">
 									<h4>退票紀錄</h4>
-									<p id="customRefund_record">無</p>
+									<p id="deposit_refund_record">無</p>
 								</div>
 								<div class="table-item">
 									<h4>扣押存款</h4>
-									<p id="customSeizure_deposit">有</p>
+									<p id="deposit_seizure_deposit">有</p>
 								</div>
 								<div class="table-item">
 									<h4>可疑帳戶</h4>
-									<p id="customSuspicious_account">正常戶</p>
+									<p id="deposit_suspicious_account" class="deposit_suspicious_account">正常戶</p>
 								</div>
 							</div>
-							<h4>(二)定期性存款往來資料查詢 : (無)</h4>
+							<h4>(二)定期性存款往來資料查詢 :<span id="deposit_regularly_deposit_data_query"></span></h4>
 							<h4>(三)放款往來、保證資料查詢(額度有效記號限主債務):</h4>
-							<h4>-尚未結清資料 : (無)</h4>
-							<h4>-已結清資料 : (無)</h4>
-							<h4>-彈性繳款 : (無)</h4>
+							<h4>-尚未結清資料 :<span id="deposit_yet_settled_data"></span></h4>
+							<h4>-已結清資料 : <span id="deposit_settled_data"></span></h4>
+							<h4>-彈性繳款 : <span id="flexible_hand_money"></span></h4>
 							<h4>(四)客戶貢獻程度分析查詢 :</h4>
 							<div class="inquire-table">
 								<div class="table-item">
 									<h4>姓名/公司名稱</h4>
-									<p id="con-name">朱炳丞</p>
+									<p class="deposit_name">朱炳丞</p>
 								</div>
 								<div class="table-item">
 									<h4>資料日期</h4>
-									<p id="con-date">201903</p>
+									<p id="deposit_date_of_information">201903</p>
 								</div>
 								<div class="table-item">
 									<h4>近三個月資產規模</h4>
-									<p id="con-asset">20074</p>
+									<p id="three_months_assets">20074</p>
 								</div>
 								<div class="table-item">
 									<h4>當年度總AP</h4>
-									<p id="con-ap">10928</p>
+									<p id="deposit_AP">10928</p>
 								</div>
 								<div class="table-item">
 									<h4>當年度非放款AP</h4>
-									<p id="con-not-ap">10928</p>
+									<p id="deposit_not_ap">10928</p>
 								</div>
 								<div class="table-item">
 									<h4>前一年度總AP</h4>
-									<p id="con-last-ap">26013</p>
+									<p id="deposit_last_ap">26013</p>
 								</div>
 								<div class="table-item">
 									<h4>前一年非放款AP</h4>
-									<p id="con-last-not-ap">26013</p>
+									<p id="deposit_last_not_ap">26013</p>
 								</div>
 							</div>
-							<h4>(五)企金主從債務查詢 : (無)</h4>
-							<h4>(六)利害關係人海外放款往來資料查詢 : (無)</h4>
+							<h4>(五)企金主從債務查詢 : <span id="deposit_debt_data_query"></span></h4>
+							<h4>(六)利害關係人海外放款往來資料查詢 : <span id="oversea_deposit_data_query"></span></h4>
 						</div>
 
 						<h4>二、本行信用卡資料</h4>
 						<div class="inquire-content">
-							<h4>(一)信用卡往來資料查詢 : (無)</h4>
-							<h4>(二)信用卡BLOCK CODE : (無)</h4>
+							<h4>(一)信用卡往來資料查詢 : <span id="deposit_credit_card_data_query"></span></h4>
+							<h4>(二)信用卡BLOCK CODE : <span id="credit_card_BLOCK_CODE"></span></h4>
 						</div>
 
 						<h4>三、風險警訊資料</h4>
 						<div class="inquire-content">
-							<h4>(一)不予承作資料查詢 : (無)</h4>
-							<h4>(二)支存拒往資料查詢 : (無)</h4>
-							<h4>(三)利害關係人記錄查詢(銀行法、金控法、實質關係人) : (無)</h4>
-							<h4>(四)催收系統異常資料查詢 : (無)</h4>
+							<h4>(一)不予承作資料查詢 : <span id="deposit_reject_case_data_query"></span></h4>
+							<h4>(二)支存拒往資料查詢 : <span id="deposit_refuse_data_query"></span></h4>
+							<h4>(三)利害關係人記錄查詢(銀行法、金控法、實質關係人) : <span
+									id="deposit_advantage_and_disadvantage_relationships_data_query"></span></h4>
+							<h4>(四)催收系統異常資料查詢 : <span id="deposit_urge_system_error_data_query"></span></h4>
 							<h4>(五)本行歷史資料查詢記錄 :</h4>
 							<ol>
-								<li>銀行JCIC資料庫 : (無)</li>
-								<li>信用卡徵審授信註記 : (無)</li>
-								<li>信用卡JCIC他行強停名單 : (無)</li>
-								<li>NCCCC他行強停名單 : (無)</li>
-								<li>e-collection最大逾期天數 : 3天</li>
+								<li>銀行JCIC資料庫 : <span id="deposit_bank_JCIC_database"></span></li>
+								<li>信用卡徵審授信註記 : <span id="deposit_credit_card_comment"></span></li>
+								<li>信用卡JCIC他行強停名單 : <span id="deposit_credit_card_JCIC_other_bank_data"></span></li>
+								<li>NCCCC他行強停名單 : <span id="deposit_NCCCC_other_bank_reject_data"></span></li>
+								<li>e-collection最大逾期天數 : <span id="deposit_e_collection_delay_day"></span> 天</li>
 							</ol>
-							<h4>(六)消債協商記號 : (無)</h4>
-							<h4>(七)信用卡金融同業通報註記 : (無)</h4>
+							<h4>(六)消債協商記號 : <span id="deposit_negotiate_data"></span></h4>
+							<h4>(七)信用卡金融同業通報註記 : <span id="deposit_credit_card_other_bank_comment"></span></h4>
 							<h4>(八)客戶風險等級資訊與防制洗錢FDD系統查詢 :</h4>
 							<div class="inquire-table">
 								<div class="table-item">
 									<h4>姓名/身分證號</h4>
-									<p id="FDDnameid">朱炳丞/R123456789</p>
+									<p class="deposit_name_identity">朱炳丞/R123456789</p>
 								</div>
 								<div class="table-item">
 									<h4>最新跑批日</h4>
-									<p id="FDDnew_batch_processing_day">20190422</p>
+									<p id="deposit_new_batch_processing_day">20190422</p>
 								</div>
 								<div class="table-item">
 									<h4>洗錢風險分級</h4>
-									<p id="FDDmoney_laundering_risk_degree">低風險</p>
+									<p id="deposit_money_laundering_risk_degree"
+										class="deposit_money_laundering_risk_degree">低風險</p>
 								</div>
 								<div class="table-item">
 									<h4>優先法</h4>
-									<p id="FDDpriority_low">0</p>
+									<p id="deposit_priority_low">0</p>
 								</div>
 								<div class="table-item">
 									<h4>客戶背景</h4>
-									<p id="FDDbackground">645</p>
+									<p id="deposit_background">645</p>
 								</div>
 								<div class="table-item">
 									<h4>地域因素</h4>
-									<p id="FDDgeographical_factor">355</p>
+									<p id="deposit_geographical_factor">355</p>
 								</div>
 								<div class="table-item">
 									<h4>業務關係與交易行為</h4>
-									<p id="FDDrelation_behavior">325</p>
+									<p id="deposit_relation_behavior">325</p>
 								</div>
 								<div class="table-item">
 									<h4>商品</h4>
-									<p id="FDDproduction">220</p>
+									<p id="deposit_production">220</p>
 								</div>
 								<div class="table-item">
 									<h4>洗錢風險總得分</h4>
-									<p id="FDDmoney_laundering_risk_gradding">1545</p>
+									<p id="deposit_money_laundering_risk_gradding"
+										class="deposit_money_laundering_risk_gradding">1545</p>
 								</div>
 								<div class="table-item">
 									<h4>防制洗錢FDD系統</h4>
-									<p id="FDDFDD_information">無資料</p>
+									<p id="deposit_FDD_information" class="deposit_FDD_information">無資料</p>
 								</div>
 							</div>
 							<h4>(九)法扣系統資料 :</h4>
 							<div class="inquire-table">
 								<div class="table-item">
 									<h4>姓名/身分證號</h4>
-									<p class="name-identity">朱炳丞/R123456789</p>
-									<p class="name-identity">朱炳丞/R123456789</p>
+									<p class="deposit_name_identity">朱炳丞/R123456789</p>
+									<p class="deposit_name_identity">朱炳丞/R123456789</p>
 								</div>
 								<div class="table-item">
 									<h4>來文資料</h4>
@@ -1237,8 +1239,8 @@
 
 							<h4>四、行為評分卡評等</h4>
 							<div class="inquire-content">
-								<h4>(一)房貸近一年行為評分卡評等 : (無)</h4>
-								<h4>(二)車貸近一年行為評分卡評等 : (無)</h4>
+								<h4>(一)房貸近一年行為評分卡評等 : <span id="deposit_house_debt_judge_score"></span></h4>
+								<h4>(二)車貸近一年行為評分卡評等 : <span id="deposit_car_debt_judge_score"></span></h4>
 							</div>
 						</div>
 					</div>
@@ -1253,19 +1255,19 @@
 					<div class="collapsible">
 						<div class="non-collapsed-item">
 							<h4>授信異常資料</h4>
-							<p>無</p>
+							<p id="union_credit_error_data">無</p>
 						</div>
 						<div class="non-collapsed-item">
 							<h4>票據退票及拒往資訊</h4>
-							<p>無</p>
+							<p>有</p>
 						</div>
 						<div class="non-collapsed-item">
 							<h4>最近三個月被查詢記錄</h4>
-							<p>2次</p>
+							<p id="union_query_times"></p>
 						</div>
 						<div class="non-collapsed-item">
 							<h4>JCIC信用評分</h4>
-							<p>514</p>
+							<p class="union_score">514</p>
 						</div>
 					</div>
 
@@ -1274,34 +1276,34 @@
 							<div class="inquire-table">
 								<div class="table-item">
 									<h4>姓名/身分證號</h4>
-									<p id="credit_name">朱炳丞/R123456789</p>
+									<p class="union_name_identity">朱炳丞/R123456789</p>
 								</div>
 								<div class="table-item">
 									<h4>英文姓名</h4>
-									<p id="credit_EN_name">Bing Cheng Zhu</p>
+									<p id="union_eng_name">Bing Cheng Zhu</p>
 								</div>
 								<div class="table-item">
 									<h4>出生日期</h4>
-									<p id="credit_birthday">19960313</p>
+									<p id="union_birthday">19960313</p>
 								</div>
 								<div class="table-item">
 									<h4>戶籍地址</h4>
-									<p id=credit_address>台南市大學路1號補字補字補字補字補字補字</p>
+									<p id="union_address">台南市大學路1號補字補字補字補字補字補字</p>
 								</div>
 							</div>
 
 							<div class="dragable-data">
-								<p>其餘資訊 : N</p>
-								<p>新增額度及每筆撥款清償資訊 : N</p>
-								<p>身分證申請補發記錄 : N</p>
-								<p>在台無戶籍人士身分註記 : N</p>
-								<p>退票異常紀錄 : N</p>
-								<p>最近授信異常日期 : N</p>
-								<p>通報案件紀錄 : N</p>
-								<p>消債其他註記 : N</p>
-								<p>拒絕往來紀錄 : N</p>
-								<p>授信異常紀錄 : N</p>
-								<p>強制停卡紀錄 : N</p>
+								<p>其餘資訊 : <span id="union_other_info"></span></p>
+								<p>新增額度及每筆撥款清償資訊 : <span id="union_repay_info"></span></p>
+								<p>身分證申請補發記錄 : <span id="union_identity_card_reissue_record"></span></p>
+								<p>在台無戶籍人士身分註記 : <span id="union_no_household_registration_in_TW"></span></p>
+								<p>退票異常紀錄 : <span id="union_refund_error_record"></span></p>
+								<p>最近授信異常日期 : <span id="union_recent_credit_problem"></span></p>
+								<p>通報案件紀錄 : <span id="union_bulletined_case_record"></span></p>
+								<p>消債其他註記 : <span id="union_cancel_debt_record"></span></p>
+								<p>拒絕往來紀錄 : <span id="union_reject_contact_record"></span></p>
+								<p>授信異常紀錄 : <span id="union_credits_problem_record"></span></p>
+								<p>強制停卡紀錄 : <span id="union_forced_stopping_credit_card_record"></span></p>
 							</div>
 
 
@@ -1309,32 +1311,33 @@
 
 						<h4>(一)通報案件紀錄資訊</h4>
 						<div class="inquire-content">
-							<p>1.案件通部 : 無  </p>
-							<p>2.遷徙公告 : 無</p>
-							<p>3.身分證更改記錄 : 無</p>
-							<p>4.補充註記資訊 : 無</p>
+							<p>1.案件通部 : <span id="union_case_notification_record"></span>  </p>
+							<p>2.遷徙公告 : <span id="union_migration_record"></span></p>
+							<p>3.身分證更改記錄 : <span id="union_identity_modification_record"></span></p>
+							<p>4.補充註記資訊 : <span id="union_supplement_comment_record"></span></p>
 							<p>5.國民身分證領補換資料查詢驗證 :</p>
-							<p>資料日期 : 20190421</p>
-							<p>身分證號 : R123456789</p>
-							<p>領補換代碼 : 3換</p>
-							<p>領補換日期 : 20170609</p>
-							<p>出生日期 : 19960313</p>
-							<p>發證地點 : 桃市列印相片</p>
+							<p>資料日期 : <span id="union_identity_data_date"></span></p>
+							<p>身分證號 : <span id="union_identity_record"></span></p>
+							<p>領補換代碼 : <span id="union_reissue_code"></span>換</p>
+							<p>領補換日期 : <span id="union_reissue_date"></span></p>
+							<p>出生日期 : <span id="union_birthdat_on_identity_system"></span></p>
+							<p>發證地點 : <span id="union_issue_place"></span></p>
 							<p>驗證結果 : Y與檔案資料相符</p>
-							<p>6.在台吳互即人士身分證資料 : 無</p>
+							<p>6.在台吳互即人士身分證資料 : <span
+									id="union_no_household_registration_in_TW_identity_information"></span></p>
 						</div>
 
 
 						<h4>(二)授信保證資料</h4>
 						<h4>授信資料日期 : 20190331</h4>
-						<h4>衍生性金融商品交易轉捩授信爭議案件住記 : 無</h4>
+						<h4>衍生性金融商品交易轉捩授信爭議案件住記 : <span id="union_extend_credit_data_date"></span></h4>
 						<div class="inquire-content">
 							<h4>1.授信資料明細及還款記錄資訊<span>(暫定表格 尚未修改)</span></h4>
 							<div class="inquire-table">
 								<div class="table-item">
 									<h4>姓名/身分證號</h4>
-									<p class="name-identity">朱炳丞/R123456789</p>
-									<p class="name-identity">朱炳丞/R123456789</p>
+									<p class="union_name_identity">朱炳丞/R123456789</p>
+									<p class="union_name_identity">朱炳丞/R123456789</p>
 								</div>
 								<div class="table-item">
 									<h4>來文資料</h4>
@@ -1360,10 +1363,10 @@
 							<h4>查資料庫中吳債權轉讓資料明細-主債務</h4>
 							<br><br>
 							<h4>2.共同債務 : 查資料庫中無本人擔任他戶之共同債務資訊</h4>
-							<h4>查資料庫中吳債權轉讓資料明細-共同債務</h4>
-							<h4>3.從債務(以下均為主借款戶之資料) : 無</h4>
+							<h4 id="union_joint_debt">查資料庫中吳債權轉讓資料明細-共同債務</h4>
+							<h4>3.從債務(以下均為主借款戶之資料) : <span id="union_debt"></span></h4>
 							<h4>查資料庫中吳債權轉讓資料明細-從債務</h4>
-							<h4>4.其他(擔保品提供人-身分證代號S) : 無</h4>
+							<h4>4.其他(擔保品提供人-身分證代號S) : <span id="union_other_information"></span></h4>
 							<h4>查資料庫中吳債權轉讓資料明細-其他(擔保品提供人)</h4>
 							<h4>5.每日受信餘額變動資訊</h4>
 							<h4>(1)每日受信餘額變動資訊<span>(尚未編輯)</span></h4>
@@ -1372,8 +1375,8 @@
 							<div class="inquire-table">
 								<div class="table-item">
 									<h4>姓名/身分證號</h4>
-									<p class="name-identity">朱炳丞/R123456789</p>
-									<p class="name-identity">朱炳丞/R123456789</p>
+									<p class="union_name_identity">朱炳丞/R123456789</p>
+									<p class="union_name_identity">朱炳丞/R123456789</p>
 								</div>
 								<div class="table-item">
 									<h4>來文資料</h4>
@@ -1400,25 +1403,26 @@
 						</div>
 
 						<div class="inquire">
-							<h4>(三)新增額度(含應計入DBR22倍金額)及清償資訊 : 無</h4>
+							<h4>(三)新增額度(含應計入DBR22倍金額)及清償資訊 : <span id="union_new_quota"></span></h4>
 						</div>
 						<div class="inquire">
 							<h4>(四)授信異常資料</h4>
 							<div class="inquire-content">
-								<h4>1.逾期催收及呆帳資料 : 無</h4>
-								<h4>2.逾期資料債權轉讓 : 無</h4>
-								<h4>3.個人餘催呆授信留向非法人組織資訊 : 無</h4>
+								<h4>1.逾期催收及呆帳資料 : <span id="union_overdue_collection_of_bad_debts"></span></h4>
+								<h4>2.逾期資料債權轉讓 : <span id="union_transfer_of_overdue_information_claims"></span></h4>
+								<h4>3.個人餘催呆授信留向非法人組織資訊 : <span
+										id="union_Personal_unincorporated_organizations_info"></span></h4>
 							</div>
 						</div>
 						<div class="inquire">
 							<h4>(五)票據退票及拒往資訊<span>(表格尚未編輯)</span></h4>
-							<h4>票信資料日期 : 20190416</h4>
+							<h4>票信資料日期 : <span id="union_data_info_date"></span></h4>
 							<div class="inquire-content">
 								<div class="inquire-table">
 									<div class="table-item">
 										<h4>姓名/身分證號</h4>
-										<p class="name-identity">朱炳丞/R123456789</p>
-										<p class="name-identity">朱炳丞/R123456789</p>
+										<p class="union_name_identity">朱炳丞/R123456789</p>
+										<p class="union_name_identity">朱炳丞/R123456789</p>
 									</div>
 									<div class="table-item">
 										<h4>來文資料</h4>
@@ -1446,14 +1450,14 @@
 						</div>
 						<div class="inquire">
 							<h4>(六)信用卡資訊</h4>
-							<h4>資料處理日期 : 20190423</h4>
+							<h4>資料處理日期 : <span id="union_data_info_date"></span></h4>
 							<div class="inquire-content">
 								<h4>1.信用卡<span>(表格尚未編輯)</span></h4>
 								<div class="inquire-table">
 									<div class="table-item">
 										<h4>姓名/身分證號</h4>
-										<p class="name-identity">朱炳丞/R123456789</p>
-										<p class="name-identity">朱炳丞/R123456789</p>
+										<p class="union_name_identity">朱炳丞/R123456789</p>
+										<p class="union_name_identity">朱炳丞/R123456789</p>
 									</div>
 									<div class="table-item">
 										<h4>來文資料</h4>
@@ -1480,87 +1484,90 @@
 								<div class="inquire-table">
 									<div class="table-item">
 										<h4><br>異動日期</h4>
-										<p>20190407</p>
+										<p id="union_change_date">20190407</p>
 									</div>
 									<div class="table-item">
 										<h4><br>報送機構</h4>
-										<p>匯豐銀行</p>
+										<p id="union_orgnization">匯豐銀行</p>
 									</div>
 									<div class="table-item">
 										<h4><br>中文姓名</h4>
-										<p>朱炳丞</p>
+										<p id="union_ch_name">朱炳丞</p>
 									</div>
 									<div class="table-item">
 										<h4><br>出生日期</h4>
-										<p>19960312</p>
+										<p id="union_birthday_on_credit_system">19960312</p>
 									</div>
 									<div class="table-item">
 										<h4>戶籍地址<br>通訊地址</h4>
-										<p>台南市大學路1號補字補字補字補字補字補字 </p>
-										<p>台南市大學路2號補字補字補字補字補字補字</p>
+										<p id="union_contact_address">台南市大學路1號補字補字補字補字補字補字 </p>
+										<p id="union_regirster_address">台南市大學路2號補字補字補字補字補字補字</p>
 									</div>
 									<div class="table-item">
 										<h4>居住電話<br>任職電話</h4>
-										<p>06-2328411</p>
-										<p>06-2328412</p>
+										<p id="union_contact_phone_number">06-2328411</p>
+										<p id="union_company_phone_number">06-2328412</p>
 									</div>
 								</div>
 								<div class="inquire-table">
 									<div class="table-item">
 										<h4>任職機構</h4>
-										<p>台積電股份有限公司</p>
+										<p id="union_company">台積電股份有限公司</p>
 									</div>
 									<div class="table-item">
 										<h4>職稱</h4>
-										<p>一般職員</p>
+										<p id="union_job_title">一般職員</p>
 									</div>
 									<div class="table-item">
 										<h4>年薪</h4>
-										<p>444</p>
+										<p id="union_year_salary">444</p>
 									</div>
 									<div class="table-item">
 										<h4>年資</h4>
-										<p>8</p>
+										<p id="union_career">8</p>
 									</div>
 									<div class="table-item">
 										<h4>教育程度</h4>
-										<p>大學</p>
+										<p id="union_edu_degree">大學</p>
 									</div>
 								</div>
-								<h4>3.自用住宅有無 : N</h4>
+								<h4>3.自用住宅有無 : <span id="union_owned_house"></span></h4>
 							</div>
 						</div>
 						<div class="inquire">
 							<h4>(七)最近三個月被查詢記錄</h4>
 							<div class="inquire-content">
-								<h4>新業務申請 : 2次</h4>
-								<h4>原業務往來 : 0次</h4>
-								<h4>原業務往來及新業務申請 : 0次</h4>
-								<h4>查詢當日截至目前金融機構查詢次數 : 1次</h4>
-								<h4>金融機構查詢次數 : 1次</h4>
+								<h4>新業務申請 : <span class="union_new_business"></span> 次</h4>
+								<h4>原業務往來 : <span class="union_original_business"></span> 次</h4>
+								<h4>原業務往來及新業務申請 : <span class="union_new_and_original_business"></span> 次</h4>
+								<h4>查詢當日截至目前金融機構查詢次數 : <span
+										class="union_other_financial_org_query_after_quered"></span> 次</h4>
+								<h4>金融機構查詢次數 : <span class="union_financial_query_time"></span> 次</h4>
 							</div>
 						</div>
 						<div class="inquire">
-							<h4>(八)信用評分 : <span style="color: #1974f5; font-weight: 700; font-size: 20px">514</span> 分
+							<h4>(八)信用評分 : <span style="color: #1974f5; font-weight: 700; font-size: 20px"
+									id="union_score" class="union_score"></span> 分
 							</h4>
 							<div class="inquire-content">
-								<h4>新業務申請 : 2次 <span>(尚未編輯)</span></h4>
-								<h4>原業務往來 : 0次</h4>
-								<h4>原業務往來及新業務申請 : 0次</h4>
-								<h4>查詢當日截至目前金融機構查詢次數 : 1次</h4>
-								<h4>金融機構查詢次數 : 1次</h4>
+								<h4>新業務申請 : <span class="union_new_business"></span> 次</h4>
+								<h4>原業務往來 : <span class="union_original_business"></span> 次</h4>
+								<h4>原業務往來及新業務申請 : <span class="union_new_and_original_business"></span> 次</h4>
+								<h4>查詢當日截至目前金融機構查詢次數 : <span
+										class="union_other_financial_org_query_after_quered"></span> 次</h4>
+								<h4>金融機構查詢次數 : <span class="union_financial_query_time"></span> 次</h4>
 							</div>
 						</div>
 						<div class="inquire">
 							<h4>(九)應記入DBR22倍規範之無擔保放款明細</h4>
 							<div class="inquire-content">
-								<h4>新業務申請 : 2次 <span>(尚未編輯)</span></h4>
-								<h4>原業務往來 : 0次</h4>
+								<h4>新業務申請 : <span class="union_new_business"></span> 次</h4>
+								<h4>原業務往來 : <span class="union_original_business"></span> 次</h4>
 								<div class="inquire-table">
 									<div class="table-item">
 										<h4>姓名/身分證號</h4>
-										<p class="name-identity">朱炳丞/R123456789</p>
-										<p class="name-identity">朱炳丞/R123456789</p>
+										<p class="union_name_identity">朱炳丞/R123456789</p>
+										<p class="union_name_identity">朱炳丞/R123456789</p>
 									</div>
 									<div class="table-item">
 										<h4>來文資料</h4>
@@ -1627,7 +1634,7 @@
 					<div class="conclusion-item">
 						<h4>信用異常資料彙整</h4>
 						<div class="conclusion-info">
-							<p>關係人:R123456789 朱炳丞</p>
+							<p>關係人: <span class="basic_name_identity"></span> </p>
 							<br>
 							<div class="inquire-table">
 								<div class="table-item">
@@ -1659,7 +1666,7 @@
 					<div class="conclusion-item">
 						<h4>信用卡繳款延遲狀</h4>
 						<div class="conclusion-info">
-							<p class="name-identity">朱炳丞/R123456789</p>
+							<p class="basic_name_identity">朱炳丞/R123456789</p>
 							<p>[31-37].未繳足最低金額 : 0</p>
 							<p>[41-47].全額逾期未繳 : 0</p>
 							<p>催收、呆帳 : 0</p>
@@ -1671,8 +1678,8 @@
 							<div class="inquire-table">
 								<div class="table-item">
 									<h4>姓名/身分證號</h4>
-									<p class="name-identity">朱炳丞/R123456789</p>
-									<p class="name-identity">朱炳丞/R123456789</p>
+									<p class="basic_name_identity">朱炳丞/R123456789</p>
+									<p class="basic_name_identity">朱炳丞/R123456789</p>
 								</div>
 								<div class="table-item">
 									<h4>來文資料</h4>
@@ -1740,6 +1747,7 @@
 					<option>案源:臨櫃申辦</option>
 					<option>案源:網銀申辦</option>
 				</select>
+				<input id="new" type="button" value="自訂片語">
 				<input id="add" type="button" value="新增">
 			</h5>
 
