@@ -196,7 +196,7 @@ var editAutoJudgeQuery = ()=>{
                         html += `
                         <li class="judgeItem"><h6> ${mapping[keys[j]]}</h6>
                         <p> ${res[i]['result'][keys[j]]}</p>
-                        <a href="javascript:goToSection('${mappign_section[keys[j]]}');"><img src="../../static/webpages/img/arrowForward.png" alt=""></a>
+                        <a href="javascript:goToSection('${mappign_section[keys[j]]}','${keys[j]}_${res[i]['item']}','${res[i]['item']}');"><img src="../../static/webpages/img/arrowForward.png" alt=""></a>
                         </li>
                         `
                     }
@@ -232,9 +232,33 @@ var editAutoJudgeQuery = ()=>{
 }
 
 
-var goToSection = (sec)=>{
+var goToSection = (sec,target,item)=>{
     jQuery("html,body").animate({ scrollTop: document.getElementById(sec).offsetTop - 15 }, 500);
+    
     spanTheSection(sec);
+    if(item === 'name'){
+        console.log('name');
+        console.log('.' + target + '_identity');
+        $('.' + target + '_identity').css('color','#FF4D4D');
+        $('.' + target + '_identity').css('transition','.5s');
+        setTimeout(()=>{
+            $('.' + target + '_identity').css('color','black');
+        },5000);
+    }
+    if ($('.' + target).length){
+        var color = $('.' + target).css('color');
+        $('.' + target).css('color','#FF4D4D');
+        $('.' + target).css('transition','.5s');
+        setTimeout(()=>{
+            $('.' + target).css('color','black');
+        },5000);
+    }else{
+        $('#' + target).css('color','#FF4D4D');
+        $('#' + target).css('transition','.5s')
+        setTimeout(()=>{
+            $('#' + target).css('color','black');
+        },5000);
+    }
 }
 
 var spanTheSection = (sec) =>{
@@ -246,10 +270,6 @@ var spanTheSection = (sec) =>{
         $(query_collapse_section).css('display','block');
         $(img).attr('src','../../static/webpages/img/topArrow.png');
     }
-    // else{
-    //     $(query_collapsible).css('display','flex');
-    //     $(query_collapse_section).css('display','none');
-    //     $(img).attr('src','../../static/webpages/img/downArrow.png');
-    // }
-        
+    console.log('spanning the section first');
 }
+
