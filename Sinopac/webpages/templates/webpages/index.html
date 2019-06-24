@@ -47,7 +47,7 @@
 				<a class="swiper-bullet" id="swipe4"></a>
 			</div>
 			<div class="loaner">
-				<span> 朱炳丞 | 信用貸款</span><br>[消金TM網銀信貸專案]
+				<span class="basic_name"> 朱炳丞 | 信用貸款</span><br>[消金TM網銀信貸專案]
 			</div>
 			<ul>
 				<li><a href=""><img src="{% static 'webpages/img/data.png' %}" width="24"> 報告總覽</a></li>
@@ -1249,19 +1249,19 @@
 					<div class="collapsible">
 						<div class="non-collapsed-item">
 							<h4>授信異常資料</h4>
-							<p id="">無</p>
+							<p id="union_credit_error_data">無</p>
 						</div>
 						<div class="non-collapsed-item">
 							<h4>票據退票及拒往資訊</h4>
-							<p>無</p>
+							<p>有</p>
 						</div>
 						<div class="non-collapsed-item">
 							<h4>最近三個月被查詢記錄</h4>
-							<p>2次</p>
+							<p id="union_query_times"></p>
 						</div>
 						<div class="non-collapsed-item">
 							<h4>JCIC信用評分</h4>
-							<p>514</p>
+							<p class="union_score">514</p>
 						</div>
 					</div>
 
@@ -1537,7 +1537,7 @@
 							</div>
 						</div>
 						<div class="inquire">
-							<h4>(八)信用評分 : <span style="color: #1974f5; font-weight: 700; font-size: 20px" id="union_score"></span> 分
+							<h4>(八)信用評分 : <span style="color: #1974f5; font-weight: 700; font-size: 20px" id="union_score" class="union_score"></span> 分
 							</h4>
 							<div class="inquire-content">
 								<h4>新業務申請 : <span class="union_new_business"></span> 次</h4>
@@ -1623,7 +1623,7 @@
 					<div class="conclusion-item">
 						<h4>信用異常資料彙整</h4>
 						<div class="conclusion-info">
-							<p>關係人:R123456789 朱炳丞</p>
+							<p>關係人: <span class="basic_name_identity"></span> </p>
 							<br>
 							<div class="inquire-table">
 								<div class="table-item">
@@ -1655,7 +1655,7 @@
 					<div class="conclusion-item">
 						<h4>信用卡繳款延遲狀</h4>
 						<div class="conclusion-info">
-							<p class="name-identity">朱炳丞/R123456789</p>
+							<p class="basic_name_identity">朱炳丞/R123456789</p>
 							<p>[31-37].未繳足最低金額 : 0</p>
 							<p>[41-47].全額逾期未繳 : 0</p>
 							<p>催收、呆帳 : 0</p>
@@ -1667,8 +1667,8 @@
 							<div class="inquire-table">
 								<div class="table-item">
 									<h4>姓名/身分證號</h4>
-									<p class="name-identity">朱炳丞/R123456789</p>
-									<p class="name-identity">朱炳丞/R123456789</p>
+									<p class="basic_name_identity">朱炳丞/R123456789</p>
+									<p class="basic_name_identity">朱炳丞/R123456789</p>
 								</div>
 								<div class="table-item">
 									<h4>來文資料</h4>

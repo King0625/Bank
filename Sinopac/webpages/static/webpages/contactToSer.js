@@ -10,6 +10,20 @@ let Contribution = []
 let creditData = []
 let autoJudgeData = []
 
+const credit_data = [
+    'overdue_collection_of_bad_debts',
+    'transfer_of_overdue_information_claims',
+    'Personal_unincorporated_organizations_info'
+]
+
+const query_data = [
+    'new_business',
+    'original_business',
+    'new_and_original_business',
+    'other_financial_org_query_after_quered',
+    'financial_query_time'
+]
+
 $(document).ready(()=>{
     // get the url paramater to get the correct
     var url = new URL(window.location.href);
@@ -40,6 +54,9 @@ var editTheForm = (BasicData)=>{
     for(var i = 0; i < keys.length; i++){
         $('#basic_' + keys[i]).val(BasicData[keys[i]]);
     }
+
+    $('.basic_name').html(BasicData['name'] + '| 信用貸款');
+    $('.basic_name_identity').html(BasicData['name'] + ' ' + BasicData['identity']);
 }
 
 var editPartTwo = (DepositData)=>{
@@ -77,8 +94,52 @@ var editPartThree = (CheckData)=>{
     }
 
     $('.union_name_identity').html(CheckData['name'] + '/' + CheckData['identity'])
+    $('.union_new_business').html(CheckData['new_business']);
+    $('.union_original_business').html(CheckData['original_business']);
+    $('.union_new_and_original_business').html(CheckData['new_and_original_business']);
+    $('.union_other_financial_org_query_after_quered').html(CheckData['other_financial_org_query_after_quered']);
+    $('.union_financial_query_time').html(CheckData['financial_query_time']);
+    $('.union_score').html(CheckData['score']);
+
+    if(CheckData['no_household_registration_in_TW']){
+        $('#union_no_household_registration_in_TW').html('有資料')
+    }else{
+        $('#union_no_household_registration_in_TW').html('無資料')
+    }
+
+    if(CheckData['owned_house']){
+        $('#union_owned_house').html('有');
+    }else{
+        $('#union_owned_house').html('無');
+    }
+    
+    if(checkCreditErrorData(CheckData)){
+        $('#union_credit_error_data').html('有')
+    }else{
+        $('#union_credit_error_data').html('無')
+    }
+    
+    var times = checkQueryTimes(CheckData);
+    $('#union_query_times').html(times + '次');
 }
 
+var checkCreditErrorData = (data)=>{
+    for(var i = 0; i < credit_data.length; i++){
+        console.log(data[credit_data[i]]);
+        if(data[credit_data[i]] !== '無'){
+            return true;
+        }
+    }
+    return false;
+}
+
+var checkQueryTimes = (data)=>{
+    var times = 0;
+    for(var i = 0; i < query_data.length; i++){
+        times += data[query_data[i]];
+    }
+    return times;
+}
 
 $('.basicFormData').on('change', function () {
     EDITELEMTSid.push($(this)[0].id);
