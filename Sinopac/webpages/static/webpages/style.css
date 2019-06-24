@@ -62,9 +62,14 @@ ul {
     box-shadow: 3px 3px 6px rgba(0, 0, 0, .16);
     font-weight: 700;
 }
+
 .failed {
     color: #FF4D4D;
 }
+
+
+
+
 @keyframes expand {
     0%{
         width: 0;
@@ -84,6 +89,13 @@ ul {
     box-shadow: 0 3px 10px rgba(0, 0, 0, .16);
     background-color: #FFF4AA;
     z-index: 10;
+    top:-60px;
+    
+}
+.headerhide{
+
+    top:0px;
+    transition-duration:500ms;
 }
 
 .header img {
@@ -109,10 +121,22 @@ ul {
     position: relative;
     position: fixed;
     height: 100%;
+    left:-220px;
+    
     /* padding: 35px; */
     /* border-right: 2px solid #EAEAEA; */
    
+}.dataListhide{
+    z-index: 2;
+    background: #FFFFFF;
+    position: relative;
+    position: fixed;
+    height: 100%;
+    left:0px;
+    transition-duration: 500ms;
+   
 }
+
 .dataList .loaner{
     line-height: 35px;
     height: 75px;
@@ -183,8 +207,13 @@ ul {
     position: relative;
     padding: 35px;
     grid-area: content;
+    opacity:0;
+    transition-duration:500ms;
 }
-
+.contenthide{
+    opacity: 1;
+    transition-duration: 200ms;  
+}
 .contentList > ul li{
     z-index: 4;
     float: left;

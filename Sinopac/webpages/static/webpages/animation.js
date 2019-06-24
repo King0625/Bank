@@ -3,7 +3,12 @@ $(document).ready(() => {
     // bankDataQuery();
     // contributionDataQuery();
 
-    $(".content").slideDown("slow");
+    $(".content").toggleClass("contenthide");
+    $(".header").addClass("headerhide");
+    // $(".header").toggleClass("header");
+    $(".dataList").toggleClass("dataListhide");
+    // $(".dataList").toggleClass("dataList");
+
 
     $("#swipe1").click(function () {
         jQuery("html,body").animate({ scrollTop: document.getElementById('content1').offsetTop - 15 }, 500);
