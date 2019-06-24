@@ -145,6 +145,14 @@ def case(request):
 	return HttpResponse(template.render({},request))
 	# return render(request, 'webpages/webpages.html', {}) 
 
+def loan(request):
+	template = loader.get_template('webpages/loan.html')
+	return HttpResponse(template.render({}, request))
+
+def info(request):
+	template = loader.get_template('webpages/information.html')
+	return HttpResponse(template.render({}, request))
+
 @csrf_exempt
 def basicDataQuery(request) :
 	# print(request.GET)
@@ -316,6 +324,16 @@ def test(request):
 	data = BankDepositData.objects.get(identity=BasicData.objects.get(id=request.GET['id']).identity)
 	print(data.identity)
 	return HttpResponse(json.dumps({}),"application/json")
+
+
+@csrf_exempt
+def loanData(request):
+	data = Case.objects.get(id=request.GET['id'])
+	data = model_to_dict(data)
+	newdata = {}
+	newdata['name'] = data['name']
+	newdata['identity'] = data['identity']
+	return HttpResponse(json.dumps(data,indent=4,ensure_ascii=False),content_type="application/json")
 
 
 # Create your views here.

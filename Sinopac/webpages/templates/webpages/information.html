@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% load static %}
-    <link href="{% static 'webpages/information.css'%}" rel="stylesheet" type="text/css">
+    <link href="{% static 'information/information.css'%}" rel="stylesheet" type="text/css">
     <link href="{% static 'webpages/style.css'%}" rel="stylesheet" type="text/css">
     <title>個案資料-</title>
 </head>
@@ -29,10 +29,10 @@
                 <span> 朱炳丞 | 信用貸款</span><br>[消金TM網銀信貸專案]
             </div>
             <ul>
-                <li><a href=""><img src="{% static 'webpages/img/data.png' %}" width="24"> 報告總覽</a></li>
-                <li><a href=""><img src="{% static 'webpages/img/report.png' %}" width="24"> 信貸徵審意見</a></li>
-                <li><a href=""><img src="{% static 'webpages/img/comment.png' %}" width="24"> 防杜代辦檢核表</a></li>
-                <li><a href=""><img src="{% static 'webpages/img/review.png' %}" width="24"> 個案資料-公告</a></li>
+                <li><a href="" id="overview"><img src="{% static 'webpages/img/data.png' %}" width="24"> 報告總覽</a></li>
+                <li><a href="" id="comment"><img src="{% static 'webpages/img/report.png' %}" width="24"> 信貸徵審意見</a></li>
+                <li><a href="" id="checklist"><img src="{% static 'webpages/img/comment.png' %}" width="24"> 防杜代辦檢核表</a></li>
+                <li><a href="" id="bulletin"><img src="{% static 'webpages/img/review.png' %}" width="24"> 個案資料-公告</a></li>
             </ul>
             <a id="todo" href="">回到代辦事項</a>
         </div>
@@ -82,5 +82,6 @@
     </div>
 
 </body>
-
+<script src="{% static 'webpages/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'information/information.js'%}"></script>
 </html>
