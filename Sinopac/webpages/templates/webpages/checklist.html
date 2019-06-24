@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        {% load static %}
+        <link href="{% static 'webpages/checklist.css'%}" rel="stylesheet" type="text/css">
+        <!-- <link href="checklist.css" rel="stylesheet" type="text/css"> -->
+        <link href="{% static 'webpages/style.css'%}" rel="stylesheet" type="text/css">
+        <!-- <link href="style.css" rel="stylesheet" type="text/css"> -->
+        <title>Sinopac 待辦事項</title>
+</head>
+
+<body>
+
+        <div class="header">
+                <div class="logo">
+                        <a href="">
+                                <img src="{% static 'webpages/img/sinopac_logo.png'%}" alt="" width="175">
+                                <!-- <img src="img/sinopac_logo.png" alt="" width="175"> -->
+                                <span class="logo-word"><span style="color: #e71a0f">e</span>Loan</span>
+                        </a>
+                </div>
+
+        </div>
+        <div class="content-container">
+                <div class="dataList">
+                        <div class="loaner">
+                                <span> 朱炳丞 | 信用貸款</span><br>[消金TM網銀信貸專案]
+                        </div>
+                        <ul>
+                                <li><a href=""><img src="{% static 'webpages/img/data.png' %}" width="24"> 報告總覽</a></li>
+                                <li><a href=""><img src="{% static 'webpages/img/report.png' %}" width="24"> 信貸徵審意見</a>
+                                </li>
+                                <li><a href=""><img src="{% static 'webpages/img/comment.png' %}" width="24">
+                                                防杜代辦檢核表</a></li>
+                                <li><a href=""><img src="{% static 'webpages/img/review.png' %}" width="24"> 個案資料-公告</a>
+                                </li>
+                                <!-- <li><a href=""><img src="img/data.png" width="24"> 報告總覽</a></li>
+                                <li><a href=""><img src="img/report.png" width="24"> 信貸徵審意見</a></li>
+                                <li><a href=""><img src="img/comment.png" width="24"> 防杜代辦檢核表</a></li>
+                                <li><a href=""><img src="img/review.png" width="24"> 個案資料-公告</a></li> -->
+                        </ul>
+                        <a id="todo" href="">回到代辦事項</a>
+                </div>
+
+                <div class="list-container">
+                        <h1>徵信件號: AAA23232323</h1>
+                        <div class="grid-item2">
+                                <button class="button ">存檔</button>
+                                <img src="{% static 'webpages/img/print.png'%}" width="24">
+                                <!-- <img src="img/print.png" width="24"> -->
+
+                        </div>
+                        <div class="grid-item3"><input type="checkbox" name="vehicle1" value="Bike"> 本案不需填寫防杜代辦措施檢核表
+                        </div>
+
+
+                        <div class="grid-container">
+                                <div class="grid-item01" id="top"></div>
+                                <div class="grid-item01" id="top1">疑似代辦案件</div>
+                                <div class="grid-item01" id="right1"></div>
+                                <div class="grid-item01" id="check">檢核項目</div>
+                                <div class="grid-item01">是</div>
+                                <div class="grid-item01">否</div>
+                                <div class="grid-item01">說明</div>
+                                <div class="grid-item01">是</div>
+                                <div class="grid-item01">否</div>
+                                <div class="grid-item01" id="right"></div>
+                                <div class="grid-item">案件來源是否透過代辦業者申貸</div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item"></div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item01" id="right"></div>
+                                <div class="grid-item">居住地、工作地與申貸分行所在地或業務人員駐點無地緣性</div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item"></div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item01" id="right"></div>
+                                <div class="grid-item">借款人提供之資料與聯徵中心及本行內部資料庫比對不符</div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item"></div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item01" id="right"></div>
+                                <div class="grid-item">所提供之公司電話與該公司實際電話無關聯性</div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item"></div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item01" id="right"></div>
+                                <div class="grid-item">職業變動頻繁或任職未滿一年者，對自稱所從事之公司及工作性質不甚了解</div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item"></div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item01" id="right"></div>
+                                <div class="grid-item">照會過程中，難以直接聯繫本人，需由第三人居中聯繫</div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item"></div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item01" id="right"></div>
+                                <div class="grid-item">財力文件資料經變造或有異常狀況</div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item"></div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item01" id="right"></div>
+                                <div class="grid-item">借款人是否有支付本行收取之開辦手續費以外之費用</div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item"></div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item01" id="right"></div>
+                                <div class="grid-item">借款人是否有指定撥款日期及時間</div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item"></div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item grid-button"><input type="checkbox" name="vehicle1" value="Bike">
+                                </div>
+                                <div class="grid-item01" id="right"></div>
+                        </div>
+
+                        <div class="grid-item2" id="bottom">
+                                <button class="button ">存檔</button>
+
+                        </div>
+                </div>
+
+        </div>
+
+
+</body>
+
+</html>

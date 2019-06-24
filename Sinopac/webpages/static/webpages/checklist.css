@@ -1,0 +1,101 @@
+
+.list-container{
+  margin-left: 220px;
+  width: 100%;
+  padding: 2em;
+}
+
+
+.grid-container {
+    display:inline-grid;
+    grid-template-columns: 600px auto auto 400px auto auto 60px;
+    background-color:white;
+    padding: 2em;
+    /* width: 100%; */
+    /* height: 843px; */
+    /* width: 1563px; */
+  }
+ 
+  .grid-item01 {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 0px;
+    border-bottom : 1px solid black;
+    border-right: 1px solid black;
+    font-size:  20px;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-bottom : 1px solid black;
+    border-right: 1px solid black;
+    font-size: 16px;
+    text-align: left;
+    padding-top: 30px;
+    
+  
+}
+
+
+.grid-button{
+    text-align: center;
+}
+
+
+.grid-item3 {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        font-size: 16px;
+        text-align: left;
+    }
+.grid-item2 {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+       
+    }
+.button {
+        background-color: white; 
+        border-radius: 6px;
+        box-shadow:0 3px 3px rgba(0, 0, 0, .16);
+        height: 32px;
+        width: 64px;
+        margin: 10.5px;
+        cursor: pointer;
+        outline: none;
+  
+      }
+
+div#bottom { 
+  position: relative;
+  float: right;
+  right: 5%;
+}
+
+div.grid-container>#check{
+    position: relative;
+    text-align: left; 
+}
+div#top{
+    grid-column: 1 / 5;
+    border-right: 0px solid black;
+    border-bottom: 0px solid black;
+  }
+  div#top1{
+    grid-column: 5 / 7;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 0px solid black;
+  }
+
+
+  div#right{
+    border-right: 0px solid black;
+    border-bottom: 1px solid black;
+  }
+  div#right1{
+    border-right: 0px solid black;
+    border-bottom: 0px solid black;
+  }
