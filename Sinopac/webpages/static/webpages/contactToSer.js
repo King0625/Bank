@@ -30,6 +30,11 @@ const mapping = {
     "union" : "參、聯合徵信中心查詢回覆資料" 
 }
 
+const mappign_section = {
+    "deposit" : "content2",
+    "union" : "content3"
+}
+
 $(document).ready(()=>{
     // get the url paramater to get the correct
     var url = new URL(window.location.href);
@@ -191,7 +196,7 @@ var editAutoJudgeQuery = ()=>{
                         html += `
                         <li class="judgeItem"><h6> ${mapping[keys[j]]}</h6>
                         <p> ${res[i]['result'][keys[j]]}</p>
-                        <a href=""><img src="../../static/webpages/img/arrowForward.png" alt=""></a>
+                        <a href="javascript:goToSection('${mappign_section[keys[j]]}');"><img src="../../static/webpages/img/arrowForward.png" alt=""></a>
                         </li>
                         `
                     }
@@ -226,3 +231,25 @@ var editAutoJudgeQuery = ()=>{
     // $('.judgeItem').remove();
 }
 
+
+var goToSection = (sec)=>{
+    jQuery("html,body").animate({ scrollTop: document.getElementById(sec).offsetTop - 15 }, 500);
+    spanTheSection(sec);
+}
+
+var spanTheSection = (sec) =>{
+    var query_collapsible = '#' + sec + '_detail .collapsible';
+    var query_collapse_section = '#' + sec + '_detail .collapse-section'
+    var img = '#' + sec + '_detail .collapse-btn'
+    if($(query_collapsible).css('display') === 'flex'){
+        $(query_collapsible).css('display','none');
+        $(query_collapse_section).css('display','block');
+        $(img).attr('src','../../static/webpages/img/topArrow.png');
+    }
+    // else{
+    //     $(query_collapsible).css('display','flex');
+    //     $(query_collapse_section).css('display','none');
+    //     $(img).attr('src','../../static/webpages/img/downArrow.png');
+    // }
+        
+}
