@@ -333,3 +333,22 @@ input[type="button"]:hover{
 #alert-save{
     background-image: url('img/round-check-24px.png');
 }
+
+.alert-list {
+    height:120px;
+    padding:20px;
+    
+}
+.alert-list img{
+    vertical-align: middle;
+}
+.alert-note{
+    vertical-align: middle;
+    margin: 0 10px;
+}
+.alert-list-close{
+    float:right;
+    margin:6px 0;
+    background: none;
+    border:none;
+}

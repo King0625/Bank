@@ -94,36 +94,6 @@ ul {
 }
 
 
-/* mainMenu */
-/* .mainMenu {
-    width: 15%;
-    background: #FFFFFF;
-    position: fixed;
-    box-shadow: 4px 0 10px #EAEAEA;
-    overflow: scroll;
-    height: 92.5%;
-    z-index: 3;
-}
-.mainMenu .wrapper{
-    width: 50px;
-    height: 50px;
-    background: url('img/leftArrow.png') no-repeat;
-}
-
-.mainMenu ul .items {
-    line-height: 35px;
-    height: 75px;
-    padding: 15px 25px;
-    box-shadow: 0 3px 8px #EAEAEA;
-    border-left: 10px solid #fff4aa;
-    vertical-align: center;
-}
-
-.mainMenu ul .items a {
-    color: #408f98;
-} */
-
-
 /* datalist */
 .dataList{
     z-index: 2;
@@ -166,7 +136,7 @@ ul {
 
 .dataList #todo {
     position: absolute;
-    top: 70%;
+    top: 80%;
     left: 10%;
     text-align: center;
     background: #fff4aa;
