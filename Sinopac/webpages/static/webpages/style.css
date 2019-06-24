@@ -525,7 +525,17 @@ ul {
     height: 25px;
     margin: 10px;
     border-radius: 50%;
+    
+}
+
+.correct{
     background: url("img/baseline-check_circle-24px.png");
+}
+
+.wrong{
+    background-color: #FF4D4D;
+    text-align: center;
+    color: white;
 }
 
 /* moreInfo in description */

@@ -197,7 +197,7 @@ $(document).ready(() => {
         $(".text-container select").css("background", "none");
     });
 
-    $("#grid1 .check").click(function () {
+    $("#grid1 .wrong").on('click',function () {
         $("#grid1-detail").toggleClass('shown');
         $("#grid1-detail").toggleClass('not-shown');
         $("#grid1-detail .close").click(function () {
@@ -207,7 +207,7 @@ $(document).ready(() => {
 
 
 
-    $("#grid2 .check").click(function () {
+    $("#grid2 .wrong").click(function () {
         $("#grid2-detail").toggleClass('shown');
         $("#grid2-detail").toggleClass('not-shown');
         $("#grid2-detail .close").click(function () {
@@ -215,7 +215,7 @@ $(document).ready(() => {
         });
     });
 
-    $("#grid3 .check").click(function () {
+    $("#grid3 .wrong").click(function () {
         $("#grid3-detail").toggleClass('shown');
         $("#grid3-detail").toggleClass('not-shown');
         $("#grid3-detail .close").click(function () {
@@ -223,7 +223,7 @@ $(document).ready(() => {
         });
     });
 
-    $("#grid4 .check").click(function () {
+    $("#grid4 .wrong").click(function () {
         $("#grid4-detail").toggleClass('shown');
         $("#grid4-detail").toggleClass('not-shown');
         $("#grid4-detail .close").click(function () {
@@ -231,7 +231,7 @@ $(document).ready(() => {
         });
     });
 
-    $("#grid5 .check").click(function () {
+    $("#grid5 .wrong").click(function () {
         $("#grid5-detail").toggleClass('shown');
         $("#grid5-detail").toggleClass('not-shown');
         $("#grid5-detail .close").click(function () {
@@ -246,49 +246,49 @@ $(document).ready(() => {
             $("#grid6-detail").addClass('not-shown');
         });
     });
-    $("#grid7 .check").click(function () {
+    $("#grid7 .wrong").click(function () {
         $("#grid7-detail").toggleClass('shown');
         $("#grid7-detail").toggleClass('not-shown');
         $("#grid7-detail .close").click(function () {
             $("#grid7-detail").addClass('not-shown');
         });
     });
-    $("#grid8 .check").click(function () {
+    $("#grid8 .wrong").click(function () {
         $("#grid8-detail").toggleClass('shown');
         $("#grid8-detail").toggleClass('not-shown');
         $("#grid8-detail .close").click(function () {
             $("#grid8-detail").addClass('not-shown');
         });
     });
-    $("#grid9 .check").click(function () {
+    $("#grid9 .wrong").click(function () {
         $("#grid9-detail").toggleClass('shown');
         $("#grid9-detail").toggleClass('not-shown');
         $("#grid9-detail .close").click(function () {
             $("#grid9-detail").addClass('not-shown');
         });
     });
-    $("#grid10 .check").click(function () {
+    $("#grid10 .wrong").click(function () {
         $("#grid10-detail").toggleClass('shown');
         $("#grid10-detail").toggleClass('not-shown');
         $("#grid10-detail .close").click(function () {
             $("#grid10-detail").addClass('not-shown');
         });
     });
-    $("#grid11 .check").click(function () {
+    $("#grid11 .wrong").click(function () {
         $("#grid11-detail").toggleClass('shown');
         $("#grid11-detail").toggleClass('not-shown');
         $("#grid11-detail .close").click(function () {
             $("#grid11-detail").addClass('not-shown');
         });
     });
-    $("#grid12 .check").click(function () {
+    $("#grid12 .wrong").click(function () {
         $("#grid12-detail").toggleClass('shown');
         $("#grid12-detail").toggleClass('not-shown');
         $("#grid12-detail .close").click(function () {
             $("#grid12-detail").addClass('not-shown');
         });
     });
-    $("#grid13 .check").click(function () {
+    $("#grid13 .wrong").click(function () {
         $("#grid13-detail").toggleClass('shown');
         $("#grid13-detail").toggleClass('not-shown');
         $("#grid13-detail .close").click(function () {

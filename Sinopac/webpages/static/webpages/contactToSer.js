@@ -172,7 +172,6 @@ $('#save').click(() => {
 
 })
 
-<<<<<<< HEAD
 var editAutoJudgeQuery = ()=>{
     // for(var i = 0; i < autoJudgeData.length; i++){
     var url = new URL(window.location.href);
@@ -188,12 +187,6 @@ var editAutoJudgeQuery = ()=>{
                 var html = ''
                 var keys = Object.keys(res[i]['result']);
                 if(keys.length > 0){
-                    // html += `
-                    //     <li class="judgeItem"><h6> ${mapping['basic']}</h6>
-                    //     <p> ${res[i]['result'][keys[j]]}</p>
-                    //     <a href=""><img src="../../static/webpages/img/arrowForward.png" alt=""></a>
-                    //     </li>
-                    //     `
                     for(var j = 0 ; j < keys.length; j++){
                         html += `
                         <li class="judgeItem"><h6> ${mapping[keys[j]]}</h6>
@@ -202,26 +195,15 @@ var editAutoJudgeQuery = ()=>{
                         </li>
                         `
                     }
+                    $('.auto_' + res[i]['item']).attr('class',`check wrong auto_${res[i]['item']} `);
+                    $('.auto_' + res[i]['item']).html(keys.length);
+                }else{
+                    $('.auto_' + res[i]['item']).attr('class',`check auto_${res[i]['item']} correct`)
                 }
                 console.log(html);
                 $('#auto_' + res[i]['item']).html(html);
+                
             }
-=======
-var editAutoJudgeQuery = (num) => {
-    // for(var i = 0; i < autoJudgeData.length; i++){
-    var judgeList = Object.keys(autoJudgeData[num]);
-    console.log(judgeList);
-    $('.judgeItem').remove();
-    var j = 0;
-    for (var j = 0; j < judgeList.length; j++) {
-        var html = ''
-        for (var k = 0; k < autoJudgeData[num][judgeList[j]].length; k++) {
-            html += `<li class="judgeItem"><h6> ${mapping[autoJudgeData[num][judgeList[j]][k]['field']]}</h6>
-            <p> ${autoJudgeData[num][judgeList[j]][k]['text']}</p>
-            <a href="#${autoJudgeData[num][judgeList[j]][k]['field'] + '_' + judgeList[j]}"><img src="../../static/webpages/img/arrowForward.png" alt=""></a>
-            </li>
-            `
->>>>>>> 17c6e73368ad5a3ce64ccfa1376224ef78ea355b
         }
     });
     // var judgeList = Object.keys(autoJudgeData[num]);
