@@ -46,7 +46,7 @@ $(document).ready(() => {
             $('#name').html(res['name'] + ' | 信用貸款')
             $('#overview').attr('href',`/sinopac/case/?id=${id}`);
             $('#comment').attr('href',`/sinopac/loan/?id=${id}`);
-            $('#checklist').attr('href',`/sinopac/`);
+            $('#checklist').attr('href',`/sinopac/checklist/?id=${id}`);
             $('#bulletin').attr('href',`/sinopac/information/?id=${id}`)
         }
     });

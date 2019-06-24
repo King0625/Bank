@@ -42,8 +42,24 @@ $(document).ready(()=>{
     // $('#name').html(res['name'] + ' | 信用貸款')
     $('#overview').attr('href',`/sinopac/case/?id=${id}`);
     $('#comment').attr('href',`/sinopac/loan/?id=${id}`);
-    $('#checklist').attr('href',`/sinopac/`);
+    $('#checklist').attr('href',`/sinopac/checklist/?id=${id}`);
     $('#bulletin').attr('href',`/sinopac/information/?id=${id}`)
+    loadBasicData(id);
+    // $.ajax({
+    //     type: "GET",
+    //     url: window.location.origin + '/sinopac/basicData/?id=' + id,
+    //     async: false,
+    //     success: (res) => {
+    //         console.log(res);
+    //         editTheForm(res['BasicData']);
+    //         editPartTwo(res['BankDepositData']);
+    //         editPartThree(res['UnionCreditCheckSystemInfo']);
+    //         editAutoJudgeQuery();
+    //     }
+    // })
+})
+
+var loadBasicData = (id)=>{
     $.ajax({
         type: "GET",
         url: window.location.origin + '/sinopac/basicData/?id=' + id,
@@ -55,8 +71,8 @@ $(document).ready(()=>{
             editPartThree(res['UnionCreditCheckSystemInfo']);
             editAutoJudgeQuery();
         }
-    })
-})
+    });
+}
 
 
 var editTheForm = (BasicData) => {
@@ -179,7 +195,7 @@ $('#save').click(() => {
             console.log('save successful')
         }
     });
-
+    loadBasicData(id);
 })
 
 var editAutoJudgeQuery = ()=>{

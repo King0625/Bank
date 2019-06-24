@@ -102,14 +102,19 @@ $(document).ready(() => {
         $("#contentList-info1, #contentList-info2, #contentList-info3, #contentList-info4, #contentList-info5").addClass('not-shown');
     })
 
-    var externalWebsites = document.getElementById('all-external-Websites');
-    externalWebsites.style.left = document.getElementById('externalPage').offsetLeft + "px";
-
-    $("#externalPage").click(function () {
-        $(this).toggleClass('list-clicked');
-        $("#all-external-Websites").toggleClass('not-shown');
-
-    })
+    try{
+        var externalWebsites = document.getElementById('all-external-Websites');
+        externalWebsites.style.left = document.getElementById('externalPage').offsetLeft + "px";
+    
+        $("#externalPage").click(function () {
+            $(this).toggleClass('list-clicked');
+            $("#all-external-Websites").toggleClass('not-shown');
+    
+        })
+    }catch(e){
+        console.log(e);
+    }
+   
 
     var readonly = true;
     var disabled = true;

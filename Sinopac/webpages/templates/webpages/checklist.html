@@ -28,22 +28,22 @@
         <div class="content-container">
                 <div class="dataList">
                         <div class="loaner">
-                                <span> 朱炳丞 | 信用貸款</span><br>[消金TM網銀信貸專案]
+                                <span id="name"> 朱炳丞 | 信用貸款</span><br>[消金TM網銀信貸專案]
                         </div>
                         <ul>
-                                <li><a href=""><img src="{% static 'webpages/img/data.png' %}" width="24"> 報告總覽</a></li>
-                                <li><a href=""><img src="{% static 'webpages/img/report.png' %}" width="24"> 信貸徵審意見</a>
+                                <li><a href="" id="overview"><img src="{% static 'webpages/img/data.png' %}" width="24"> 報告總覽</a></li>
+                                <li><a href="" id="comment"><img src="{% static 'webpages/img/report.png' %}" width="24"> 信貸徵審意見</a>
                                 </li>
-                                <li><a href=""><img src="{% static 'webpages/img/comment.png' %}" width="24">
+                                <li><a href="" id="checklist"><img src="{% static 'webpages/img/comment.png' %}" width="24">
                                                 防杜代辦檢核表</a></li>
-                                <li><a href=""><img src="{% static 'webpages/img/review.png' %}" width="24"> 個案資料-公告</a>
+                                <li><a href="" id="bulletin"><img src="{% static 'webpages/img/review.png' %}" width="24"> 個案資料-公告</a>
                                 </li>
                                 <!-- <li><a href=""><img src="img/data.png" width="24"> 報告總覽</a></li>
                                 <li><a href=""><img src="img/report.png" width="24"> 信貸徵審意見</a></li>
                                 <li><a href=""><img src="img/comment.png" width="24"> 防杜代辦檢核表</a></li>
                                 <li><a href=""><img src="img/review.png" width="24"> 個案資料-公告</a></li> -->
                         </ul>
-                        <a id="todo" href="">回到代辦事項</a>
+                        <a id="todo" href="/sinopac/">回到代辦事項</a>
                 </div>
 
                 <div class="list-container">
@@ -180,5 +180,7 @@
 
 
 </body>
-
+        <script src="{% static 'webpages/jquery-3.4.1.min.js' %}"></script>
+        <script src="{% static 'webpages/animation.js' %}"></script>
+        <script src="{% static 'information/information.js'%}"></script>
 </html>

@@ -12,6 +12,7 @@ urlpatterns = [
 		path('loan/',views.loan,name="loan"),
 		path('information/',views.info,name="info"),
 		path('tinyInfo/',views.loanData,name="tinyInfo"),
+		path('checklist/',views.checklist,name="checklist"),
 		# path('bankDepositData/',views.bankDepositData,name="bankDepositData"),
 		# path('contrubutionData/',views.contributionData, name='contributionData'),
 		# path('FDDData/',views.FDDLevelData,name ='FDDData'),

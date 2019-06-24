@@ -149,6 +149,10 @@ def loan(request):
 	template = loader.get_template('webpages/loan.html')
 	return HttpResponse(template.render({}, request))
 
+def checklist(request):
+	template = loader.get_template('webpages/checklist.html')
+	return HttpResponse(template.render({}, request))
+
 def info(request):
 	template = loader.get_template('webpages/information.html')
 	return HttpResponse(template.render({}, request))
@@ -207,7 +211,9 @@ def __basicDataQuery_POST(id,data):
 	newData = {}
 	for i in keys:
 		newData[re.sub(r'basic_','',i)] = data[i]
-	print(newData)
+	# print(newData)
+	c = Case.objects.get(identity=id)
+	setattr(c,'name',d.name)
 		
 	if(len(newData.keys())):
 		# update sql
