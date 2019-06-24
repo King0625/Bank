@@ -46,8 +46,16 @@ ul {
 
 
 .not-shown{
-    display: none;
+    transition-duration: 200ms;
+    visibility: hidden;
+    opacity: 0;
 }
+.shown{
+    transition-duration: 200ms;
+    visibility: visible;
+    opacity: 1;
+}
+
 .list-clicked{
     background: #FAFAFA;
     border-radius: 6px;

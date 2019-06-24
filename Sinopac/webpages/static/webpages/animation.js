@@ -188,7 +188,9 @@ $(document).ready(() => {
         $("#grid1-detail").toggleClass('shown');
         $("#grid1-detail").toggleClass('not-shown');
         $("#grid1-detail .close").click(function () {
+            $("#grid1-detail").removeClass('shown');
             $("#grid1-detail").addClass('not-shown');
+
         });
     });
 
@@ -198,6 +200,7 @@ $(document).ready(() => {
         $("#grid2-detail").toggleClass('shown');
         $("#grid2-detail").toggleClass('not-shown');
         $("#grid2-detail .close").click(function () {
+            $("#grid2-detail").removeClass('shown');
             $("#grid2-detail").addClass('not-shown');
         });
     });
@@ -206,6 +209,7 @@ $(document).ready(() => {
         $("#grid3-detail").toggleClass('shown');
         $("#grid3-detail").toggleClass('not-shown');
         $("#grid3-detail .close").click(function () {
+            $("#grid3-detail").removeClass('shown');
             $("#grid3-detail").addClass('not-shown');
         });
     });
@@ -214,6 +218,7 @@ $(document).ready(() => {
         $("#grid4-detail").toggleClass('shown');
         $("#grid4-detail").toggleClass('not-shown');
         $("#grid4-detail .close").click(function () {
+            $("#grid4-detail").removeClass('shown');
             $("#grid4-detail").addClass('not-shown');
         });
     });
@@ -222,6 +227,7 @@ $(document).ready(() => {
         $("#grid5-detail").toggleClass('shown');
         $("#grid5-detail").toggleClass('not-shown');
         $("#grid5-detail .close").click(function () {
+            $("#grid5-detail").removeClass('shown');
             $("#grid5-detail").addClass('not-shown');
         });
     });
@@ -230,6 +236,7 @@ $(document).ready(() => {
         $("#grid6-detail").toggleClass('shown');
         $("#grid6-detail").toggleClass('not-shown');
         $("#grid6-detail .close").click(function () {
+            $("#grid6-detail").removeClass('shown');
             $("#grid6-detail").addClass('not-shown');
         });
     });
@@ -237,6 +244,7 @@ $(document).ready(() => {
         $("#grid7-detail").toggleClass('shown');
         $("#grid7-detail").toggleClass('not-shown');
         $("#grid7-detail .close").click(function () {
+            $("#grid7-detail").removeClass('shown');
             $("#grid7-detail").addClass('not-shown');
         });
     });
@@ -244,6 +252,7 @@ $(document).ready(() => {
         $("#grid8-detail").toggleClass('shown');
         $("#grid8-detail").toggleClass('not-shown');
         $("#grid8-detail .close").click(function () {
+            $("#grid8-detail").removeClass('shown');
             $("#grid8-detail").addClass('not-shown');
         });
     });
@@ -251,6 +260,7 @@ $(document).ready(() => {
         $("#grid9-detail").toggleClass('shown');
         $("#grid9-detail").toggleClass('not-shown');
         $("#grid9-detail .close").click(function () {
+            $("#grid9-detail").removeClass('shown');
             $("#grid9-detail").addClass('not-shown');
         });
     });
@@ -258,6 +268,7 @@ $(document).ready(() => {
         $("#grid10-detail").toggleClass('shown');
         $("#grid10-detail").toggleClass('not-shown');
         $("#grid10-detail .close").click(function () {
+            $("#grid10-detail").removeClass('shown');
             $("#grid10-detail").addClass('not-shown');
         });
     });
@@ -265,6 +276,7 @@ $(document).ready(() => {
         $("#grid11-detail").toggleClass('shown');
         $("#grid11-detail").toggleClass('not-shown');
         $("#grid11-detail .close").click(function () {
+            $("#grid11-detail").removeClass('shown');
             $("#grid11-detail").addClass('not-shown');
         });
     });
@@ -272,6 +284,7 @@ $(document).ready(() => {
         $("#grid12-detail").toggleClass('shown');
         $("#grid12-detail").toggleClass('not-shown');
         $("#grid12-detail .close").click(function () {
+            $("#grid12-detail").removeClass('shown');
             $("#grid12-detail").addClass('not-shown');
         });
     });
@@ -279,6 +292,7 @@ $(document).ready(() => {
         $("#grid13-detail").toggleClass('shown');
         $("#grid13-detail").toggleClass('not-shown');
         $("#grid13-detail .close").click(function () {
+            $("#grid13-detail").removeClass('shown');
             $("#grid13-detail").addClass('not-shown');
         });
     });
