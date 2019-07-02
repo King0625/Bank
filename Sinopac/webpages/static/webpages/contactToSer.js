@@ -65,7 +65,7 @@ var loadBasicData = (id)=>{
         url: window.location.origin + '/sinopac/basicData/?id=' + id,
         async: false,
         success: (res) => {
-            console.log(res);
+            // console.log(res);
             editTheForm(res['BasicData']);
             editPartTwo(res['BankDepositData']);
             editPartThree(res['UnionCreditCheckSystemInfo']);
@@ -76,9 +76,9 @@ var loadBasicData = (id)=>{
 
 
 var editTheForm = (BasicData) => {
-    console.log(BasicData);
+    // console.log(BasicData);
     var keys = Object.keys(BasicData);
-    console.log(keys);
+    // console.log(keys);
     for (var i = 0; i < keys.length; i++) {
         $('#basic_' + keys[i]).val(BasicData[keys[i]]);
     }
@@ -90,7 +90,7 @@ var editTheForm = (BasicData) => {
 
 var editPartTwo = (DepositData) => {
     var keys = Object.keys(DepositData);
-    console.log(keys);
+    // console.log(keys);
     for (var i = 0; i < keys.length; i++) {
         var id = '#deposit_' + keys[i];
         $(id).html(DepositData[keys[i]]);
@@ -154,7 +154,7 @@ var editPartThree = (CheckData) => {
 
 var checkCreditErrorData = (data) => {
     for (var i = 0; i < credit_data.length; i++) {
-        console.log(data[credit_data[i]]);
+        // console.log(data[credit_data[i]]);
         if (data[credit_data[i]] !== '無') {
             return true;
         }
@@ -258,8 +258,8 @@ var goToSection = (sec,target,item)=>{
     
     spanTheSection(sec);
     if(item === 'name'){
-        console.log('name');
-        console.log('.' + target + '_identity');
+        // console.log('name');
+        // console.log('.' + target + '_identity');
         $('.' + target + '_identity').css('color','#FF4D4D');
         $('.' + target + '_identity').css('transition','.5s');
         setTimeout(()=>{
@@ -291,6 +291,6 @@ var spanTheSection = (sec) =>{
         $(query_collapse_section).css('display','block');
         $(img).attr('src','../../static/webpages/img/topArrow.png');
     }
-    console.log('spanning the section first');
+    // console.log('spanning the section first');
 }
 
