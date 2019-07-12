@@ -4,7 +4,9 @@
 
 This project is designed for Bank Sinopac for renewing its inner system, e-loan system. Our design philosophy focuses on simple layouts and convenient features.
 
-The team has 5 menbers. 
+![](https://i.imgur.com/ydjGNVJ.jpg)
+
+The team has 5 members. 
 * Designer and Leader : 朱炳丞
 * Front-end Engineer : [陳伯瑋](https://github.com/King0625), 曹能寶, [馮立壕](https://github.com/Secretlife108)
 * Back-end Engineer : [林友鈞](https://github.com/yuchun1214)
